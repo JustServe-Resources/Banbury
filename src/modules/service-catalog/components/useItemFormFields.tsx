@@ -108,7 +108,10 @@ export function useItemFormFields(
       if (serviceCatalogItem && serviceCatalogItem.form_id) {
         try {
           const { requestFields, associatedLookupField } =
-            await fetchTicketFields(serviceCatalogItem.form_id, baseLocale);
+            await fetchTicketFields(
+              serviceCatalogItem.form_id.toString(),
+              baseLocale
+            );
           setRequestFields(requestFields);
           setAssociatedLookupField(associatedLookupField);
         } catch (error) {
