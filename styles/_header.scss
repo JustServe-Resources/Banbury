@@ -8,6 +8,9 @@ $header-height: 71px;
   display: flex;
   height: $header-height;
   justify-content: space-between;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12pt;
+  font-weight: 200; 
 }
 
 .logo img {

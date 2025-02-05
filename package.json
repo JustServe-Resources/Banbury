@@ -1,7 +1,7 @@
 {
-  "name": "copenhagen_theme",
-  "version": "1.0.0",
-  "repository": "git@github.com:zendesk/copenhagen_theme.git",
+  "name": "banbury_theme",
+  "version": "0.0.1",
+  "repository": "git@github.com:JustServe-Resources/Banbury.git",
   "scripts": {
     "start": "concurrently -k -r 'rollup -c -w' 'wait-on script.js style.css && zcli themes:preview'",
     "build": "NODE_ENV=production rollup -c",
