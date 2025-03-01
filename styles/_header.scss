@@ -1,8 +1,10 @@
 /***** Header *****/
-$header-height: 71px;
+$header-height: 80px;
 
 .header {
-  @include max-width-container;
+  max-width: unset;
+  padding: 0 16px 0 24px;
+  width: 100%;
   position: relative;
   align-items: center;
   display: flex;
@@ -13,8 +15,21 @@ $header-height: 71px;
   font-weight: 200; 
 }
 
+.header .left-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header .left-container a{
+    color: #000;
+    font-weight: 400;
+    line-height: 100%;
+    padding: 0 16px;
+}
+
 .logo img {
-  max-height: 37px;
+  max-height: auto;
   vertical-align: middle;
 }
 
@@ -25,6 +40,9 @@ $header-height: 71px;
 
 .logo a {
   display: inline-block;
+  margin-bottom: 4px;
+  padding-right: 32px;
+  min-width: 120px;
 }
 
 .logo a:hover, .logo a:focus, .logo a:active {

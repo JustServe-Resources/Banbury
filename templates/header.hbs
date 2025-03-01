@@ -1,17 +1,21 @@
 <a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 
 <header class="header">
-  <div class="logo">
-      <a href="https://justserve.org/">
-        <img src="https://justserve-static-assets-shared-prod.justserve.org/static/images/justserve-logo.svg" alt="JustServe Home Page" />
-      </a>
+  <div class="left-container">
+    <div class="logo">
+        <a href="https://justserve.org/">
+          <img src="https://justserve-static-assets-shared-prod.justserve.org/static/images/justserve-logo.svg" alt="JustServe Home Page" />
+        </a>
+    </div>
+    <div class="link-container">
+        {{link 'community'}}
+        {{link 'new_request' class='submit-a-request'}}
+    </div>
   </div>
 
   <div class="nav-wrapper-desktop">
     <nav class="user-nav" id="user-nav" aria-label="{{t 'user_navigation'}}">
       <ul class="user-nav-list">
-        <li>{{link 'community'}}</li>
-        <li>{{link 'new_request' class='submit-a-request'}}</li>
         {{#if signed_in}}
           <li>
             <div class="user-info dropdown">
