@@ -28,6 +28,19 @@ $header-height: 80px;
     display: flex;
 }
 
+.header .languageBtn {
+    font-size: 25px;
+    min-width: 25px;
+    color: #ef5e39;
+    cursor: pointer;
+    align-items: center;
+    background: transparent;
+    &:hover, &:focus {
+        color: $text_color;
+        background-color: transparent; //set the hover background to the default background
+    }
+}
+
 .header .link-container a{
     align-items: center;
     display: flex;
@@ -95,8 +108,12 @@ $header-height: 80px;
 }
 
 .user-nav-list {
-  display: block;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
   list-style: none;
+  margin: 4px;
 
   > li {
     display: inline-block;
@@ -121,14 +138,6 @@ $header-height: 80px;
     width: auto;
 
     [dir="rtl"] & { padding: 0 0 0 20px;}
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: transparent;
-      color: $link_color;
-      text-decoration: underline;
-    }
   }
 }
 
@@ -206,10 +215,6 @@ $header-height: 80px;
       cursor: pointer;
       text-align: start;
 
-      &:active, &:focus, &:hover {
-        background-color: #f3f3f3;
-        text-decoration: underline;
-      }
     }
 
     a {
