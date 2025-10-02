@@ -1,51 +1,78 @@
 <a class="skip-navigation" tabindex="1" href="#main-content">{{t 'skip_navigation' }}</a>
 
 <header class="header">
-  <div class="logo">
-    {{#link 'help_center'}}
-      <img src="{{settings.logo}}" alt="{{t 'home_page' name=help_center.name}}" />
-      {{#if settings.show_brand_name}}
-        <span aria-hidden="true">{{help_center.name}}</span>
-      {{/if}}
-    {{/link}}
+  <div class="left-container">
+    <div class="logo">
+      <a href="https://justserve.org/">
+        <img src="https://justserve-static-assets-shared-prod.justserve.org/static/images/justserve-logo.svg" alt="JustServe Home Page" />
+      </a>
+    </div>
+    <div class="link-container">
+      {{#link 'help_center' class='header-link header-link_home'}}
+        {{t 'help_center'}}
+      {{/link}}
+      {{#link 'community' class='header-link header-link_community'}}
+        {{t 'community'}}
+      {{/link}}
+      {{#link 'new_request' class='submit-a-request header-link header-link_request'}}
+        {{t 'submit_a_request'}}
+      {{/link}}
+    </div>
   </div>
-
+  
+<div class="right-container">
   <div class="nav-wrapper-desktop">
     <nav class="user-nav" id="user-nav" aria-label="{{t 'user_navigation'}}">
       <ul class="user-nav-list">
-        <li>{{link 'community'}}</li>
-        <li>{{link 'new_request' class='submit-a-request'}}</li>
-        {{#unless signed_in}}
+        {{#if signed_in}}
+          <svg class="sc-2zzkbx-0 iLBAfP profile-icon" data-test="profileIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M18.47 16.497c0-.954-.75-1.711-1.647-1.711H7.177c-.9 0-1.647.754-1.647 1.711v3.76c0 .41-.34.743-.747.743h-.036A.749.749 0 0 1 4 20.256v-3.759c0-1.774 1.42-3.211 3.177-3.211h9.646c1.755 0 3.177 1.44 3.177 3.211v3.76c0 .41-.34.743-.747.743h-.036a.749.749 0 0 1-.747-.744v-3.759zM4 20.25c0-.414.328-.75.756-.75h14.172c.417 0 .756.333.756.75 0 .414-.328.75-.756.75H4.756A.751.751 0 0 1 4 20.25zm8.17-8.467c-2.495 0-4.473-1.986-4.473-4.392C7.697 4.986 9.675 3 12.17 3s4.473 1.986 4.473 4.391c0 2.406-1.978 4.392-4.473 4.392zm0-7.283c-1.632 0-2.943 1.296-2.943 2.891 0 1.596 1.311 2.892 2.943 2.892 1.632 0 2.943-1.296 2.943-2.892 0-1.595-1.311-2.891-2.943-2.891z"> </path></svg>
           <li>
-            {{#link "sign_in" class="sign-in"}}
-              {{t 'sign_in'}}
-            {{/link}}
+            <div class="user-info dropdown">
+              <button class="dropdown-toggle" aria-haspopup="true">
+                
+                <span>
+                  {{user_name}}
+<!--                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true"> -->
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown-menu" role="menu">
+                {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
+                {{link "requests" role="menuitem"}}
+                {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
+                {{contact_details role="menuitem"}}
+                {{change_password role="menuitem"}}
+                <div class="separator" role="separator"></div>
+                {{link "sign_out" role="menuitem"}}
+              </div>
+            </div>
           </li>
-        {{/unless}}
+        {{else}}
+          
+            <li class="sign-in-right">
+              {{#link "sign_in" class="sign-in"}}
+                {{t 'sign_in'}}
+              {{/link}}
+            </li>
+          </div>
+        {{/if}}
       </ul>
     </nav>
-    {{#if signed_in}}
-      <div class="user-info dropdown">
-        <button class="dropdown-toggle" aria-haspopup="true">
-          {{user_avatar class="user-avatar"}}
-          <span>
-            {{user_name}}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true">
-              <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
-            </svg>
-          </span>
+    <div class="footer-language-selector">
+    <div class="dropdown language-selector">
+      <button class="dropdown-toggle" aria-haspopup="true">
+        <svg class="sc-1kw2hvr-0 cqDtAL language-icon" data-test="languageIconDesktop" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M9.496 20.124h.76a.277.277 0 0 0 .278-.278v-3.559l1.645-1.392.932-1.547a.277.277 0 0 0-.06-.353l-1.308-1.106-.899-.761-.296-.251-.083-.07-.022-.019a.28.28 0 0 0-.295-.05l-.872.369-.82.347H7.8l-.752-1.273v-.796l-.029-.125-.843-1.684V6.97l2.426-.809a.278.278 0 0 0 .108-.46l-.099-.099-.068-.068-.287-.287-.418-.418a.274.274 0 0 0-.296-.055 8.44 8.44 0 0 1 4.46-1.274c.888 0 1.745.138 2.551.391-.02.005-.042.005-.06.014l-1.745.872-.944.924a.279.279 0 0 0 0 .393l.872.872.197.081H14.615a.277.277 0 0 0 .278-.278v-.756l.71-.71h.756c.28 0 .367-.352.15-.499a8.508 8.508 0 0 1 3.431 4.184l-1.459-1.53a.28.28 0 0 0-.32-.058l-1.556.745-1.535-.027a.278.278 0 0 0-.267.185l-.842 2.387-.003.176.758 2.415.137.163 1.587.829a.28.28 0 0 0 .278-.012l1.032-.658.561.571-.012.684-.013.712-.404.755-.762.718-.085.195-.014.8a.28.28 0 0 0 .273.283l.368.006a8.487 8.487 0 0 1-8.166 1.797zM3.5 12c0-1.138.228-2.222.634-3.215.044.067.08.129.14.204a6.644 6.644 0 0 0 .562.598l.19.075h.7l.584 1.169-.679 2.297.027.22.833 1.41v1.4l.06.172 1.744 2.213.85 1.445c.005.007.013.01.018.017C5.866 18.835 3.5 15.698 3.5 12zm11.645-7.892c.432.172.843.381 1.237.618l-1.237-.618zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"> </path></svg>
         </button>
-        <div class="dropdown-menu" role="menu">
-          {{#my_profile role="menuitem"}}{{t 'profile'}}{{/my_profile}}
-          {{link "requests" role="menuitem"}}
-          {{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}
-          {{contact_details role="menuitem"}}
-          {{change_password role="menuitem"}}
-          <div class="separator" role="separator"></div>
-          {{link "sign_out" role="menuitem"}}
+          <span class="dropdown-menu dropdown-menu-end" role="menu">
+            {{#each alternative_locales}}
+              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                {{name}}
+              </a>
+            {{/each}}
+          </span>
         </div>
-      </div>
-    {{/if}}
+    </div>
   </div>
 
   <div class="nav-wrapper-mobile">
@@ -53,7 +80,7 @@
       {{#if signed_in}}
         {{user_avatar class="user-avatar"}}
       {{/if}}
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
+      <svg xmlns="https://justserve-static-assets-shared-prod.justserve.org/static/images/menu.svg" width="24" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
         <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
       </svg>
     </button>
@@ -82,8 +109,9 @@
           </li>
           <li class="nav-divider"></li>
         {{/if}}
-        <li class="item">{{link 'community' role="menuitem"}}</li>
-        <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
+        <li class="item ham-link_home">{{link 'help_center' role="menuitem"}}</li>
+        <li class="item ham-link_community">{{link 'community' role="menuitem"}}</li>
+        <li class="item ham-link_request">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
         <li class="nav-divider"></li>
         {{#if signed_in}}
           <li class="item">
@@ -93,5 +121,7 @@
       </ul>
     </nav>
   </div>
-
+	
+	</div>
 </header>
+
