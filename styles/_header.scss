@@ -301,12 +301,20 @@ $header-height: 80px;
 }
 
 .right-container {
+  
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 32px;
     height: calc(100% - 12px);
     margin: 4px;
+}
+
+.right-container>.footer-language-selector 
+{
+  @include mobile {display: none;}
+  @include tablet { display: none; }
+  @include desktop { display: flex; }
 }
 
 a.header-link 

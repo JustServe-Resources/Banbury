@@ -902,6 +902,22 @@ ul {
   margin: 4px;
 }
 
+@media (max-width: 768px) {
+  .right-container > .footer-language-selector {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .right-container > .footer-language-selector {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .right-container > .footer-language-selector {
+    display: flex;
+  }
+}
+
 a.header-link {
   padding: 1.2rem;
   font-weight: 700;
