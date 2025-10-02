@@ -907,11 +907,6 @@ ul {
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .right-container > .footer-language-selector {
-    display: none;
-  }
-}
 @media (min-width: 768px) {
   .right-container > .footer-language-selector {
     display: none;
