@@ -1,6 +1,8 @@
-<footer class="footer">
+<!--<footer class="footer">
+  
   <div class="footer-inner">
     {{#link 'help_center'}}{{help_center.name}}{{/link}}
+
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}
@@ -22,4 +24,85 @@
       {{/if}}
     </div>
   </div>
+</footer>-->
+
+
+<footer class="footer">
+  <div id="social" data-testid="socialSection">
+    <div data-testid="followUsText">Follow Us:</div>
+    <div class="icons">
+      <span class="circle">
+        <a target="_blank" href="https://www.instagram.com/justserve/" rel="noreferrer noopener">
+          <svg data-testid="projectShareInstagram" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation" class="sc-1k3zqvr-0 dsjgWF"> 
+            <path fill="currentColor" d="M12 3.804c2.67 0 2.985.01 4.04.059.974.044 1.504.207 1.856.344.466.181.8.398 1.15.748.35.35.566.683.747 1.15.137.351.3.88.344 1.855.048 1.055.059 1.37.059 4.04s-.01 2.985-.059 4.04c-.044.974-.207 1.504-.344 1.856-.181.466-.398.8-.748 1.15-.35.35-.683.566-1.15.747-.351.137-.88.3-1.855.344-1.054.048-1.37.059-4.04.059s-2.986-.01-4.04-.059c-.974-.044-1.504-.207-1.856-.344a3.097 3.097 0 0 1-1.15-.748 3.097 3.097 0 0 1-.747-1.15c-.137-.351-.3-.88-.344-1.855-.048-1.055-.059-1.37-.059-4.04s.01-2.985.059-4.04c.044-.974.207-1.504.344-1.856.181-.466.398-.8.748-1.15.35-.35.683-.566 1.15-.747.351-.137.88-.3 1.855-.344 1.055-.048 1.37-.059 4.04-.059m0-1.8c-2.715 0-3.055.01-4.122.06-1.064.048-1.79.217-2.426.464A4.9 4.9 0 0 0 3.68 3.681a4.9 4.9 0 0 0-1.153 1.77c-.247.637-.416 1.363-.465 2.427-.048 1.067-.06 1.407-.06 4.122s.012 3.055.06 4.122c.049 1.064.218 1.79.465 2.426a4.9 4.9 0 0 0 1.153 1.771 4.9 4.9 0 0 0 1.77 1.153c.637.247 1.363.416 2.427.465 1.067.048 1.407.06 4.122.06s3.055-.012 4.122-.06c1.064-.049 1.79-.218 2.426-.465a4.9 4.9 0 0 0 1.771-1.153 4.9 4.9 0 0 0 1.153-1.77c.247-.637.416-1.363.465-2.427.048-1.067.06-1.407.06-4.122s-.012-3.055-.06-4.122c-.049-1.064-.218-1.79-.465-2.426a4.9 4.9 0 0 0-1.153-1.771 4.9 4.9 0 0 0-1.77-1.153c-.637-.247-1.363-.416-2.427-.465-1.067-.048-1.407-.06-4.122-.06m0 4.863a5.134 5.134 0 1 0 0 10.268 5.134 5.134 0 0 0 0-10.268zm0 8.466a3.332 3.332 0 1 1 0-6.664 3.332 3.332 0 0 1 0 6.664zm6.536-8.668a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0"> </path>
+          </svg>
+        </a>
+      </span>
+      <span class="circle">
+          <a target="_blank" href="https://www.youtube.com/channel/UCqsl9oij5zvoBq1FWb1KeMg" rel="noreferrer noopener">
+            <svg data-testid="projectShareYoutube" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation" class="sc-5vky5b-0 iOeNQh"> 
+              <path fill="currentColor" d="M9.517 14.955l-.001-6.387 6.481 3.205-6.48 3.182zm14.23-7.493s-.234-1.567-.953-2.256c-.912-.906-1.935-.91-2.403-.963-3.357-.23-8.392-.23-8.392-.23h-.01s-5.036 0-8.392.23c-.47.053-1.491.057-2.404.963-.72.69-.953 2.256-.953 2.256S0 9.302 0 11.14v1.724c0 1.84.24 3.679.24 3.679s.234 1.566.953 2.256c.913.905 2.111.877 2.645.972 1.919.174 8.156.228 8.156.228s5.04-.007 8.397-.237c.468-.053 1.49-.058 2.403-.963.72-.69.954-2.256.954-2.256s.24-1.84.24-3.679v-1.724c0-1.84-.24-3.68-.24-3.68z"> </path>
+            </svg>
+          </a>
+      </span>
+      <span class="circle">
+        <a target="_blank" href="https://www.facebook.com/JustServe.org/?fref=ts" rel="noreferrer noopener">
+          <svg data-testid="projectShareFacebook" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation" class="sc-1v8rue6-0 fIGHwQ"> 
+            <path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.9 3.77-3.9 1.1 0 2.24.2 2.24.2v2.46H15.2c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.9h-2.33v6.98A10 10 0 0 0 22 12Z"> </path>
+          </svg>
+        </a>
+      </span>
+      <span class="circle">
+        <a target="_blank" href="https://x.com/JustServe" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1227" width="20px" height="20px" style="min-height: 20px; min-width: 20px;">
+            <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal;">
+              <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"></path> 
+            </g>
+          </svg>
+        </a>
+      </span>
+      <span class="circle">
+        <a target="_blank" href="https://www.linkedin.com/company/justserve-org/" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="28px" height="28px">
+            <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal;">
+              <g transform="scale(8.53333,8.53333)">
+                <path d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM10.954,22h-2.95v-9.492h2.95zM9.449,11.151c-0.951,0 -1.72,-0.771 -1.72,-1.72c0,-0.949 0.77,-1.719 1.72,-1.719c0.948,0 1.719,0.771 1.719,1.719c0,0.949 -0.771,1.72 -1.719,1.72zM22.004,22h-2.948v-4.616c0,-1.101 -0.02,-2.517 -1.533,-2.517c-1.535,0 -1.771,1.199 -1.771,2.437v4.696h-2.948v-9.492h2.83v1.297h0.04c0.394,-0.746 1.356,-1.533 2.791,-1.533c2.987,0 3.539,1.966 3.539,4.522z"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+      </span>
+    </div>
+    <div class="MuiBox-root css-h5fkc8">
+      <div class="MuiBox-root css-19idom" data-testid="followUsText">Get the JustServe App:</div>
+      <div class="MuiBox-root css-70qvj9">
+        <a href="https://play.google.com/store/apps/details?id=org.lds.justserve" rel="noreferrer noopener" target="_blank">
+          <img src="https://justserve-static-assets-shared-prod.justserve.org/static/images/google-play_en.png" alt="google play" width="130" height="40" style="max-width: 100%; height: auto;">
+        </a>
+        <a href="https://itunes.apple.com/us/app/justserve/id1006664302?mt=8" rel="noreferrer noopener" target="_blank" style="margin-left: 10px;">
+          <img src="https://justserve-static-assets-shared-prod.justserve.org/static/images/app-store_en.png" alt="google play" width="130" height="40" style="max-width: 100%; height: auto;">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="legal" data-testid="legalSection">
+    <span class="ml">
+      <a target="_blank" rel="noreferrer" data-testid="footerTermsLink" href="/legal/terms">Terms of Use</a>
+    </span>
+    <span class="ml">
+      <a target="_blank" rel="noreferrer" data-testid="footerPrivacyLink" href="/legal/privacy">Privacy Notice</a>
+    </span>
+    <span class="ml">
+      {{!-- <a id="teconsent" consent="undefined" aria-label="Open Cookie Preferences Modal" class="truste_caIcon_display" role="complementary"></a>
+      <a role="link" id="icon-id08954275273834861" tabindex="0" lang="en" aria-haspopup="dialog" aria-label="Cookie Preferences, opens a dedicated popup modal window" class="truste_cursor_pointer">Cookie Preferences</a> --}}
+    </span>
+    <span class="ml">
+      <a target="_blank" rel="noreferrer" data-testid="footerBlogLink" href="https://www.justserve.org/blog">Blog</a>
+    </span>
+  </div>
+  <div id="service" data-testid="service">
+    <div data-testid="serviceText">JustServe.org is provided as a service by The Church of Jesus Christ of Latter-day Saints.</div>
+    <div id="copy" data-testid="copyrightText">© 2025 by Intellectual Reserve, Inc. All rights reserved.</div>
+  </div>
+  <div data-testid="jsmodal"></div>
 </footer>

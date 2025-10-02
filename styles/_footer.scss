@@ -1,28 +1,117 @@
-/***** Footer *****/
+/***** Footer *****/ // !Old
+// .footer {
+//   border-top: 1px solid $low-contrast-border-color;
+//   margin-top: 60px;
+//   padding: 30px 0;
+
+//   a {
+//     color: $secondary-text-color;
+//   }
+
+//   &-inner {
+//     @include max-width-container;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &-language-selector button {
+//     color: $secondary-text-color;
+//     display: inline-block;
+//   }
+// }
+
+// .powered-by-zendesk {
+//   a,
+//   a:visited {
+//     color: $secondary-text-color;
+//   }
+// }
+
+/**** FOOTER ****/ // !New
 .footer {
-  border-top: 1px solid $low-contrast-border-color;
-  margin-top: 60px;
-  padding: 30px 0;
-
-  a {
-    color: $secondary-text-color;
-  }
-
-  &-inner {
-    @include max-width-container;
+    flex-direction: column;
+    background-color: #002838;
+    padding: 32px;
     display: flex;
+    color: #fff;
     justify-content: space-between;
-  }
-
-  &-language-selector button {
-    color: $secondary-text-color;
-    display: inline-block;
-  }
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    @include tablet 
+    {
+      display: grid;
+      grid-template-areas: "social service legal";
+      grid-gap: 32px;
+      gap: 32px;
+    }
 }
 
-.powered-by-zendesk {
-  a,
-  a:visited {
-    color: $secondary-text-color;
-  }
+.footer #social {
+    grid-area: social;
 }
+
+.footer #legal 
+{
+  grid-area: legal;
+}
+
+.footer #service {
+    grid-area: service;
+}
+
+// Legal
+
+.footer #legal, footer #legal .ml {
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.footer #legal {
+    --divider: 2px;
+    --column-gap: 20px;
+    --border: 2px;
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    gap: 8px;
+    overflow: hidden;
+    margin: 46px 0 46px -8px;
+    @include desktop {margin: 0;}
+    @include tablet 
+    {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+}
+
+// Social
+.footer #social .icons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.footer #social .circle {
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    min-height: 46px;
+    border-radius: 50%;
+    background-color: #264856;
+}
+
+.footer #social .circle, .footer #social .circle a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-h5fkc8 {
+    margin-top: 32px;
+}
+
