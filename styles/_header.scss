@@ -2,12 +2,14 @@
 $header-height: 80px;
 
 .header {
-  @include max-width-container;
+  /* @include max-width-container; */
   position: relative;
   align-items: center;
   display: flex;
   height: $header-height;
   justify-content: space-between;
+  gap: 48px;
+  padding: 0 16px 0 24px;
 }
 
 .logo img {
@@ -73,7 +75,7 @@ $header-height: 80px;
 .nav-wrapper-desktop {
   @include mobile { display: none; }
   @include tablet { display: none; }
-  @include desktop { display: inline-block; }
+  @include desktop { display: flex; justify-content: center; }
 
   a {
     @include tablet {
@@ -112,9 +114,8 @@ $header-height: 80px;
     .icon-menu {
       padding: 7px;
       vertical-align: middle;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
+      width: 40px;
+      height: 40px;
     }
 
     &[aria-expanded="true"] {
@@ -259,3 +260,105 @@ $header-height: 80px;
 #zd-modal-container ~ .skip-navigation {
   display: none;
 }
+
+// DevSciCloan Start
+
+
+.profile-icon 
+{
+    font-size: 25px !important;
+    min-width: 25px !important;
+}
+.iLBAfP 
+{
+    min-width: 1em;
+    max-width: 1em;
+    height: 1em;
+    color: $brand-color;
+}
+
+.userNameBtn {
+    color: $brand-color;
+    font-weight: 700;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 2px 0;
+    font-family: Nunito Sans;
+    line-height: 22px;
+}
+
+.left-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    height: calc(100% - 12px);
+    margin: 4px;
+}
+
+.right-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    height: calc(100% - 12px);
+    margin: 4px;
+}
+
+a.header-link 
+{
+  padding: 1.2rem;
+  font-weight: 700;
+  font-size: 19px;
+  color: $text-color !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+a.header-link.active
+{
+  border-bottom: 4px solid #009eb9;
+  margin-bottom: -4px;
+  height: calc(100% - 10px);
+}
+
+/* .user-avatar 
+{
+  see _user.scss line 45
+} */
+
+.link-container
+{
+  @include mobile { display: none; }
+  @include tablet { display: none; }
+  @include desktop { display: flex; }
+}
+
+@supports selector(:has(*)) {
+  :root:has([data-hc-page="home"])        .link-container .header-link_home,
+  :root:has([data-hc-page="community"])   .link-container .header-link_community,
+  :root:has([data-hc-page="request"]) .link-container .header-link_request {
+    border-bottom: 4px solid #009eb9;
+    margin-bottom: -4px;
+    height: calc(100% - 10px);
+  }
+}
+
+@supports selector(:has(*)) {
+  :root:has([data-hc-page="home"]) .menu-list-mobile .ham-link_home > a,
+  :root:has([data-hc-page="community"])   .menu-list-mobile .ham-link_community > a,
+  :root:has([data-hc-page="request"]) .menu-list-mobile .ham-link_request > a {
+    border-left: 4px solid #009eb9;
+    margin: 0px 0 0 1.5rem !important;
+    padding: 0 0 0 5px !important;
+    /* width: calc(100% - 10px); */
+  }
+}
+
+// DevSciCloan End
+
