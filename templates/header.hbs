@@ -76,11 +76,10 @@
   </div>
 
   <div class="nav-wrapper-mobile">
-    {{#if signed_in}}
+    <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
+      {{#if signed_in}}
         {{user_avatar class="user-avatar"}}
       {{/if}}
-    <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">
-      
       <svg xmlns="https://justserve-static-assets-shared-prod.justserve.org/static/images/menu.svg" width="24" height="16" focusable="false" viewBox="0 0 16 16" class="icon-menu">
         <path fill="none" stroke="currentColor" stroke-linecap="round" d="M1.5 3.5h13m-13 4h13m-13 4h13"/>
       </svg>
