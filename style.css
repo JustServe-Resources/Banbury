@@ -1051,35 +1051,94 @@ a.header-link.active {
 }
 
 /***** Footer *****/
+/**** FOOTER ****/
 .footer {
-  border-top: 1px solid #ddd;
-  margin-top: 60px;
-  padding: 30px 0;
-}
-.footer a {
-  color: lighten($text_color, 20%);
-}
-.footer-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
+  flex-direction: column;
+  background-color: #002838;
+  padding: 32px;
   display: flex;
+  color: #fff;
   justify-content: space-between;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
 }
-@media (min-width: 1160px) {
-  .footer-inner {
-    padding: 0;
-    width: 90%;
+@media (min-width: 768px) {
+  .footer {
+    display: grid;
+    grid-template-areas: "social service legal";
+    grid-gap: 32px;
+    gap: 32px;
   }
 }
-.footer-language-selector button {
-  color: lighten($text_color, 20%);
-  display: inline-block;
+
+.footer #social {
+  grid-area: social;
 }
 
-.powered-by-zendesk a,
-.powered-by-zendesk a:visited {
-  color: lighten($text_color, 20%);
+.footer #legal {
+  grid-area: legal;
+}
+
+.footer #service {
+  grid-area: service;
+}
+
+.footer #legal, footer #legal .ml {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.footer #legal {
+  --divider: 2px;
+  --column-gap: 20px;
+  --border: 2px;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  gap: 8px;
+  overflow: hidden;
+  margin: 46px 0 46px -8px;
+}
+@media (min-width: 1024px) {
+  .footer #legal {
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer #legal {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.footer #social .icons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer #social .circle {
+  width: 46px;
+  min-width: 46px;
+  height: 46px;
+  min-height: 46px;
+  border-radius: 50%;
+  background-color: #264856;
+}
+
+.footer #social .circle, .footer #social .circle a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css-h5fkc8 {
+  margin-top: 32px;
 }
 
 /***** Breadcrumbs *****/
