@@ -1,5 +1,52 @@
 // Add here css changes
 
-.header {
-    background-color: red;
+a:hover {
+    text-decoration: none;
 }
+
+a.blocks-item-link:hover>span
+{
+    color: white;
+}
+
+
+.dropdown-toggle span, .sign-in
+{
+    font-weight: 700 !important;
+    font-size: 19px !important;
+    color: $brand-color !important;
+    align-items: center;
+    text-decoration: none;
+    vertical-align: super;
+}
+
+.dropdown-toggle span 
+{
+    margin-right: 1rem;
+}
+
+.language-icon {
+    font-size: 25px;
+    min-width: 25px;
+    color: $brand-color;
+    cursor: pointer;
+}
+
+.button-large, .button
+{
+    border-radius: 30px;
+    padding: 6px 28px;
+    text-decoration: none;
+    background-color: rgb(239, 94, 57);
+    color: white !important;
+    margin: 10px;
+    font-size: 19px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover
+{
+    background-color: rgb(167, 65, 39);
+    color: white;
+}
+
