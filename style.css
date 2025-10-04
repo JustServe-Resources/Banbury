@@ -1209,20 +1209,20 @@ footer #legal .ml:before {
 
 .search {
   border-color: #87929D;
-  border-radius: 30px;
+  border-radius: 4px;
   border-style: solid;
   border-width: 1px;
   display: flex;
   position: relative;
   transition: border 0.12s ease-in-out;
 }
-.search:focus-within {
-  border-color: $brand_color;
+.search:hover:has(input[type=search]#query[name=query]:not(:focus)) {
+  border: 1px solid black;
 }
 .search input[type=search],
 .search .clear-button {
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 4px;
   border: none;
 }
 .search-full input[type=search], .search-full .clear-button {
@@ -1250,26 +1250,18 @@ footer #legal .ml:before {
   align-items: center;
   box-sizing: border-box;
   color: #777;
-  cursor: pointer;
   display: none;
   flex: none;
   justify-content: center;
   padding: 0 15px;
 }
-.search .clear-button:hover {
-  background-color: $brand_color;
-  color: #fff;
-}
 .search .clear-button:focus {
   outline: 0;
   box-shadow: 0 0 0 3px $brand_color;
 }
-.search-has-value .clear-button {
-  display: flex;
-}
 
 [dir=ltr] .search input[type=search] {
-  padding-left: 40px;
+  padding-left: 11px;
   padding-right: 20px;
 }
 [dir=ltr] .search-has-value input[type=search] {
@@ -1285,13 +1277,10 @@ footer #legal .ml:before {
   border-top-left-radius: 0;
   border-left-color: transparent;
 }
-[dir=ltr] .search .clear-button:focus {
-  border-left-color: $brand_color;
-}
 
 [dir=rtl] .search input[type=search] {
   padding-left: 20px;
-  padding-right: 40px;
+  padding-right: 11px;
 }
 [dir=rtl] .search-has-value input[type=search] {
   border-bottom-left-radius: 0;
@@ -1306,43 +1295,66 @@ footer #legal .ml:before {
   border-top-right-radius: 0;
   border-right-color: transparent;
 }
-[dir=rtl] .search .clear-button:focus {
-  border-right-color: $brand_color;
-}
 
 .search-icon {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
+  right: auto;
   left: 15px;
   z-index: 1;
   width: 18px;
   height: 18px;
-  color: #777;
+  color: $brand_text_color;
   pointer-events: none;
+  margin-right: 10px;
 }
-[dir=rtl] .search-icon {
-  left: auto;
-  right: 15px;
+
+.search-bar-container .search-button {
+  width: 162px;
+  align-self: center;
+  font-size: 19px;
+  max-width: 162px !important;
+  max-height: 45px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.search-full {
+  width: 100%;
+  background-color: white;
+  align-items: center;
 }
 
 /***** Hero component *****/
 .hero {
-  background-image: url($homepage_background_image);
-  background-position: center;
-  background-size: cover;
-  height: 300px;
-  padding: 0 20px;
-  text-align: center;
-  width: 100%;
+  background: #0081a0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 .hero-inner {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 610px;
+  display: flex;
+  max-width: 846px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.hero-inner .search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hero-inner .search-bar-container {
+    flex-direction: column;
+  }
+}
+
+.hero-outer {
+  max-width: 846px;
+  width: 100%;
+  padding: 1.5rem;
 }
 
 .page-header {
@@ -1511,9 +1523,19 @@ footer #legal .ml:before {
   }
 }
 
+/***** DevSciCloan Homepage ****/
+.search-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  color: #fff;
+}
+
 .home-section h2 {
   margin-bottom: 10px;
   text-align: center;
+  font-weight: 700;
+  font-size: 36px;
 }
 
 /***** Promoted articles *****/
@@ -1562,13 +1584,20 @@ footer #legal .ml:before {
 }
 
 /***** Community section in homepage *****/
+.community,
+.activity {
+  border-top: 1px solid #ddd;
+  padding: 30px 0;
+}
+
+/***** DevSciCloan Community section in homepage *****/
 .community {
   text-align: center;
 }
 .community-image {
   min-height: 300px;
   margin-top: 32px;
-  background-image: url($community_image);
+  background: url(https://justserve-static-assets-shared-prod.justserve.org/static/images/people-desktop.svg);
   background-position: center;
   background-repeat: no-repeat;
   max-width: 100%;
@@ -1584,13 +1613,8 @@ footer #legal .ml:before {
   color: $hover_link_color;
 }
 
-.community,
-.activity {
-  border-top: 1px solid #ddd;
-  padding: 30px 0;
-}
-
 /***** Recent activity *****/
+/***** DevSciCloan Recent activity *****/
 .recent-activity-header {
   margin-bottom: 10px;
   text-align: center;
@@ -1607,8 +1631,8 @@ footer #legal .ml:before {
   margin: 0;
 }
 .recent-activity-item-parent {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
 }
 .recent-activity-item-parent, .recent-activity-item-link {
   margin: 6px 0;
@@ -1622,9 +1646,12 @@ footer #legal .ml:before {
   }
 }
 .recent-activity-item-link {
-  font-size: 14px;
+  font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 300;
+  line-height: 22px;
+  color: #002838;
 }
 .recent-activity-item-meta {
   color: $text_color;
@@ -4967,4 +4994,8 @@ a.blocks-item-link:hover > span {
 .button:hover, .split-button button:hover, .section-subscribe button:hover, .article-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover {
   background-color: rgb(167, 65, 39);
   color: white;
+}
+
+.powered-by-zendesk {
+  width: 100% !important;
 }
