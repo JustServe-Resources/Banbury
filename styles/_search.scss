@@ -1,30 +1,38 @@
 /***** Search field *****/
 
 $icon-color: #777;
-$padding-left: 40px;
+// $padding-left: 40px;
+$padding-left: 11px;
 $padding-right: 20px;
 
 .search-container {
   position: relative;
+  
 }
 
 .search {
   border-color: $high-contrast-border-color;
-  border-radius: 30px;
+  // border-radius: 30px;
+  border-radius: 4px;
   border-style: solid;
   border-width: 1px;
   display: flex;
   position: relative;
   transition: $input-transition;
 
-  &:focus-within {
-    border-color: $brand_color;
+  &:hover:has(input[type="search"]#query[name="query"]:not(:focus)) {
+    border: 1px solid black;
   }
+
+  // &:focus-within {
+  //   border-color: $brand_color;
+  // }
 
   input[type="search"], 
   .clear-button {
     background-color: #fff;
-    border-radius: 30px;
+    // border-radius: 30px;
+    border-radius: 4px;
     border: none;
   }
 
@@ -59,22 +67,24 @@ $padding-right: 20px;
       -webkit-box-shadow: 0 0 0 1000px #fff inset;
     }
 
+    
+
   }
 
   .clear-button {
     align-items: center;
     box-sizing: border-box;
     color: $icon-color;
-    cursor: pointer;
+    // cursor: pointer;
     display: none;
     flex: none;
     justify-content: center;
     padding: 0 15px;
 
-    &:hover {
-      background-color: $brand_color;
-      color: #fff;
-    }
+    // &:hover {
+    //   background-color: $brand_color;
+    //   color: #fff;
+    // }
 
     &:focus {
       @include focus-ring;
@@ -82,9 +92,9 @@ $padding-right: 20px;
 
   }
 
-  &-has-value .clear-button {
-    display: flex;
-  }
+  // &-has-value .clear-button { //! Comment out to remove search bar clear button
+  //   display: flex;
+  // }
 
 }
 
@@ -110,9 +120,9 @@ $padding-right: 20px;
     border-top-left-radius: 0;
     border-left-color: transparent;
 
-    &:focus {
-      border-left-color: $brand_color;
-    }
+    // &:focus {
+    //   border-left-color: $brand_color;
+    // }
     
   }
 }
@@ -139,25 +149,61 @@ $padding-right: 20px;
     border-top-right-radius: 0;
     border-right-color: transparent;
 
-    &:focus {
-      border-right-color: $brand_color;
-    }
+    // &:focus {
+    //   border-right-color: $brand_color;
+    // }
 
   }
 }
 
+// .search-icon {
+//   @include vertical-align;
+//   position: absolute;
+//   left: auto;
+//   right: 15px;
+//   z-index: 1;
+//   width: 18px;
+//   height: 18px;
+//   color: $brand-text-color;
+//   pointer-events: none;
+
+//   [dir="rtl"] & {
+//     left: auto;
+//     right: 15px;
+//   }
+// }
+
 .search-icon {
-  @include vertical-align;
-  position: absolute;
+  right: auto;
   left: 15px;
   z-index: 1;
   width: 18px;
   height: 18px;
-  color: $icon-color;
+  color: $brand-text-color;
   pointer-events: none;
+  margin-right: 10px;
 
-  [dir="rtl"] & {
-    left: auto;
-    right: 15px;
-  }
+
+  // [dir="rtl"] & {
+  //   left: auto;
+  //   right: 15px;
+  // }
+}
+
+.search-bar-container .search-button 
+{
+  width: 162px;
+  align-self: center;
+  font-size: 19px;
+  max-width: 162px !important;
+  max-height: 45px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.search-full 
+{
+  width: 100%;
+  background-color: white;
+  align-items: center;
 }

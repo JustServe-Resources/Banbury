@@ -8,9 +8,25 @@
   margin-bottom: 40px;
 }
 
+// .home-section h2 {
+//   margin-bottom: 10px;
+//   text-align: center;
+// }
+
+/***** DevSciCloan Homepage ****/
+.search-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: #fff;
+}
+
 .home-section h2 {
   margin-bottom: 10px;
   text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+
 }
 
 /***** Promoted articles *****/
@@ -59,23 +75,39 @@
 }
 
 /***** Community section in homepage *****/
+// .community {
+//   text-align: center;
+
+//   &-image {
+//     min-height: 300px;
+//     margin-top: 32px;
+//     background-image: url($community_image);
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     max-width: 100%;
+//   }
+
+//   @include standalone-link;
+// }
+
+.community,
+.activity {
+  border-top: 1px solid $low-contrast-border-color;
+  padding: 30px 0;
+}
+
+/***** DevSciCloan Community section in homepage *****/
 .community {
   text-align: center;
 
   &-image {
     min-height: 300px;
     margin-top: 32px;
-    background-image: url($community_image);
+    background: url(https://justserve-static-assets-shared-prod.justserve.org/static/images/people-desktop.svg);
     background-position: center;
     background-repeat: no-repeat;
     max-width: 100%;
   }
 
   @include standalone-link;
-}
-
-.community,
-.activity {
-  border-top: 1px solid $low-contrast-border-color;
-  padding: 30px 0;
 }
