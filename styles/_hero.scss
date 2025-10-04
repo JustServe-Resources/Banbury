@@ -1,16 +1,51 @@
 /***** Hero component *****/
-.hero {
-  background-image: url($homepage_background_image);
-  background-position: center;
-  background-size: cover;
-  height: 300px;
-  padding: 0 20px;
-  text-align: center;
-  width: 100%;
+// .hero {
+//   background-image: url($homepage_background_image);
+//   background-position: center;
+//   background-size: cover;
+//   height: 300px;
+//   padding: 0 20px;
+//   text-align: center;
+//   width: 100%;
+//   
 
+//   &-inner {
+//     @include vertical-align;
+//     max-width: 610px;
+//     margin: 0 auto;
+//   }
+// }
+
+.hero 
+{
+  background: #0081a0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
   &-inner {
-    @include vertical-align;
-    max-width: 610px;
+    display: flex;
+    max-width: 846px;
     margin: 0 auto;
+    width: 100%;
   }
 }
+
+.hero-inner .search-bar-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include mobile {flex-direction: column;}
+}
+
+.hero-outer 
+{
+  max-width: 846px;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+
