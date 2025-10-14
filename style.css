@@ -189,7 +189,7 @@ template {
 body {
   background-color: $background_color;
   color: $text_color;
-  font-family: $text_font;
+  font-family: Noto Sans;
   font-size: 15px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -1114,6 +1114,11 @@ a.header-link.active {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 768px) {
+  .footer #legal {
+    flex-direction: row;
+  }
+}
 
 footer #legal .ml {
   position: relative;
@@ -1166,6 +1171,10 @@ footer #legal .ml:before {
   min-width: 24px;
   max-width: 24px;
   height: 24px;
+}
+
+.css-19idom {
+  margin-bottom: 8px;
 }
 
 .footer #service #copy {
