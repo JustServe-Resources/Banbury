@@ -15,6 +15,7 @@ $header-height: 80px;
 .logo img {
   max-height: 37px;
   vertical-align: middle;
+  padding-right: 32px;
 }
 
 .logo span {
@@ -333,8 +334,8 @@ a.header-link
   padding: 0 16px;
   height: 100%;
   line-height: 22px;
-  font-weight: 700;
-  font-size: 19px;
+  font-weight: 400;
+  font-size: 18px;
   color: $text-color !important;
   display: flex;
   align-items: center;
