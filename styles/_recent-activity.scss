@@ -120,11 +120,16 @@
     }
   }
 
+  // &-item-parent {
+  //   font-size: 18px;
+  //   font-weight: 700;
+  // }
   &-item-parent {
+    font-family: Noto Sans;
+    line-height: 1.5;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
   }
-
   &-item-parent,
   &-item-link {
     @include tablet {

@@ -620,17 +620,6 @@ ul {
 }
 
 /***** Header *****/
-.header {
-  /* @include max-width-container; */
-  position: relative;
-  align-items: center;
-  display: flex;
-  height: 80px;
-  justify-content: space-between;
-  gap: 48px;
-  padding: 0 16px 0 24px;
-}
-
 .logo img {
   max-height: 37px;
   vertical-align: middle;
@@ -858,6 +847,17 @@ ul {
   display: none;
 }
 
+.header {
+  font-family: Nunito Sans, Arial, Helvetica, sans-serif;
+  position: relative;
+  align-items: center;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 0 16px 0 24px;
+}
+
 .profile-icon {
   font-size: 25px !important;
   min-width: 25px !important;
@@ -919,7 +919,9 @@ ul {
 }
 
 a.header-link {
-  padding: 1.2rem;
+  padding: 0 16px;
+  height: 100%;
+  line-height: 22px;
   font-weight: 700;
   font-size: 19px;
   color: $text_color !important;
@@ -928,16 +930,13 @@ a.header-link {
   text-decoration: none;
 }
 
-a.header-link.active {
-  border-bottom: 4px solid #009eb9;
-  margin-bottom: -4px;
-  height: calc(100% - 10px);
-}
-
 /* .user-avatar 
 {
   see _user.scss line 45
 } */
+.link-container {
+  height: 100%;
+}
 @media (max-width: 768px) {
   .link-container {
     display: none;
@@ -960,7 +959,6 @@ a.header-link.active {
   :root:has([data-hc-page=request]) .link-container .header-link_request {
     border-bottom: 4px solid #009eb9;
     margin-bottom: -4px;
-    height: calc(100% - 10px);
   }
 }
 @supports selector(:has(*)) {
@@ -1314,6 +1312,7 @@ footer #legal .ml:before {
   color: $brand_text_color;
   pointer-events: none;
   margin-right: 10px;
+  stroke-width: 1.6;
 }
 
 .search-bar-container .search-button {
@@ -1338,12 +1337,14 @@ footer #legal .ml:before {
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
+  min-height: 180px;
 }
 .hero-inner {
   display: flex;
   max-width: 846px;
+  max-height: 65px;
   margin: 0 auto;
   width: 100%;
 }
@@ -1640,8 +1641,10 @@ footer #legal .ml:before {
   margin: 0;
 }
 .recent-activity-item-parent {
+  font-family: Noto Sans;
+  line-height: 1.5;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
 }
 .recent-activity-item-parent, .recent-activity-item-link {
   margin: 6px 0;
@@ -2569,34 +2572,6 @@ footer #legal .ml:before {
 }
 
 /***** Community *****/
-.community-hero {
-  background-image: url($community_background_image);
-  margin-bottom: 10px;
-}
-.community-footer {
-  padding-top: 50px;
-  text-align: center;
-}
-.community-footer-title {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.community-featured-posts .title {
-  font-size: 18px;
-  font-weight: 600;
-}
-.community-featured-posts, .community-activity {
-  padding-top: 40px;
-  width: 100%;
-}
-.community-header {
-  margin-bottom: 30px;
-}
-.community-header .title {
-  margin-bottom: 0;
-  font-size: 16px;
-}
-
 .post-to-community {
   margin-top: 10px;
 }

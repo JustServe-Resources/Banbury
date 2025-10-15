@@ -22,11 +22,13 @@
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
+  min-height: 180px;
   &-inner {
     display: flex;
     max-width: 846px;
+    max-height: 65px;
     margin: 0 auto;
     width: 100%;
   }
