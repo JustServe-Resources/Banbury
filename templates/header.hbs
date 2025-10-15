@@ -49,31 +49,30 @@
             </div>
           </li>
         {{else}}
-          
-            <li class="sign-in-right">
-              {{#link "sign_in" class="sign-in"}}
-                {{t 'sign_in'}}
-              {{/link}}
-            </li>
-          </div>
+          <li class="sign-in-right">
+            {{#link "sign_in" class="sign-in"}}
+              {{t 'sign_in'}}
+            {{/link}}
+          </li>
         {{/if}}
       </ul>
     </nav>
-    <div class="footer-language-selector">
-    <div class="dropdown language-selector">
-      <button class="dropdown-toggle" aria-haspopup="true">
-        <svg class="sc-1kw2hvr-0 cqDtAL language-icon" data-test="languageIconDesktop" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M9.496 20.124h.76a.277.277 0 0 0 .278-.278v-3.559l1.645-1.392.932-1.547a.277.277 0 0 0-.06-.353l-1.308-1.106-.899-.761-.296-.251-.083-.07-.022-.019a.28.28 0 0 0-.295-.05l-.872.369-.82.347H7.8l-.752-1.273v-.796l-.029-.125-.843-1.684V6.97l2.426-.809a.278.278 0 0 0 .108-.46l-.099-.099-.068-.068-.287-.287-.418-.418a.274.274 0 0 0-.296-.055 8.44 8.44 0 0 1 4.46-1.274c.888 0 1.745.138 2.551.391-.02.005-.042.005-.06.014l-1.745.872-.944.924a.279.279 0 0 0 0 .393l.872.872.197.081H14.615a.277.277 0 0 0 .278-.278v-.756l.71-.71h.756c.28 0 .367-.352.15-.499a8.508 8.508 0 0 1 3.431 4.184l-1.459-1.53a.28.28 0 0 0-.32-.058l-1.556.745-1.535-.027a.278.278 0 0 0-.267.185l-.842 2.387-.003.176.758 2.415.137.163 1.587.829a.28.28 0 0 0 .278-.012l1.032-.658.561.571-.012.684-.013.712-.404.755-.762.718-.085.195-.014.8a.28.28 0 0 0 .273.283l.368.006a8.487 8.487 0 0 1-8.166 1.797zM3.5 12c0-1.138.228-2.222.634-3.215.044.067.08.129.14.204a6.644 6.644 0 0 0 .562.598l.19.075h.7l.584 1.169-.679 2.297.027.22.833 1.41v1.4l.06.172 1.744 2.213.85 1.445c.005.007.013.01.018.017C5.866 18.835 3.5 15.698 3.5 12zm11.645-7.892c.432.172.843.381 1.237.618l-1.237-.618zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"> </path></svg>
-        </button>
-          <span class="dropdown-menu dropdown-menu-end" role="menu">
-            {{#each alternative_locales}}
-              <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
-                {{name}}
-              </a>
-            {{/each}}
-          </span>
-        </div>
-    </div>
+    
   </div>
+  <div class="footer-language-selector">
+      <div class="dropdown language-selector">
+        <button class="dropdown-toggle" aria-haspopup="true">
+          <svg class="sc-1kw2hvr-0 cqDtAL language-icon" data-test="languageIconDesktop" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M9.496 20.124h.76a.277.277 0 0 0 .278-.278v-3.559l1.645-1.392.932-1.547a.277.277 0 0 0-.06-.353l-1.308-1.106-.899-.761-.296-.251-.083-.07-.022-.019a.28.28 0 0 0-.295-.05l-.872.369-.82.347H7.8l-.752-1.273v-.796l-.029-.125-.843-1.684V6.97l2.426-.809a.278.278 0 0 0 .108-.46l-.099-.099-.068-.068-.287-.287-.418-.418a.274.274 0 0 0-.296-.055 8.44 8.44 0 0 1 4.46-1.274c.888 0 1.745.138 2.551.391-.02.005-.042.005-.06.014l-1.745.872-.944.924a.279.279 0 0 0 0 .393l.872.872.197.081H14.615a.277.277 0 0 0 .278-.278v-.756l.71-.71h.756c.28 0 .367-.352.15-.499a8.508 8.508 0 0 1 3.431 4.184l-1.459-1.53a.28.28 0 0 0-.32-.058l-1.556.745-1.535-.027a.278.278 0 0 0-.267.185l-.842 2.387-.003.176.758 2.415.137.163 1.587.829a.28.28 0 0 0 .278-.012l1.032-.658.561.571-.012.684-.013.712-.404.755-.762.718-.085.195-.014.8a.28.28 0 0 0 .273.283l.368.006a8.487 8.487 0 0 1-8.166 1.797zM3.5 12c0-1.138.228-2.222.634-3.215.044.067.08.129.14.204a6.644 6.644 0 0 0 .562.598l.19.075h.7l.584 1.169-.679 2.297.027.22.833 1.41v1.4l.06.172 1.744 2.213.85 1.445c.005.007.013.01.018.017C5.866 18.835 3.5 15.698 3.5 12zm11.645-7.892c.432.172.843.381 1.237.618l-1.237-.618zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"> </path></svg>
+        </button>
+        <span class="dropdown-menu dropdown-menu-end" role="menu">
+          {{#each alternative_locales}}
+            <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+              {{name}}
+            </a>
+          {{/each}}
+        </span>
+      </div>
+    </div>
 
   <div class="nav-wrapper-mobile">
     <button class="menu-button-mobile" aria-controls="user-nav-mobile" aria-expanded="false" aria-label="{{t 'toggle_navigation'}}">

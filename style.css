@@ -302,7 +302,7 @@ a:hover, a:active, a:focus {
 }
 
 .container-divider {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   margin-bottom: 20px;
 }
 
@@ -376,33 +376,6 @@ ul {
 }
 .button[data-disabled], [data-disabled].pagination-next-link, [data-disabled].pagination-prev-link, [data-disabled].pagination-first-link, [data-disabled].pagination-last-link, .subscriptions-subscribe button[data-disabled], .requests-table-toolbar .organization-subscribe button[data-disabled], .community-follow button[data-disabled], .article-subscribe button[data-disabled], .section-subscribe button[data-disabled], .split-button button[data-disabled] {
   cursor: default;
-}
-
-.button-large, .hbs-form input[type=submit] {
-  cursor: pointer;
-  background-color: $brand_color;
-  border: 0;
-  border-radius: 4px;
-  color: $brand_text_color;
-  font-size: 14px;
-  line-height: 2.72;
-  min-width: 190px;
-  padding: 0 1.9286em;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .button-large, .hbs-form input[type=submit] {
-    width: auto;
-  }
-}
-.button-large:visited, .hbs-form input[type=submit]:visited {
-  color: $brand_text_color;
-}
-.button-large:hover, .button-large:active, .button-large:focus, .hbs-form input[type=submit]:hover, .hbs-form input[type=submit]:active, .hbs-form input[type=submit]:focus {
-  background-color: darken($brand_color, 20%);
-}
-.button-large[disabled], .hbs-form input[type=submit][disabled] {
-  background-color: #ddd;
 }
 
 .button-secondary {
@@ -484,7 +457,7 @@ ul {
   text-align: right;
 }
 .table tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   display: block;
   padding: 20px 0;
 }
@@ -514,10 +487,6 @@ ul {
 }
 
 /***** Forms *****/
-.form {
-  max-width: 650px;
-}
-
 .form-field ~ .form-field {
   margin-top: 25px;
 }
@@ -529,21 +498,21 @@ ul {
 }
 
 .form-field input {
-  border: 1px solid #87929D;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 4px;
   padding: 10px;
   width: 100%;
 }
 .form-field input:focus {
-  border: 1px solid $brand_color;
+  border: 1px solid $brand_text_color;
 }
 
 .form-field input[type=text] {
-  border: 1px solid #87929D;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 4px;
 }
 .form-field input[type=text]:focus {
-  border: 1px solid $brand_color;
+  border: 1px solid $brand_text_color;
 }
 
 .form-field input[type=checkbox] {
@@ -559,17 +528,17 @@ ul {
   vertical-align: middle;
 }
 .form-field .nesty-input:focus {
-  border: 1px solid $brand_color;
+  border: 1px solid $brand_text_color;
   text-decoration: none;
 }
 
 .form-field .hc-multiselect-toggle {
-  border: 1px solid #87929D;
+  border: 1px solid rgb(216, 220, 222);
 }
 
 .form-field .hc-multiselect-toggle:focus {
   outline: none;
-  border: 1px solid $brand_color;
+  border: 1px solid $brand_text_color;
   text-decoration: none;
 }
 
@@ -593,8 +562,7 @@ ul {
 }
 
 .form footer {
-  margin-top: 40px;
-  padding-top: 30px;
+  margin-top: 16px;
 }
 
 .form footer a {
@@ -608,7 +576,7 @@ ul {
   margin-top: 30px;
 }
 .form .suggestion-list label {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   display: block;
   padding-bottom: 5px;
 }
@@ -619,10 +587,92 @@ ul {
   color: $visited_link_color;
 }
 
+.form footer input[type=submit] {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-transform: none;
+  font-family: "Nunito Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.75;
+  min-width: 64px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(239, 94, 57);
+  box-shadow: none;
+  outline: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: 0 0 32px 0;
+  text-decoration: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 30px;
+  padding: 6px 28px;
+}
+.form footer input[type=submit]:hover {
+  background-color: rgb(167, 65, 39);
+}
+
+.form input[type=text] {
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.hbs-form select {
+  border: 1px solid rgb(216, 220, 222);
+  color: inherit;
+  /* When the hidden placeholder is the selected value */
+}
+.hbs-form select:focus {
+  border: 1px solid $brand_text_color;
+}
+.hbs-form select:has(> option[hidden][value=""]:checked) {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+}
+.hbs-form select option {
+  color: initial;
+}
+.hbs-form select option:checked {
+  color: inherit;
+}
+
+/* Once a real value is selected, revert the color */
+.hbs-form select:not(:has(> option[value=""]:checked)) {
+  color: inherit;
+}
+
 /***** Header *****/
 .logo img {
   max-height: 37px;
   vertical-align: middle;
+  padding-right: 32px;
 }
 
 .logo span {
@@ -922,8 +972,8 @@ a.header-link {
   padding: 0 16px;
   height: 100%;
   line-height: 22px;
-  font-weight: 700;
-  font-size: 19px;
+  font-weight: 400;
+  font-size: 18px;
   color: $text_color !important;
   display: flex;
   align-items: center;
@@ -1483,7 +1533,7 @@ footer #legal .ml:before {
 }
 .blocks-item-internal {
   background-color: transparent;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
 }
 .blocks-item-internal .icon-lock {
   height: 15px;
@@ -1578,7 +1628,7 @@ footer #legal .ml:before {
 }
 .promoted-articles-item a {
   display: block;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   padding: 15px 0;
 }
 .promoted-articles-item .icon-lock {
@@ -1589,14 +1639,14 @@ footer #legal .ml:before {
 }
 @media (min-width: 1024px) {
   .promoted-articles-item:last-child a {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(216, 220, 222);
   }
 }
 
 /***** Community section in homepage *****/
 .community,
 .activity {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   padding: 30px 0;
 }
 
@@ -1633,7 +1683,7 @@ footer #legal .ml:before {
   padding: 0;
 }
 .recent-activity-item {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   overflow: auto;
   padding: 20px 0;
 }
@@ -1815,12 +1865,12 @@ footer #legal .ml:before {
 }
 
 .section-list-item {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   font-size: 16px;
   padding: 15px 0;
 }
 .section-list-item:first-child {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
 }
 .section-list-item a {
   align-items: center;
@@ -2006,21 +2056,21 @@ footer #legal .ml:before {
 }
 .article-body :not(pre) > code {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 0 5px;
   margin: 0 2px;
 }
 .article-body pre {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 10px 15px;
   overflow: auto;
   white-space: pre;
 }
 .article-body blockquote {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid rgb(216, 220, 222);
   color: lighten($text_color, 20%);
   font-style: italic;
   padding: 0 15px;
@@ -2052,8 +2102,8 @@ footer #legal .ml:before {
   height: 18px;
 }
 .article-sidebar {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
+  border-top: 1px solid rgb(216, 220, 222);
   flex: 1 0 auto;
   margin-bottom: 20px;
   padding: 0;
@@ -2067,7 +2117,7 @@ footer #legal .ml:before {
   }
 }
 .article-relatives {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   display: flex;
   flex-direction: column;
   padding: 20px 0;
@@ -2092,7 +2142,7 @@ footer #legal .ml:before {
   }
 }
 .article-votes {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   padding: 30px 0;
   text-align: center;
 }
@@ -2226,7 +2276,7 @@ footer #legal .ml:before {
 /***** Comments *****/
 /* Styles comments inside articles, posts and requests */
 .comment {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   padding: 20px 0;
 }
 .comment-heading, .recent-articles-title,
@@ -2237,8 +2287,8 @@ footer #legal .ml:before {
   font-weight: 600;
 }
 .comment-overview {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
+  border-top: 1px solid rgb(216, 220, 222);
   padding: 20px 0;
 }
 .comment-overview p {
@@ -2475,21 +2525,21 @@ footer #legal .ml:before {
 }
 .comment-body :not(pre) > code {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 0 5px;
   margin: 0 2px;
 }
 .comment-body pre {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 10px 15px;
   overflow: auto;
   white-space: pre;
 }
 .comment-body blockquote {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid rgb(216, 220, 222);
   color: lighten($text_color, 20%);
   font-style: italic;
   padding: 0 15px;
@@ -2593,7 +2643,7 @@ footer #legal .ml:before {
 
 /* Community topic page */
 .topic-header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   font-size: 13px;
 }
 @media (min-width: 768px) {
@@ -2603,7 +2653,7 @@ footer #legal .ml:before {
 }
 .topic-header .dropdown {
   display: block;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   padding: 10px 0;
 }
 @media (min-width: 768px) {
@@ -2691,7 +2741,7 @@ footer #legal .ml:before {
 }
 .striped-list-item {
   align-items: flex-start;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -3014,21 +3064,21 @@ footer #legal .ml:before {
 }
 .post-body :not(pre) > code {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 0 5px;
   margin: 0 2px;
 }
 .post-body pre {
   background: darken($background_color, 3%);
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   border-radius: 3px;
   padding: 10px 15px;
   overflow: auto;
   white-space: pre;
 }
 .post-body blockquote {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid rgb(216, 220, 222);
   color: lighten($text_color, 20%);
   font-style: italic;
   padding: 0 15px;
@@ -3054,7 +3104,7 @@ footer #legal .ml:before {
   vertical-align: middle;
 }
 .post-sidebar {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   flex: 1;
   padding: 30px 0;
   text-align: center;
@@ -3156,8 +3206,8 @@ footer #legal .ml:before {
 }
 
 .collapsible-nav-border {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
+  border-top: 1px solid rgb(216, 220, 222);
 }
 @media (min-width: 768px) {
   .collapsible-nav-border {
@@ -3614,7 +3664,7 @@ footer #legal .ml:before {
 }
 .request-main .comment-show-container {
   border-radius: 2px;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(216, 220, 222);
   color: lighten($text_color, 20%);
   text-align: inherit;
   padding: 8px 25px;
@@ -3652,15 +3702,15 @@ footer #legal .ml:before {
 }
 @media (min-width: 1024px) {
   .request-title {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(216, 220, 222);
     margin-bottom: 0;
     max-width: 66%;
     padding-bottom: 20px;
   }
 }
 .request-sidebar {
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
+  border-top: 1px solid rgb(216, 220, 222);
   flex: 1 0 auto;
   order: 0;
 }
@@ -3685,7 +3735,7 @@ footer #legal .ml:before {
   }
 }
 .request-details {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(216, 220, 222);
   font-size: 0;
   margin: 0;
   padding-bottom: 20px;
@@ -4125,7 +4175,7 @@ footer #legal .ml:before {
   margin-top: 25px;
 }
 .profile-badges-item {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -4419,7 +4469,7 @@ footer #legal .ml:before {
   }
 }
 .search-results-sidebar {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
   flex: 1 0 auto;
   margin-bottom: 20px;
   padding: 0;
@@ -4519,7 +4569,7 @@ footer #legal .ml:before {
   padding: 20px 0;
 }
 .search-results-list > li:first-child {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgb(216, 220, 222);
 }
 .search-results .no-results {
   display: flex;
@@ -4951,10 +5001,6 @@ a.blocks-item-link:hover > span {
   align-items: center;
   text-decoration: none;
   vertical-align: super;
-}
-
-.dropdown-toggle span {
-  margin-right: 1rem;
 }
 
 .language-icon {
