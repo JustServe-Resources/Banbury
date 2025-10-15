@@ -1,16 +1,16 @@
 /***** Header *****/
 $header-height: 80px;
 
-.header {
-  /* @include max-width-container; */
-  position: relative;
-  align-items: center;
-  display: flex;
-  height: $header-height;
-  justify-content: space-between;
-  gap: 48px;
-  padding: 0 16px 0 24px;
-}
+// .header {
+//   @include max-width-container;
+//   position: relative;
+//   align-items: center;
+//   display: flex;
+//   height: $header-height;
+//   justify-content: space-between;
+//   gap: 48px;
+//   padding: 0 16px 0 24px;
+// }
 
 .logo img {
   max-height: 37px;
@@ -263,6 +263,17 @@ $header-height: 80px;
 
 // DevSciCloan Start
 
+.header {
+  // @include max-width-container;
+  font-family: Nunito Sans, Arial, Helvetica, sans-serif;
+  position: relative;
+  align-items: center;
+  display: flex;
+  height: $header-height;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 0 16px 0 24px;
+}
 
 .profile-icon 
 {
@@ -319,20 +330,15 @@ $header-height: 80px;
 
 a.header-link 
 {
-  padding: 1.2rem;
+  padding: 0 16px;
+  height: 100%;
+  line-height: 22px;
   font-weight: 700;
   font-size: 19px;
   color: $text-color !important;
   display: flex;
   align-items: center;
   text-decoration: none;
-}
-
-a.header-link.active
-{
-  border-bottom: 4px solid #009eb9;
-  margin-bottom: -4px;
-  height: calc(100% - 10px);
 }
 
 /* .user-avatar 
@@ -345,6 +351,7 @@ a.header-link.active
   @include mobile { display: none; }
   @include tablet { display: none; }
   @include desktop { display: flex; }
+  height: 100%;
 }
 
 @supports selector(:has(*)) {
@@ -353,7 +360,7 @@ a.header-link.active
   :root:has([data-hc-page="request"]) .link-container .header-link_request {
     border-bottom: 4px solid #009eb9;
     margin-bottom: -4px;
-    height: calc(100% - 10px);
+    // height: calc(100% - 10px); // don't need this because we height calc in .left-container
   }
 }
 
