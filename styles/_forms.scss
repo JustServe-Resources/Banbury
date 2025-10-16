@@ -4,6 +4,14 @@
 //   max-width: 650px;
 // }
 
+.form button 
+{
+  margin-left: 0;
+  width: auto;
+  height: 44px;
+  padding:0 16px;
+}
+
 .form-field ~ .form-field {
   margin-top: 25px;
   
@@ -117,72 +125,66 @@
 
 // DevSciCloan Form Input Type Submit
 
- .form footer input[type="submit"]
- {
+//  .form footer input[type="submit"] //! Currently not being used. Input[type:submit] text was blurry so we are now using a button
+//  {
+//   display: inline-flex;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   -webkit-box-pack: center;
+//   justify-content: center;
+//   position: relative;
+//   box-sizing: border-box;
+//   -webkit-tap-highlight-color: transparent;
+//   cursor: pointer;
+//   user-select: none;
+//   vertical-align: middle;
+//   appearance: none;
+//   text-transform: none;
+//   font-family: "Nunito Sans";
+//   font-size: 18px;
+//   font-weight: 700;
+//   line-height: 1.75;
+//   min-width: 64px;
+//   color: rgb(255, 255, 255);
+//   background-color: rgb(239, 94, 57);
+//   box-shadow: none;
+//   outline: 0px;
+//   border-width: 0px;
+//   border-style: initial;
+//   border-color: initial;
+//   border-image: initial;
+//   margin: 0 0 32px 0;
+//   text-decoration: none;
+//   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+//   border-radius: 30px;
+//   padding: 6px 28px;
+
+//   &:hover 
+//   {
+//     background-color: rgb(167, 65, 39);
+//   }
+//  }
+
+.form input[type="text"]
+{
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: text;
   display: inline-flex;
   -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
+  width: 100%;
   position: relative;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  text-transform: none;
-  font-family: "Nunito Sans";
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.75;
-  min-width: 64px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(239, 94, 57);
-  box-shadow: none;
-  outline: 0px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  margin: 0 0 32px 0;
-  text-decoration: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 30px;
-  padding: 6px 28px;
+  background-color: white;
+  border-radius: 4px;
+}
 
-  &:hover 
-  {
-    background-color: rgb(167, 65, 39);
-  }
- }
-
-//  .form label 
-//  {
-//   display: none;
-//  }
-
- .form input[type="text"]
- {
-    font-family: "Noto Sans";
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.4375em;
-    color: rgba(0, 0, 0, 0.87);
-    box-sizing: border-box;
-    cursor: text;
-    display: inline-flex;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    background-color: white;
-    border-radius: 4px;
-
-    
- }
-
- .hbs-form select {
+.hbs-form select 
+{
   border: 1px solid $low-contrast-border-color;
   color: inherit; // default color
 
@@ -190,7 +192,7 @@
     border: 1px solid $brand-text-color;
   }
 
-  /* When the hidden placeholder is the selected value */
+  // When the hidden placeholder is the selected value
   &:has(> option[hidden][value=""]:checked) {
     color: rgba(0, 0, 0, 0.6); 
     font-family: "Noto Sans";
@@ -203,7 +205,7 @@
   option:checked { color: inherit; }
 }
 
-/* Once a real value is selected, revert the color */
+// Once a real value is selected, revert the color
 .hbs-form select:not(:has(> option[value=""]:checked)) {
   color: inherit; 
 }

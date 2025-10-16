@@ -27,8 +27,7 @@
   min-height: 180px;
   &-inner {
     display: flex;
-    max-width: 846px;
-    max-height: 65px;
+    max-width: 718px;
     margin: 0 auto;
     width: 100%;
   }
@@ -48,6 +47,10 @@
   max-width: 846px;
   width: 100%;
   padding: 1.5rem;
+  .search-title
+  {
+    margin-bottom: 8px;
+  }
 }
 
 
