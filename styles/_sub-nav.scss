@@ -1,34 +1,159 @@
 .sub-nav {
-  align-items: baseline;
+  // align-items: baseline;
+  background-color: #0081a0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 15px 30px;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 55px;
+  margin-top: 50px;          // if we move breadcrumbs on top we comment out or delete this line
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;             // full viewport width
+  margin-left: -50vw;       // cancel container padding/width
+  margin-right: -50vw;
 
   @include tablet {
+    flex-direction: column;
+    .search-full
+    {
+      margin-top: 32px;
+    }
+  }
+  @include desktop 
+  {
     flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   // Inner pages breadcrumbs
-  .breadcrumbs {
-    margin: 0;
+
+  &:not(:has(.search-container)) // for pages where {{form}} is used
+  {
+    .breadcrumbs 
+    {
+      margin: 0;
+      top: -40px;               // breadcrumbs top
+    }
+  }
+
+  &:has(.search-container)      // for pages where {{search}} is used
+  {
+    .breadcrumbs
+    {
+      bottom: -40px;            // breadcrumbs bottom
+    }
+    margin-top: 0;
   }
 
   // Inner pages search field
-  .search-container {
-    max-width: 300px;
-    width: 100%;
+  // .search-container {
+  //   max-width: 300px;
+  //   width: 100%;
 
-    @include tablet {
-      flex: 0 1 300px;
-    }
-  }
+  //   @include tablet {
+  //     flex: 0 1 300px;
+  //     margin-right: 32px;
+  //   }
+  // }
 
   input[type="search"] {
     &::after { 
       font-size: $font-size-base; 
     }
   }
+
+  // DevSciCloan Start
+
+  .search-container 
+  {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 52px;
+
+    @include desktop
+    {
+      margin-top: 32px;
+    }
+
+    @include tablet {
+      // flex: 0 1 300px;
+      margin-right: 32px;
+    }
+  }
+
+  .search-full 
+  {
+    min-width: 300px;
+    @include desktop 
+    {
+      max-width: 600px;
+    }
+  }
+
+  .button
+  {
+    width: auto;
+    height: auto;
+    padding: 0 16px;
+    @include mobile 
+    {
+      width: 100%;
+    }
+  }
+
+  .sub-nav-right-container
+  {
+    position: relative;
+    display:flex;
+    width: 100%;
+    max-width: 718px;
+
+    align-items: baseline;
+    @include desktop
+    {
+      flex-direction: row;
+    }
+    @include mobile 
+    {
+      flex-direction: column;
+    }
+
+    .search 
+    {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      input[type="search"]
+      {
+        padding-right: 30px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+    .search-wrapper 
+    {
+      margin-top: 32px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+
+      .search-icon 
+      {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% - 28px);
+        pointer-events: none;
+        color: $brand_text_color;
+      }
+    }
+    
+  }
+  // DevSciCloan End
 }

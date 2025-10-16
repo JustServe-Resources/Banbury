@@ -487,6 +487,13 @@ ul {
 }
 
 /***** Forms *****/
+.form button {
+  margin-left: 0;
+  width: auto;
+  height: 44px;
+  padding: 0 16px;
+}
+
 .form-field ~ .form-field {
   margin-top: 25px;
 }
@@ -587,43 +594,6 @@ ul {
   color: $visited_link_color;
 }
 
-.form footer input[type=submit] {
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  appearance: none;
-  text-transform: none;
-  font-family: "Nunito Sans";
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.75;
-  min-width: 64px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(239, 94, 57);
-  box-shadow: none;
-  outline: 0px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  margin: 0 0 32px 0;
-  text-decoration: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 30px;
-  padding: 6px 28px;
-}
-.form footer input[type=submit]:hover {
-  background-color: rgb(167, 65, 39);
-}
-
 .form input[type=text] {
   font-family: "Noto Sans";
   font-weight: 400;
@@ -644,7 +614,6 @@ ul {
 .hbs-form select {
   border: 1px solid rgb(216, 220, 222);
   color: inherit;
-  /* When the hidden placeholder is the selected value */
 }
 .hbs-form select:focus {
   border: 1px solid $brand_text_color;
@@ -663,7 +632,6 @@ ul {
   color: inherit;
 }
 
-/* Once a real value is selected, revert the color */
 .hbs-form select:not(:has(> option[value=""]:checked)) {
   color: inherit;
 }
@@ -1238,6 +1206,8 @@ footer #legal .ml:before {
   margin: 0 0 15px 0;
   padding: 0;
   display: flex;
+  position: absolute;
+  left: 32px;
 }
 @media (min-width: 768px) {
   .breadcrumbs {
@@ -1366,10 +1336,9 @@ footer #legal .ml:before {
 }
 
 .search-bar-container .search-button {
-  width: 162px;
   align-self: center;
   font-size: 19px;
-  max-width: 162px !important;
+  min-width: 118px;
   max-height: 45px;
   padding: 0;
   font-weight: 700;
@@ -1393,8 +1362,7 @@ footer #legal .ml:before {
 }
 .hero-inner {
   display: flex;
-  max-width: 846px;
-  max-height: 65px;
+  max-width: 718px;
   margin: 0 auto;
   width: 100%;
 }
@@ -1415,6 +1383,9 @@ footer #legal .ml:before {
   max-width: 846px;
   width: 100%;
   padding: 1.5rem;
+}
+.hero-outer .search-title {
+  margin-bottom: 8px;
 }
 
 .page-header {
@@ -1465,33 +1436,123 @@ footer #legal .ml:before {
 }
 
 .sub-nav {
-  align-items: baseline;
+  background-color: #0081a0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 15px 30px;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 55px;
+  margin-top: 50px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 @media (min-width: 768px) {
   .sub-nav {
+    flex-direction: column;
+  }
+  .sub-nav .search-full {
+    margin-top: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .sub-nav {
     flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
-.sub-nav .breadcrumbs {
+.sub-nav:not(:has(.search-container)) .breadcrumbs {
   margin: 0;
+  top: -40px;
 }
-.sub-nav .search-container {
-  max-width: 300px;
-  width: 100%;
+.sub-nav:has(.search-container) {
+  margin-top: 0;
 }
-@media (min-width: 768px) {
-  .sub-nav .search-container {
-    flex: 0 1 300px;
-  }
+.sub-nav:has(.search-container) .breadcrumbs {
+  bottom: -40px;
 }
 .sub-nav input[type=search]::after {
   font-size: 15px;
+}
+.sub-nav .search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 52px;
+}
+@media (min-width: 1024px) {
+  .sub-nav .search-container {
+    margin-top: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .sub-nav .search-container {
+    margin-right: 32px;
+  }
+}
+.sub-nav .search-full {
+  min-width: 300px;
+}
+@media (min-width: 1024px) {
+  .sub-nav .search-full {
+    max-width: 600px;
+  }
+}
+.sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .section-subscribe button, .section-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
+  width: auto;
+  height: auto;
+  padding: 0 16px;
+}
+@media (max-width: 768px) {
+  .sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .section-subscribe button, .section-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
+    width: 100%;
+  }
+}
+.sub-nav .sub-nav-right-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 718px;
+  align-items: baseline;
+}
+@media (min-width: 1024px) {
+  .sub-nav .sub-nav-right-container {
+    flex-direction: row;
+  }
+}
+@media (max-width: 768px) {
+  .sub-nav .sub-nav-right-container {
+    flex-direction: column;
+  }
+}
+.sub-nav .sub-nav-right-container .search {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.sub-nav .sub-nav-right-container .search input[type=search] {
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sub-nav .sub-nav-right-container .search-wrapper {
+  margin-top: 32px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.sub-nav .sub-nav-right-container .search-wrapper .search-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% - 28px);
+  pointer-events: none;
+  color: $brand_text_color;
 }
 
 /***** Blocks *****/
