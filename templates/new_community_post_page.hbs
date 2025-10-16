@@ -1,14 +1,20 @@
-<div class="container-divider"></div>
+<!--<div class="container-divider"></div>-->
 <div class="container">
   <div class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search submit=false}}
-    </div>
+      <div class="sub-nav-right-container">
+        <div class="search-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+            <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+            <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+          </svg>
+          {{search submit=false}}
+        </div>
+        <button id="searchSubmitBtn" class="button search-button" type="button">Search</button>
+      </div>
+    </div> 
+    
   </div>
 
   <h1 class="form-header">
@@ -16,7 +22,7 @@
   </h1>
 
   <div id="main-content" class="form">
-    {{#form 'post' class='new_community_post hbs-form'}}
+    {{#form 'post' class='new_community_post hbs-form' id="postForm"}}
       <div class="form-field">
         {{#required 'title'}}
           {{label 'title'}}
@@ -83,8 +89,8 @@
           </div>
         {{/validate}}
       </div>
-
-      <footer>{{input type='submit'}}</footer>
+      <button class="button search-button" type="submit" form="postForm">Submit</button>
+      <!-- <footer>{{input type='submit'}}</footer> -->
     {{/form}}
   </div>
 </div>
