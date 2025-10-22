@@ -39,6 +39,10 @@
 .post-to-community {
   @include tablet { margin: 0; }
   margin-top: 10px;
+  .button 
+  {
+    padding: 0 16px;
+  }
 }
 
 /* Community topics grid */
@@ -101,10 +105,10 @@
 
     &:hover { background-color: $brand_color; }
 
-    &:hover::after, &:focus::after {
-      border-color: $brand_text_color;
-      color: $brand_text_color;
-    }
+    // &:hover::after, &:focus::after {
+    //   border-color: $brand_text_color;
+    //   color: $brand_text_color;
+    // }
 
     &[data-selected="true"] {
       background-color: $brand_color;
@@ -126,9 +130,9 @@
         position: static;
       }
 
-      border-left: 1px solid $button-color;
+      border-left: 1px solid white;
       content: attr(data-follower-count);
-      color: $button-color;
+      color: white;
       display: inline-block;
       font-family: $heading_font;
       margin-left: 15px;
@@ -138,7 +142,7 @@
 
       [dir="rtl"] & {
         border-left: 0;
-        border-right: 1px solid $button-color;
+        border-right: 1px solid white;
         margin: 0 10px 0 0;
         padding: 0 10px 0 0;
       }

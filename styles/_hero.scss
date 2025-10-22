@@ -25,9 +25,17 @@
   justify-content: center;
   flex-direction: column;
   min-height: 180px;
-  &-inner {
+  &:not(:has(.hero-outer))
+  {
+    .hero-inner
+    {
+      max-width: 718px;
+    }
+  }
+
+  &-inner 
+  {
     display: flex;
-    max-width: 718px;
     margin: 0 auto;
     width: 100%;
   }
@@ -40,6 +48,10 @@
   justify-content: center;
   width: 100%;
   @include mobile {flex-direction: column;}
+  .button 
+  {
+    width: 162px;
+  }
 }
 
 .hero-outer 

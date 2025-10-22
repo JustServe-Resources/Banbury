@@ -1,14 +1,19 @@
-<div class="container-divider"></div>
+{{!-- <div class="container-divider"></div> --}}
 <div class="container">
   <div class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search scoped=settings.scoped_community_search submit=false}}
-    </div>
+      <div class="sub-nav-right-container">
+        <div class="search-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+            <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+            <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+          </svg>
+          {{search scoped=settings.scoped_community_search submit=false}}
+        </div>
+        <button id="searchSubmitBtn" class="button search-button" type="button">Search</button>
+      </div>
+    </div> 
   </div>
 
   <div class="post-container">
@@ -159,7 +164,10 @@
 
         {{#if settings.show_post_sharing}}
           <footer class="post-footer">
-            <div class="post-share">{{share}}</div>
+            <div class="post-share">
+              <span class="post-share-label">Share this post:</span>
+              {{share}}
+            </div>
             {{#if comments}}
               <a href="#comment-overview" class="post-comment-count">
                 <svg role="img" aria-labelledby="post-comments-title post-comments-desc" xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="icon-comments">

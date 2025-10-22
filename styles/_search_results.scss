@@ -129,7 +129,11 @@
   &-list {
     margin-bottom: 25px;
     > li {
-      padding: 20px 0;
+      // padding: 20px 0;
+      padding: 32px;
+      background-color: white;
+      border: 1px solid $low-contrast-border-color;
+      margin-bottom: 16px;
       &:first-child {
         border-top: 1px solid $low-contrast-border-color;
       }
@@ -176,8 +180,9 @@
   }
 
   &-title {
-    font-size: $font-size-bigger;
+    font-size: 19px;
     margin-bottom: 0;
+    color: $brand-text-color;
   }
 
   &-votes,
@@ -231,6 +236,7 @@
   }
 
   &-breadcrumbs {
+    position: relative;
     margin: 0;
   }
 

@@ -60,6 +60,7 @@
 
   &-avatar {
     margin-bottom: 30px;
+    display: none;
   }
 
   &-content {
@@ -142,6 +143,7 @@
     &-title {
       font-size: 18px;
       font-weight: $font-weight-semibold;
+      color: $brand-text-color;
     }
   }
 
