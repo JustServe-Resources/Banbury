@@ -1,8 +1,8 @@
 /***** Forms *****/
 
-// .form {
-//   max-width: 650px;
-// }
+.form {
+  margin-bottom: 32px;
+}
 
 .form button 
 {
@@ -10,6 +10,9 @@
   width: auto;
   height: 44px;
   padding:0 16px;
+  color:white;
+  font-size: 19px;
+  border-radius: 30px;
 }
 
 .form-field ~ .form-field {

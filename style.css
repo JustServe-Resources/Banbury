@@ -487,11 +487,18 @@ ul {
 }
 
 /***** Forms *****/
+.form {
+  margin-bottom: 32px;
+}
+
 .form button {
   margin-left: 0;
   width: auto;
   height: 44px;
   padding: 0 16px;
+  color: white;
+  font-size: 19px;
+  border-radius: 30px;
 }
 
 .form-field ~ .form-field {
@@ -1360,9 +1367,11 @@ footer #legal .ml:before {
   flex-direction: column;
   min-height: 180px;
 }
+.hero:not(:has(.hero-outer)) .hero-inner {
+  max-width: 718px;
+}
 .hero-inner {
   display: flex;
-  max-width: 718px;
   margin: 0 auto;
   width: 100%;
 }
@@ -1377,6 +1386,9 @@ footer #legal .ml:before {
   .hero-inner .search-bar-container {
     flex-direction: column;
   }
+}
+.hero-inner .search-bar-container .button, .hero-inner .search-bar-container .pagination-next-link, .hero-inner .search-bar-container .pagination-prev-link, .hero-inner .search-bar-container .pagination-first-link, .hero-inner .search-bar-container .pagination-last-link, .hero-inner .search-bar-container .subscriptions-subscribe button, .subscriptions-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .community-follow button, .community-follow .hero-inner .search-bar-container button, .hero-inner .search-bar-container .article-subscribe button, .article-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .section-subscribe button, .section-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .split-button button, .split-button .hero-inner .search-bar-container button {
+  width: 162px;
 }
 
 .hero-outer {
@@ -1589,7 +1601,7 @@ footer #legal .ml:before {
   background-color: $brand_color;
 }
 .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
-  color: $brand_text_color;
+  color: white;
   text-decoration: none;
 }
 .blocks-item-internal {
@@ -2322,16 +2334,22 @@ footer #legal .ml:before {
 }
 
 .share a {
-  color: lighten($text_color, 20%);
+  color: $brand_text_color;
 }
 .share a:hover {
   text-decoration: none;
-  color: $brand_color;
 }
 .share a svg {
   height: 18px;
   width: 18px;
   display: block;
+}
+
+.post-share {
+  display: flex;
+}
+.post-share-label {
+  margin-right: 16px;
 }
 
 /***** Comments *****/
@@ -2691,6 +2709,9 @@ footer #legal .ml:before {
     margin: 0;
   }
 }
+.post-to-community .button, .post-to-community .pagination-next-link, .post-to-community .pagination-prev-link, .post-to-community .pagination-first-link, .post-to-community .pagination-last-link, .post-to-community .subscriptions-subscribe button, .subscriptions-subscribe .post-to-community button, .post-to-community .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .post-to-community button, .post-to-community .community-follow button, .community-follow .post-to-community button, .post-to-community .split-button button, .split-button .post-to-community button, .post-to-community .section-subscribe button, .section-subscribe .post-to-community button, .post-to-community .article-subscribe button, .article-subscribe .post-to-community button {
+  padding: 0 16px;
+}
 
 /* Community topics grid */
 .topics {
@@ -2756,10 +2777,6 @@ footer #legal .ml:before {
 .community-follow button:hover {
   background-color: $brand_color;
 }
-.community-follow button:hover::after, .community-follow button:focus::after {
-  border-color: $brand_text_color;
-  color: $brand_text_color;
-}
 .community-follow button[data-selected=true] {
   background-color: $brand_color;
   color: $brand_text_color;
@@ -2773,9 +2790,9 @@ footer #legal .ml:before {
   border-color: darken($brand_color, 20%);
 }
 .community-follow button::after {
-  border-left: 1px solid $brand_color;
+  border-left: 1px solid white;
   content: attr(data-follower-count);
-  color: $brand_color;
+  color: white;
   display: inline-block;
   font-family: $heading_font;
   margin-left: 15px;
@@ -2790,7 +2807,7 @@ footer #legal .ml:before {
 }
 [dir=rtl] .community-follow button::after {
   border-left: 0;
-  border-right: 1px solid $brand_color;
+  border-right: 1px solid white;
   margin: 0 10px 0 0;
   padding: 0 10px 0 0;
 }
@@ -3007,6 +3024,7 @@ footer #legal .ml:before {
 }
 .post-avatar {
   margin-bottom: 30px;
+  display: none;
 }
 .post-content {
   font-family: $text_font;
@@ -3184,6 +3202,7 @@ footer #legal .ml:before {
 .post-sidebar-title {
   font-size: 18px;
   font-weight: 600;
+  color: $brand_text_color;
 }
 .post-comments {
   margin-bottom: 20px;
@@ -3908,6 +3927,7 @@ footer #legal .ml:before {
 .meta-data {
   color: lighten($text_color, 20%);
   font-size: 13px;
+  text-decoration: none;
 }
 .meta-data:not(:last-child)::after {
   content: "·";
@@ -4627,7 +4647,10 @@ footer #legal .ml:before {
   margin-bottom: 25px;
 }
 .search-results-list > li {
-  padding: 20px 0;
+  padding: 32px;
+  background-color: white;
+  border: 1px solid rgb(216, 220, 222);
+  margin-bottom: 16px;
 }
 .search-results-list > li:first-child {
   border-top: 1px solid rgb(216, 220, 222);
@@ -4665,8 +4688,9 @@ footer #legal .ml:before {
   align-items: center;
 }
 .search-result-title {
-  font-size: 16px;
+  font-size: 19px;
   margin-bottom: 0;
+  color: $brand_text_color;
 }
 .search-result-votes, .search-result-meta-count {
   color: lighten($text_color, 20%);
@@ -4714,6 +4738,7 @@ footer #legal .ml:before {
   content: none;
 }
 .search-result-breadcrumbs {
+  position: relative;
   margin: 0;
 }
 .search-result-description {
