@@ -15,15 +15,25 @@
 }
 
 .share a {
-  color: $secondary-text-color;
+  color: $brand-text-color;
   &:hover {
     text-decoration: none;
-    color: $brand_color;
+    // color: $brand_color;
   }
   
   & svg {
     height: 18px;
     width: 18px;
     display: block;  
+  }
+}
+
+// DevSciCloan
+.post-share
+{
+  display:flex;
+  &-label
+  {
+    margin-right: 16px;
   }
 }

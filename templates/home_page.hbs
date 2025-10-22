@@ -6,12 +6,12 @@
     <div class="hero-inner">
       <div class="search-bar-container">
         <h2 class="visibility-hidden">{{ t 'search' }}</h2>
-        {{!-- <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
           <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
           <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
         </svg> --}}
         {{!--Custom search. Line below this comment is the full version of the search helper that is commented out with an id added--}}
-        <form id="searchForm" role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
+        {{!-- <form id="searchForm" role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/en-us/search" accept-charset="UTF-8" method="get">
         <input name="utf8" type="hidden" value="✓" autocomplete="off"></input>
           
           <input type="search" name="query" id="query" placeholder="Search" autocomplete="off" aria-label="Search">{{!-- Also moving the svg from above to inside the form --}}
@@ -20,9 +20,9 @@
             <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
           </svg>
         
-        </form>
-        {{!-- {{search submit=false instant=settings.instant_search class='search search-full' }} --}}
-        <button class="button search-button" type="submit" form="searchForm">Search</button>
+        </form> -->
+        {{search submit=false instant=settings.instant_search class='search search-full' }} 
+        <button id="searchSubmitBtn" class="button search-button" type="submit" form="searchForm">Search</button>
       </div>
     </div>
   </div>
