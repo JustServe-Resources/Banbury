@@ -358,6 +358,7 @@ a.header-link
 @supports selector(:has(*)) {
   :root:has([data-hc-page="home"])        .link-container .header-link_home,
   :root:has([data-hc-page="community"])   .link-container .header-link_community,
+  :root:has([data-hc-page="services"])   .link-container .header-link_community,
   :root:has([data-hc-page="request"]) .link-container .header-link_request {
     border-bottom: 4px solid #009eb9;
     margin-bottom: -4px;
@@ -368,6 +369,7 @@ a.header-link
 @supports selector(:has(*)) {
   :root:has([data-hc-page="home"]) .menu-list-mobile .ham-link_home > a,
   :root:has([data-hc-page="community"])   .menu-list-mobile .ham-link_community > a,
+  :root:has([data-hc-page="services"])   .menu-list-mobile .ham-link_community > a,
   :root:has([data-hc-page="request"]) .menu-list-mobile .ham-link_request > a {
     border-left: 4px solid #009eb9;
     margin: 0px 0 0 1.5rem !important;
