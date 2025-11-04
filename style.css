@@ -881,6 +881,7 @@ ul {
   justify-content: space-between;
   gap: 48px;
   padding: 0 16px 0 24px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 .profile-icon {
@@ -1452,7 +1453,7 @@ footer #legal .ml:before {
 .sub-nav {
   background-color: #0081a0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 15px 30px;
   justify-content: center;
@@ -1497,6 +1498,7 @@ footer #legal .ml:before {
   justify-content: center;
   width: 100%;
   padding-bottom: 52px;
+  margin: 0 36px 0 16px;
 }
 @media (min-width: 1024px) {
   .sub-nav .search-container {
@@ -1892,14 +1894,19 @@ footer #legal .ml:before {
   .section-tree .section {
     flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */
   }
+  .section-tree .section:first-child {
+    border-right: 1px solid rgb(216, 220, 222);
+    padding-right: 2vw;
+  }
 }
 .section-tree-title {
   margin-bottom: 0;
   font-size: 18px;
   font-weight: 600;
+  /* a { color: $text_color; } */
 }
 .section-tree-title a {
-  color: $text_color;
+  color: $brand_text_color;
 }
 .section-tree .see-all-articles {
   display: block;
@@ -1919,6 +1926,10 @@ footer #legal .ml:before {
 .icon-star {
   color: $brand_color;
   font-size: 18px;
+}
+
+.page-header {
+  color: $text_color;
 }
 
 /***** Section pages *****/
@@ -2006,12 +2017,14 @@ footer #legal .ml:before {
   }
 }
 .article-avatar {
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  display: none;
 }
 .article-author {
   margin-bottom: 10px;
 }
 .article-title {
+  color: $text_color;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
@@ -2284,6 +2297,7 @@ footer #legal .ml:before {
   margin-bottom: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: $brand_text_color;
 }
 
 .recent-articles li,
@@ -4091,14 +4105,16 @@ footer #legal .ml:before {
 }
 
 .profile-avatar {
-  position: relative;
+  display: none;
+  /* position: relative;
   line-height: 0;
   align-self: center;
   margin-right: 10px;
-}
-[dir=rtl] .profile-avatar {
-  margin-left: 10px;
-  margin-right: 0;
+
+  [dir="rtl"] & {
+    margin-left: 10px;
+    margin-right: 0;
+  } */
 }
 
 .profile-avatar .user-avatar {

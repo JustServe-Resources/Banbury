@@ -24,7 +24,8 @@
 }
 
 .profile-avatar {
-  position: relative;
+  display:none; 
+  /* position: relative;
   line-height: 0;
   align-self: center;
   margin-right: 10px;
@@ -32,7 +33,7 @@
   [dir="rtl"] & {
     margin-left: 10px;
     margin-right: 0;
-  }
+  } */
 }
 
 .profile-avatar .user-avatar {
