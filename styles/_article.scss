@@ -39,7 +39,8 @@
   }
 
   &-avatar {
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    display:none;
   }
 
   &-author {
@@ -47,6 +48,7 @@
   }
 
   &-title {
+    color: $text_color;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
@@ -233,6 +235,7 @@
     margin-bottom: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: $brand-text-color;
   }
 }
 
