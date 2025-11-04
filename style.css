@@ -1931,6 +1931,14 @@ footer #legal .ml:before {
 .page-header {
   color: $text_color;
 }
+.page-header::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: $brand_color;
+  margin-bottom: 10px;
+  position: absolute;
+}
 
 /***** Section pages *****/
 .section-container {
