@@ -64,14 +64,14 @@ $header-height: 80px;
   }
 }
 
-.user-nav-list {
-  display: block;
-  list-style: none;
+// .user-nav-list {
+//   display: block;
+//   list-style: none;
 
-  > li {
-    display: inline-block;
-  }
-}
+//   > li {
+//     display: inline-block;
+//   }
+// }
 
 .nav-wrapper-desktop {
   @include mobile { display: none; }
@@ -304,6 +304,16 @@ $header-height: 80px;
     line-height: 22px;
 }
 
+.user-nav-list {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+  }
+}
+
 .left-container {
     display: flex;
     justify-content: space-between;
@@ -359,10 +369,23 @@ a.header-link
 @supports selector(:has(*)) {
   :root:has([data-hc-page="home"])        .link-container .header-link_home,
   :root:has([data-hc-page="community"])   .link-container .header-link_community,
-  :root:has([data-hc-page="services"])   .link-container .header-link_community,
+  :root:has([data-hc-page="services"])   .link-container .header-link_services,
   :root:has([data-hc-page="request"]) .link-container .header-link_request {
-    border-bottom: 4px solid #009eb9;
-    margin-bottom: -4px;
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    margin-bottom: -30px;
+    &::after
+    {
+      content: '';
+      border-bottom: 4px solid #009eb9;
+      width:100%;
+      position: absolute;
+      left: 0;
+      bottom: 24px;
+    }
+    
+    // margin-bottom: -4px;
     // height: calc(100% - 10px); // don't need this because we height calc in .left-container
   }
 }
@@ -370,7 +393,7 @@ a.header-link
 @supports selector(:has(*)) {
   :root:has([data-hc-page="home"]) .menu-list-mobile .ham-link_home > a,
   :root:has([data-hc-page="community"])   .menu-list-mobile .ham-link_community > a,
-  :root:has([data-hc-page="services"])   .menu-list-mobile .ham-link_community > a,
+  :root:has([data-hc-page="services"])   .menu-list-mobile .ham-link_services > a,
   :root:has([data-hc-page="request"]) .menu-list-mobile .ham-link_request > a {
     border-left: 4px solid #009eb9;
     margin: 0px 0 0 1.5rem !important;

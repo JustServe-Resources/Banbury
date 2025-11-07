@@ -694,14 +694,6 @@ ul {
   margin: 20px;
 }
 
-.user-nav-list {
-  display: block;
-  list-style: none;
-}
-.user-nav-list > li {
-  display: inline-block;
-}
-
 @media (max-width: 768px) {
   .nav-wrapper-desktop {
     display: none;
@@ -910,6 +902,15 @@ ul {
   line-height: 22px;
 }
 
+.user-nav-list {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+}
+.user-nav-list > li {
+  display: inline-block;
+}
+
 .left-container {
   display: flex;
   justify-content: space-between;
@@ -982,16 +983,29 @@ a.header-link {
 @supports selector(:has(*)) {
   :root:has([data-hc-page=home]) .link-container .header-link_home,
   :root:has([data-hc-page=community]) .link-container .header-link_community,
-  :root:has([data-hc-page=services]) .link-container .header-link_community,
+  :root:has([data-hc-page=services]) .link-container .header-link_services,
   :root:has([data-hc-page=request]) .link-container .header-link_request {
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    margin-bottom: -30px;
+  }
+  :root:has([data-hc-page=home]) .link-container .header-link_home::after,
+  :root:has([data-hc-page=community]) .link-container .header-link_community::after,
+  :root:has([data-hc-page=services]) .link-container .header-link_services::after,
+  :root:has([data-hc-page=request]) .link-container .header-link_request::after {
+    content: "";
     border-bottom: 4px solid #009eb9;
-    margin-bottom: -4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 24px;
   }
 }
 @supports selector(:has(*)) {
   :root:has([data-hc-page=home]) .menu-list-mobile .ham-link_home > a,
   :root:has([data-hc-page=community]) .menu-list-mobile .ham-link_community > a,
-  :root:has([data-hc-page=services]) .menu-list-mobile .ham-link_community > a,
+  :root:has([data-hc-page=services]) .menu-list-mobile .ham-link_services > a,
   :root:has([data-hc-page=request]) .menu-list-mobile .ham-link_request > a {
     border-left: 4px solid #009eb9;
     margin: 0px 0 0 1.5rem !important;
@@ -1017,6 +1031,8 @@ a.header-link {
   min-width: 0;
   padding: 0;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 .user-info > button:hover, .user-info > button:focus {
   color: $link_color;
@@ -5241,9 +5257,7 @@ a.blocks-item-link:hover > span {
   font-weight: 700 !important;
   font-size: 19px !important;
   color: $brand_color !important;
-  align-items: center;
   text-decoration: none;
-  vertical-align: super;
 }
 
 .language-icon {
