@@ -1036,6 +1036,7 @@ a.header-link {
   white-space: nowrap;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 .user-info > button:hover, .user-info > button:focus {
   color: $link_color;
