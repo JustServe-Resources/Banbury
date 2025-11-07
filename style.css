@@ -206,7 +206,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading_font;
+  font-family: "Noto Sans";
   margin-top: 0;
 }
 
@@ -346,7 +346,9 @@ ul {
   color: $brand_color;
   cursor: pointer;
   display: inline-block;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  font-variation-settings: "wdth" 112.5, "YTLC" 500;
   line-height: 2.34;
   margin: 0;
   padding: 0 20px;
@@ -356,6 +358,7 @@ ul {
   white-space: nowrap;
   width: 100%;
   -webkit-touch-callout: none;
+  font-family: "Nunito Sans";
 }
 @media (min-width: 768px) {
   .button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .section-subscribe button, .split-button button {
@@ -1421,15 +1424,14 @@ footer #legal .ml:before {
 
 .page-header {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 10px 0;
 }
 @media (min-width: 768px) {
   .page-header {
-    align-items: baseline;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
     margin: 0;
@@ -2741,6 +2743,21 @@ footer #legal .ml:before {
 }
 
 /***** Community *****/
+.community-footer {
+  padding-top: 50px;
+  text-align: center;
+}
+.community-footer-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.community-footer .button, .community-footer .pagination-next-link, .community-footer .pagination-prev-link, .community-footer .pagination-first-link, .community-footer .pagination-last-link, .community-footer .subscriptions-subscribe button, .subscriptions-subscribe .community-footer button, .community-footer .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .community-footer button, .community-footer .community-follow button, .community-follow .community-footer button, .community-footer .split-button button, .split-button .community-footer button, .community-footer .section-subscribe button, .section-subscribe .community-footer button, .community-footer .article-subscribe button, .article-subscribe .community-footer button {
+  margin-bottom: 32px;
+}
+.community-header {
+  margin-bottom: 30px;
+}
+
 .post-to-community {
   margin-top: 10px;
 }
