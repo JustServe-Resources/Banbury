@@ -17,7 +17,7 @@
       {{#link 'new_request' class='submit-a-request header-link header-link_request'}}
         {{t 'submit_a_request'}}
       {{/link}}
-      {{#link 'services' class='header-link header-link_services'}}
+      {{#link 'service_catalog' class='header-link header-link_services'}}
         {{t 'services'}}
       {{/link}}
     </div>
@@ -28,14 +28,13 @@
     <nav class="user-nav" id="user-nav" aria-label="{{t 'user_navigation'}}">
       <ul class="user-nav-list">
         {{#if signed_in}}
-          <svg class="sc-2zzkbx-0 iLBAfP profile-icon" data-test="profileIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M18.47 16.497c0-.954-.75-1.711-1.647-1.711H7.177c-.9 0-1.647.754-1.647 1.711v3.76c0 .41-.34.743-.747.743h-.036A.749.749 0 0 1 4 20.256v-3.759c0-1.774 1.42-3.211 3.177-3.211h9.646c1.755 0 3.177 1.44 3.177 3.211v3.76c0 .41-.34.743-.747.743h-.036a.749.749 0 0 1-.747-.744v-3.759zM4 20.25c0-.414.328-.75.756-.75h14.172c.417 0 .756.333.756.75 0 .414-.328.75-.756.75H4.756A.751.751 0 0 1 4 20.25zm8.17-8.467c-2.495 0-4.473-1.986-4.473-4.392C7.697 4.986 9.675 3 12.17 3s4.473 1.986 4.473 4.391c0 2.406-1.978 4.392-4.473 4.392zm0-7.283c-1.632 0-2.943 1.296-2.943 2.891 0 1.596 1.311 2.892 2.943 2.892 1.632 0 2.943-1.296 2.943-2.892 0-1.595-1.311-2.891-2.943-2.891z"> </path></svg>
           <li>
             <div class="user-info dropdown">
               <button class="dropdown-toggle" aria-haspopup="true">
-                
+                <svg class="sc-2zzkbx-0 iLBAfP profile-icon" data-test="profileIcon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation"> <path fill="currentColor" d="M18.47 16.497c0-.954-.75-1.711-1.647-1.711H7.177c-.9 0-1.647.754-1.647 1.711v3.76c0 .41-.34.743-.747.743h-.036A.749.749 0 0 1 4 20.256v-3.759c0-1.774 1.42-3.211 3.177-3.211h9.646c1.755 0 3.177 1.44 3.177 3.211v3.76c0 .41-.34.743-.747.743h-.036a.749.749 0 0 1-.747-.744v-3.759zM4 20.25c0-.414.328-.75.756-.75h14.172c.417 0 .756.333.756.75 0 .414-.328.75-.756.75H4.756A.751.751 0 0 1 4 20.25zm8.17-8.467c-2.495 0-4.473-1.986-4.473-4.392C7.697 4.986 9.675 3 12.17 3s4.473 1.986 4.473 4.391c0 2.406-1.978 4.392-4.473 4.392zm0-7.283c-1.632 0-2.943 1.296-2.943 2.891 0 1.596 1.311 2.892 2.943 2.892 1.632 0 2.943-1.296 2.943-2.892 0-1.595-1.311-2.891-2.943-2.891z"> </path></svg>
                 <span>
                   {{user_name}}
-<!--                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true"> -->
+                  <!--<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon" aria-hidden="true"> -->
                     <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
                   </svg>
                 </span>
