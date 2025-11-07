@@ -206,7 +206,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading_font;
+  font-family: "Noto Sans";
   margin-top: 0;
 }
 
@@ -346,7 +346,9 @@ ul {
   color: $brand_color;
   cursor: pointer;
   display: inline-block;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  font-variation-settings: "wdth" 112.5, "YTLC" 500;
   line-height: 2.34;
   margin: 0;
   padding: 0 20px;
@@ -356,6 +358,7 @@ ul {
   white-space: nowrap;
   width: 100%;
   -webkit-touch-callout: none;
+  font-family: "Nunito Sans";
 }
 @media (min-width: 768px) {
   .button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .section-subscribe button, .split-button button {
@@ -694,14 +697,6 @@ ul {
   margin: 20px;
 }
 
-.user-nav-list {
-  display: block;
-  list-style: none;
-}
-.user-nav-list > li {
-  display: inline-block;
-}
-
 @media (max-width: 768px) {
   .nav-wrapper-desktop {
     display: none;
@@ -910,6 +905,15 @@ ul {
   line-height: 22px;
 }
 
+.user-nav-list {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+}
+.user-nav-list > li {
+  display: inline-block;
+}
+
 .left-container {
   display: flex;
   justify-content: space-between;
@@ -982,16 +986,29 @@ a.header-link {
 @supports selector(:has(*)) {
   :root:has([data-hc-page=home]) .link-container .header-link_home,
   :root:has([data-hc-page=community]) .link-container .header-link_community,
-  :root:has([data-hc-page=services]) .link-container .header-link_community,
+  :root:has([data-hc-page=services]) .link-container .header-link_services,
   :root:has([data-hc-page=request]) .link-container .header-link_request {
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    margin-bottom: -30px;
+  }
+  :root:has([data-hc-page=home]) .link-container .header-link_home::after,
+  :root:has([data-hc-page=community]) .link-container .header-link_community::after,
+  :root:has([data-hc-page=services]) .link-container .header-link_services::after,
+  :root:has([data-hc-page=request]) .link-container .header-link_request::after {
+    content: "";
     border-bottom: 4px solid #009eb9;
-    margin-bottom: -4px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 24px;
   }
 }
 @supports selector(:has(*)) {
   :root:has([data-hc-page=home]) .menu-list-mobile .ham-link_home > a,
   :root:has([data-hc-page=community]) .menu-list-mobile .ham-link_community > a,
-  :root:has([data-hc-page=services]) .menu-list-mobile .ham-link_community > a,
+  :root:has([data-hc-page=services]) .menu-list-mobile .ham-link_services > a,
   :root:has([data-hc-page=request]) .menu-list-mobile .ham-link_request > a {
     border-left: 4px solid #009eb9;
     margin: 0px 0 0 1.5rem !important;
@@ -1017,6 +1034,9 @@ a.header-link {
   min-width: 0;
   padding: 0;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .user-info > button:hover, .user-info > button:focus {
   color: $link_color;
@@ -1405,15 +1425,14 @@ footer #legal .ml:before {
 
 .page-header {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 10px 0;
 }
 @media (min-width: 768px) {
   .page-header {
-    align-items: baseline;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
     margin: 0;
@@ -2725,6 +2744,21 @@ footer #legal .ml:before {
 }
 
 /***** Community *****/
+.community-footer {
+  padding-top: 50px;
+  text-align: center;
+}
+.community-footer-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.community-footer .button, .community-footer .pagination-next-link, .community-footer .pagination-prev-link, .community-footer .pagination-first-link, .community-footer .pagination-last-link, .community-footer .subscriptions-subscribe button, .subscriptions-subscribe .community-footer button, .community-footer .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .community-footer button, .community-footer .community-follow button, .community-follow .community-footer button, .community-footer .split-button button, .split-button .community-footer button, .community-footer .section-subscribe button, .section-subscribe .community-footer button, .community-footer .article-subscribe button, .article-subscribe .community-footer button {
+  margin-bottom: 32px;
+}
+.community-header {
+  margin-bottom: 30px;
+}
+
 .post-to-community {
   margin-top: 10px;
 }
@@ -5241,9 +5275,7 @@ a.blocks-item-link:hover > span {
   font-weight: 700 !important;
   font-size: 19px !important;
   color: $brand_color !important;
-  align-items: center;
   text-decoration: none;
-  vertical-align: super;
 }
 
 .language-icon {
