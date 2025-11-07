@@ -1,19 +1,24 @@
 /***** Community *****/
-// .community {
+.community {
 //   &-hero {
 //     background-image: url($community_background_image);
 //     margin-bottom: 10px;
 //   }
 
-//   &-footer {
-//     padding-top: 50px;
-//     text-align: center;
+  &-footer {
+    padding-top: 50px;
+    text-align: center;
 
-//     &-title {
-//       font-size: 16px;
-//       margin-bottom: 20px;
-//     }
-//   }
+    &-title {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .button 
+    {
+      margin-bottom: 32px;
+    }
+  }
 
 //   &-featured-posts .title {
 //     font-size: 18px;
@@ -26,15 +31,15 @@
 //     width: 100%;
 //   }
 
-//   &-header {
-//     margin-bottom: 30px;
+  &-header {
+    margin-bottom: 30px;
 
-//     .title {
-//       margin-bottom: 0;
-//       font-size: 16px;
-//     }
-//   }
-// }
+    // .title {
+    //   margin-bottom: 0;
+    //   font-size: 16px;
+    // }
+  }
+}
 
 .post-to-community {
   @include tablet { margin: 0; }
@@ -149,3 +154,5 @@
     }
   }
 }
+
+
