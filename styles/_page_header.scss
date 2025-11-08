@@ -46,3 +46,19 @@
     vertical-align: baseline;
   }
 }
+
+// DevSciCloan
+
+.page-header 
+{
+  color: $text_color;
+  &::before
+  {
+    content: '';
+    width: 40px;
+    height: 4px;
+    background: $brand-color;
+    margin-bottom: 10px;
+    position:absolute;
+  }
+}

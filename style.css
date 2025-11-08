@@ -1469,6 +1469,18 @@ footer #legal .ml:before {
   vertical-align: baseline;
 }
 
+.page-header {
+  color: $text_color;
+}
+.page-header::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: $brand_color;
+  margin-bottom: 10px;
+  position: absolute;
+}
+
 .sub-nav {
   background-color: #0081a0;
   display: flex;
@@ -1945,18 +1957,6 @@ footer #legal .ml:before {
 .icon-star {
   color: $brand_color;
   font-size: 18px;
-}
-
-.page-header {
-  color: $text_color;
-}
-.page-header::before {
-  content: "";
-  width: 40px;
-  height: 4px;
-  background: $brand_color;
-  margin-bottom: 10px;
-  position: absolute;
 }
 
 /***** Section pages *****/
@@ -5303,4 +5303,19 @@ a.blocks-item-link:hover > span {
 
 .powered-by-zendesk {
   width: 100% !important;
+}
+
+.ikhvff {
+  color: $text_color;
+  font-size: 32px !important;
+  font-weight: bold !important;
+}
+.ikhvff::before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background: #EF5E39;
+  position: relative;
+  top: -5px;
+  display: flex;
 }
