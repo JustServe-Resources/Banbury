@@ -4047,6 +4047,11 @@ footer #legal .ml:before {
   padding-top: 20px;
 }
 
+.search .search-icon {
+  margin-left: 10px;
+  align-self: center;
+}
+
 /***** Pagination *****/
 .pagination {
   margin: 20px 0;
