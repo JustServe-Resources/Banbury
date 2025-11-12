@@ -106,3 +106,26 @@
   font-style: italic;
   padding: 0 15px;
 }
+
+.StyledButton-sc-qe3ace-0 // Service Catalog button
+{
+  color: white !important;
+  text-decoration: none !important;
+  font-family: "Noto Sans" !important;
+  font-size: 18px !important;
+  border-radius: 30px !important;
+}
+
+.sc-hmdomO // border around button
+{
+  border: none !important;
+}
+
+.sc-fHjqPf // service fields container
+{
+  &:last-child
+  {
+    margin-bottom: 100px;
+  }
+  
+}
