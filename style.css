@@ -231,9 +231,6 @@ a {
   color: $link_color;
   text-decoration: none;
 }
-a:visited {
-  color: $visited_link_color;
-}
 a:hover, a:active, a:focus {
   text-decoration: underline;
 }
@@ -290,15 +287,8 @@ a:hover, a:active, a:focus {
 }
 
 .container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-@media (min-width: 1160px) {
-  .container {
-    padding: 0;
-    width: 90%;
-  }
+  margin: 0 auto 32px auto;
+  padding: 0 10%;
 }
 
 .container-divider {
@@ -1236,12 +1226,10 @@ footer #legal .ml:before {
   margin: 0 0 15px 0;
   padding: 0;
   display: flex;
-  position: absolute;
-  left: 32px;
 }
 @media (min-width: 768px) {
   .breadcrumbs {
-    margin: 0;
+    margin: 0 0 32px 0;
   }
 }
 .breadcrumbs li {
@@ -1482,20 +1470,12 @@ footer #legal .ml:before {
 }
 
 .sub-nav {
-  background-color: #0081a0;
   display: flex;
   /* flex-direction: column; */
-  flex-wrap: wrap;
   gap: 15px 30px;
-  justify-content: center;
-  margin-bottom: 55px;
-  margin-top: 50px;
+  margin-bottom: 32px;
   position: relative;
-  left: 50%;
-  right: 50%;
   width: 100vw;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 @media (min-width: 768px) {
   .sub-nav {
@@ -1516,9 +1496,19 @@ footer #legal .ml:before {
   top: -40px;
 }
 .sub-nav:has(.search-container) {
+  background-color: #0081a0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   margin-top: 0;
 }
 .sub-nav:has(.search-container) .breadcrumbs {
+  position: absolute;
+  left: 32px;
   bottom: -40px;
 }
 .sub-nav input[type=search]::after {
@@ -1604,28 +1594,38 @@ footer #legal .ml:before {
 
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
-.blocks-list {
+.blocks {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+}
+.blocks-list {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 320px));
+  grid-auto-rows: minmax(104px, 190px);
+  width: 100%;
+  max-width: 1400px;
   list-style: none;
   padding: 0;
+  gap: 32px;
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .blocks-list {
-    margin: 0 -15px;
+    align-items: center;
   }
 }
 .blocks-item {
-  border: 1px solid $brand_color;
-  border-radius: 4px;
+  background-color: rgb(220, 235, 243);
+  border-radius: 8px;
   box-sizing: border-box;
-  color: $brand_color;
+  color: $text_color;
   display: flex;
   flex: 1 0 340px;
   margin: 0 0 30px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  box-shadow: 5px 0 7px rgba(0, 0, 0, 0.08), 9px 0 13px rgba(0, 0, 0, 0.04), 0 5px 7px rgba(0, 0, 0, 0.22), 0 9px 13px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 768px) {
   .blocks-item {
@@ -1633,7 +1633,8 @@ footer #legal .ml:before {
   }
 }
 .blocks-item:hover, .blocks-item:focus, .blocks-item:active {
-  background-color: $brand_color;
+  background-color: $brand_text_color;
+  box-shadow: 3px 0 5px rgba(0, 0, 0, 0.08), 7px 0 11px rgba(0, 0, 0, 0.04), 0 3px 5px rgba(0, 0, 0, 0.22), 0 7px 11px rgba(0, 0, 0, 0.1);
 }
 .blocks-item:hover *, .blocks-item:focus *, .blocks-item:active * {
   color: white;
@@ -2010,13 +2011,13 @@ footer #legal .ml:before {
   * 17%     | 66%     | 17%
   */
   flex: 1 0 auto;
+  margin-right: 32px;
 }
 @media (min-width: 1024px) {
   .article {
     flex: 1 0 66%;
-    max-width: 66%;
+    max-width: 80%;
     min-width: 640px;
-    padding: 0 30px;
   }
 }
 .article-container {
@@ -2048,6 +2049,7 @@ footer #legal .ml:before {
   display: none;
 }
 .article-author {
+  display: none;
   margin-bottom: 10px;
 }
 .article-title {
@@ -2065,6 +2067,9 @@ footer #legal .ml:before {
   position: relative;
   left: -5px;
   vertical-align: baseline;
+}
+.article-share {
+  display: none;
 }
 .article [role=button] {
   flex-shrink: 0; /*Avoid collapsing elements in Safari (https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored)*/
@@ -2205,6 +2210,7 @@ footer #legal .ml:before {
   padding-bottom: 20px;
 }
 .article-comment-count {
+  display: none;
   color: lighten($text_color, 20%);
 }
 .article-comment-count:hover {
@@ -2266,9 +2272,23 @@ footer #legal .ml:before {
   font-weight: normal;
   margin-bottom: 0;
 }
+.article-votes-count {
+  display: none;
+}
+.article-votes-controls button {
+  font-size: 16px;
+  padding: 0 16px;
+  background-color: transparent;
+  border: 2px solid rgb(216, 220, 222);
+  color: #87929D !important;
+}
+.article-votes-controls button:hover {
+  background-color: white !important;
+  border: 2px solid #87929D;
+  color: $text_color !important;
+}
 .article-vote {
   margin: 10px 5px;
-  min-width: 90px;
   width: auto;
 }
 .article-more-questions {
@@ -2303,6 +2323,9 @@ footer #legal .ml:before {
 }
 .article-return-to-top-icon {
   transform: rotate(0.5turn);
+}
+.article-subscribe button {
+  display: none;
 }
 .article td > p:first-child,
 .article th > p:first-child {
@@ -2753,7 +2776,17 @@ footer #legal .ml:before {
   margin-bottom: 20px;
 }
 .community-footer .button, .community-footer .pagination-next-link, .community-footer .pagination-prev-link, .community-footer .pagination-first-link, .community-footer .pagination-last-link, .community-footer .subscriptions-subscribe button, .subscriptions-subscribe .community-footer button, .community-footer .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .community-footer button, .community-footer .community-follow button, .community-follow .community-footer button, .community-footer .split-button button, .split-button .community-footer button, .community-footer .section-subscribe button, .section-subscribe .community-footer button, .community-footer .article-subscribe button, .article-subscribe .community-footer button {
+  font-size: 16px;
+  padding: 0 16px;
+  background-color: transparent;
+  border: 2px solid rgb(216, 220, 222);
+  color: #87929D !important;
   margin-bottom: 32px;
+}
+.community-footer .button:hover, .community-footer .pagination-next-link:hover, .community-footer .pagination-prev-link:hover, .community-footer .pagination-first-link:hover, .community-footer .pagination-last-link:hover, .community-footer .subscriptions-subscribe button:hover, .subscriptions-subscribe .community-footer button:hover, .community-footer .requests-table-toolbar .organization-subscribe button:hover, .requests-table-toolbar .organization-subscribe .community-footer button:hover, .community-footer .community-follow button:hover, .community-follow .community-footer button:hover, .community-footer .split-button button:hover, .split-button .community-footer button:hover, .community-footer .section-subscribe button:hover, .section-subscribe .community-footer button:hover, .community-footer .article-subscribe button:hover, .article-subscribe .community-footer button:hover {
+  background-color: white !important;
+  border: 2px solid #87929D;
+  color: $text_color !important;
 }
 .community-header {
   margin-bottom: 30px;
@@ -2775,6 +2808,7 @@ footer #legal .ml:before {
 .topics {
   max-width: none;
   width: 100%;
+  margin-bottom: 32px;
 }
 .topics-item .meta-group {
   justify-content: center;
@@ -3913,18 +3947,9 @@ footer #legal .ml:before {
 .request-container .comment-container {
   min-width: 0;
 }
-.request-breadcrumbs {
-  margin-bottom: 40px;
-}
-@media (min-width: 1024px) {
-  .request-breadcrumbs {
-    margin-bottom: 60px;
-  }
-}
 .request-breadcrumbs .breadcrumbs {
   position: relative;
   top: 16px;
-  left: -4vw;
 }
 .request-main {
   flex: 1 0 auto;

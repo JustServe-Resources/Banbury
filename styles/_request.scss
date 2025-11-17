@@ -17,13 +17,13 @@
   }
 
   &-breadcrumbs {
-    @include desktop { margin-bottom: 60px; }
-    margin-bottom: 40px;
+    // @include desktop { margin-bottom: 60px; }
+    // margin-bottom: 40px;
     .breadcrumbs 
     {
       position: relative;
       top: 16px;
-      left: -4vw;
+      // left: -4vw;
     }
   }
 

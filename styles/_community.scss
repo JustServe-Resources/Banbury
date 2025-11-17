@@ -16,6 +16,17 @@
 
     .button 
     {
+      font-size: 16px;
+      padding: 0 16px;
+      background-color: transparent;
+      border: 2px solid $low-contrast-border-color;
+      color: $high-contrast-border-color !important;
+      &:hover 
+      {
+        background-color: white !important;
+        border: 2px solid $high-contrast-border-color;
+        color: $text_color !important;
+      }
       margin-bottom: 32px;
     }
   }
@@ -54,6 +65,7 @@
 .topics {
   max-width: none;
   width: 100%;
+  margin-bottom: 32px;
 
   &-item {
     .meta-group {

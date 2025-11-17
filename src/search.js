@@ -93,4 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("keyup", clearSearchInputOnKeypress);
     input.addEventListener("keyup", toggleClearSearchButtonAvailability);
   });
+  // update placeholder text
+  const input = document.querySelector('.search input[type="search"]');
+  if (input) input.placeholder = 'Find answers and resources';
 });

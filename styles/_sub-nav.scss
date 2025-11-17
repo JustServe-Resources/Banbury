@@ -1,19 +1,17 @@
 .sub-nav {
   // align-items: baseline;
-  background-color: #0081a0;
+  
   display: flex;
   /* flex-direction: column; */
-  flex-wrap: wrap;
+  
   gap: 15px 30px;
-  justify-content: center;
-  margin-bottom: 55px;
-  margin-top: 50px;          // if we move breadcrumbs on top we comment out or delete this line
+  
+  margin-bottom: 32px;
+           
   position: relative;
-  left: 50%;
-  right: 50%;
+  
   width: 100vw;             // full viewport width
-  margin-left: -50vw;       // cancel container padding/width
-  margin-right: -50vw;
+  
 
   @include tablet {
     flex-direction: column;
@@ -41,8 +39,18 @@
 
   &:has(.search-container)      // for pages where {{search}} is used
   {
+    background-color: #0081a0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px; 
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;       // cancel container padding/width
+    margin-right: -50vw;
     .breadcrumbs
     {
+      position:absolute;
+      left: 32px;
       bottom: -40px;            // breadcrumbs bottom
     }
     margin-top: 0;

@@ -474,30 +474,9 @@
       input.addEventListener("keyup", clearSearchInputOnKeypress);
       input.addEventListener("keyup", toggleClearSearchButtonAvailability);
     });
-  });
-
-  // DevSciCloan sub-nav search bar custom button
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn  = document.getElementById('searchSubmitBtn');
-    const form = btn?.previousElementSibling?.matches('form.search')
-      ? btn.previousElementSibling
-      : btn?.nextElementSibling?.matches('form.search')
-        ? btn.nextElementSibling
-        : btn?.parentElement?.querySelector('form.search');
-
-
-    if (!btn || !form) return;
-
-    btn.addEventListener('click', () => {
-      if (typeof form.requestSubmit === 'function') {
-        form.requestSubmit();               // fires validation + submit event
-      } else {
-        // fallback for very old browsers
-        const ev = new Event('submit', { cancelable: true });
-        if (form.dispatchEvent(ev)) form.submit(); // if not prevented, do legacy submit
-      }
-    });
+    // update placeholder text
+    const input = document.querySelector('.search input[type="search"]');
+    if (input) input.placeholder = 'Find answers and resources';
   });
 
   const key = "returnFocusTo";
