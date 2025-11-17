@@ -290,15 +290,8 @@ a:hover, a:active, a:focus {
 }
 
 .container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-@media (min-width: 1160px) {
-  .container {
-    padding: 0;
-    width: 90%;
-  }
+  margin: 0 auto 32px auto;
+  padding: 0 10%;
 }
 
 .container-divider {
@@ -1236,12 +1229,10 @@ footer #legal .ml:before {
   margin: 0 0 15px 0;
   padding: 0;
   display: flex;
-  position: absolute;
-  left: 32px;
 }
 @media (min-width: 768px) {
   .breadcrumbs {
-    margin: 0;
+    margin: 0 0 32px 0;
   }
 }
 .breadcrumbs li {
@@ -1482,20 +1473,12 @@ footer #legal .ml:before {
 }
 
 .sub-nav {
-  background-color: #0081a0;
   display: flex;
   /* flex-direction: column; */
-  flex-wrap: wrap;
   gap: 15px 30px;
-  justify-content: center;
-  margin-bottom: 55px;
-  margin-top: 50px;
+  margin-bottom: 32px;
   position: relative;
-  left: 50%;
-  right: 50%;
   width: 100vw;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 @media (min-width: 768px) {
   .sub-nav {
@@ -1516,9 +1499,19 @@ footer #legal .ml:before {
   top: -40px;
 }
 .sub-nav:has(.search-container) {
+  background-color: #0081a0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   margin-top: 0;
 }
 .sub-nav:has(.search-container) .breadcrumbs {
+  position: absolute;
+  left: 32px;
   bottom: -40px;
 }
 .sub-nav input[type=search]::after {
@@ -3913,18 +3906,9 @@ footer #legal .ml:before {
 .request-container .comment-container {
   min-width: 0;
 }
-.request-breadcrumbs {
-  margin-bottom: 40px;
-}
-@media (min-width: 1024px) {
-  .request-breadcrumbs {
-    margin-bottom: 60px;
-  }
-}
 .request-breadcrumbs .breadcrumbs {
   position: relative;
   top: 16px;
-  left: -4vw;
 }
 .request-main {
   flex: 1 0 auto;

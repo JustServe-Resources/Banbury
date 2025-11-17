@@ -125,7 +125,9 @@ a {
 
 
 .container {
-  @include max-width-container;
+  // @include max-width-container;
+    margin: 0 auto 32px auto;
+    padding: 0 10%;
 }
 
 .container-divider {

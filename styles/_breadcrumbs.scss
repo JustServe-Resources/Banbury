@@ -1,16 +1,13 @@
 /***** Breadcrumbs *****/
 .breadcrumbs {
   @include tablet {
-    margin: 0;
+    margin: 0 0 32px 0;
   }
 
   margin: 0 0 15px 0;
   padding: 0;
   display: flex;
-  // DevSciCloan start
-  position:absolute;
-  left: 32px;
-  // DevSciCloan end
+  
 
   li {
     color: $secondary-text-color;
