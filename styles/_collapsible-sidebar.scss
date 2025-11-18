@@ -2,14 +2,15 @@
 .collapsible-sidebar {
   @include desktop {
     max-height: none;
-    padding: 0;
+    // padding: 0;
   }
   flex: 1;
   max-height: 45px;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 24px;
   position: relative;
-
+  background-color: rgb(220, 235, 243);
+  min-width: 230px;
   &-title {
     margin-top: 0;
   }

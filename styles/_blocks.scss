@@ -3,6 +3,7 @@
 .blocks {
   display: flex;
   justify-content: center;
+  margin-bottom: 32px;
   &-list {
 
     @include mobile 
@@ -79,7 +80,7 @@
   }
 
   &-item-link {
-    color: $brand_color;
+    color: $text_color;
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
@@ -87,7 +88,10 @@
     justify-content: center;
     border-radius: inherit;
 
-    &:visited,
+    &:visited 
+    {
+      text-decoration: none;
+    }
     &:hover,
     &:active {
       color: inherit;
@@ -102,7 +106,8 @@
 
   &-item-title {
     margin-bottom: 0;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bolder;
   }
 
   &-item-description {
