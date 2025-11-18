@@ -2,7 +2,7 @@
 .section {
   &-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   &-content {
@@ -14,7 +14,21 @@
   }
 
   &-subscribe button {
-    @extend .button;
+    // @extend .button;
+    font-size: 18px;
+    padding: 5px 16px;
+    background-color: transparent;
+    border: 2px solid $low-contrast-border-color;
+    color: $high-contrast-border-color !important;
+    border-radius: 30px;
+    text-decoration: none;
+    &:hover 
+    {
+      background-color: white !important;
+      border: 2px solid $high-contrast-border-color;
+      color: $text_color !important;
+      cursor: pointer;
+    }
     &[data-selected="true"] {
       @extend .button-primary;
     }

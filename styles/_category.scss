@@ -2,16 +2,16 @@
 .category {
   &-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   &-content {
-    @include desktop {
-      flex: 0 0 80%;
-    }
+    // @include desktop {
+    //   flex: 0 0 80%;
+    // }
 
-    flex: 1;
-    max-width: 100%;
+    // flex: 1;
+    width: 100%;
   }
 }
 

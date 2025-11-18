@@ -9,8 +9,9 @@
     @include mobile 
     {
       align-items: center;
+      justify-content: center;
     }
-    justify-content: center;
+    justify-content: start;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax( 180px,320px));
     grid-auto-rows: minmax(104px,190px);
@@ -26,9 +27,9 @@
   }
 
   &-item {
-    @include tablet {
-      margin: 0 15px 30px;
-    }
+    // @include tablet {
+    //   margin: 0 15px 30px;
+    // }
 
 
     // border: 1px solid $brand_color;
@@ -112,6 +113,12 @@
 
   &-item-description {
     margin: 0;
+    max-height: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
   }
 
   &-item-description:not(:empty) {

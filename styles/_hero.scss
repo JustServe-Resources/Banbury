@@ -22,8 +22,8 @@
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
   min-height: 180px;
   &:not(:has(.hero-outer))
   {
@@ -38,6 +38,21 @@
     display: flex;
     margin: 0 auto;
     width: 100%;
+  }
+
+  &-image
+  {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg 
+    {
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      margin: -17px;
+    }
   }
 }
 
