@@ -1386,9 +1386,16 @@ footer #legal .ml:before {
 .hero-image {
   height: 100%;
   width: 25%;
+  min-width: 250px;
+  max-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .hero-image {
+    display: none;
+  }
 }
 .hero-image svg {
   width: -webkit-fill-available;
@@ -1605,7 +1612,7 @@ footer #legal .ml:before {
 /* Used in Homepage#categories and Community#topics */
 .blocks {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 32px;
 }
 .blocks-list {
