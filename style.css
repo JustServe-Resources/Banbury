@@ -329,7 +329,7 @@ ul {
 }
 
 /***** Buttons *****/
-.button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .section-subscribe button, .split-button button {
+.button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .split-button button {
   background-color: transparent;
   border: 1px solid $brand_color;
   border-radius: 4px;
@@ -351,23 +351,23 @@ ul {
   font-family: "Nunito Sans";
 }
 @media (min-width: 768px) {
-  .button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .section-subscribe button, .split-button button {
+  .button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link, .subscriptions-subscribe button, .requests-table-toolbar .organization-subscribe button, .community-follow button, .article-subscribe button, .split-button button {
     width: auto;
   }
 }
-.button:visited, .pagination-next-link:visited, .pagination-prev-link:visited, .pagination-first-link:visited, .pagination-last-link:visited, .subscriptions-subscribe button:visited, .requests-table-toolbar .organization-subscribe button:visited, .community-follow button:visited, .article-subscribe button:visited, .section-subscribe button:visited, .split-button button:visited {
+.button:visited, .pagination-next-link:visited, .pagination-prev-link:visited, .pagination-first-link:visited, .pagination-last-link:visited, .subscriptions-subscribe button:visited, .requests-table-toolbar .organization-subscribe button:visited, .community-follow button:visited, .article-subscribe button:visited, .split-button button:visited {
   color: $brand_color;
 }
-.button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover, .subscriptions-subscribe button:hover, .requests-table-toolbar .organization-subscribe button:hover, .community-follow button:hover, .article-subscribe button:hover, .section-subscribe button:hover, .split-button button:hover, .button:active, .pagination-next-link:active, .pagination-prev-link:active, .pagination-first-link:active, .pagination-last-link:active, .subscriptions-subscribe button:active, .requests-table-toolbar .organization-subscribe button:active, .community-follow button:active, .article-subscribe button:active, .section-subscribe button:active, .split-button button:active, .button:focus, .pagination-next-link:focus, .pagination-prev-link:focus, .pagination-first-link:focus, .pagination-last-link:focus, .subscriptions-subscribe button:focus, .requests-table-toolbar .organization-subscribe button:focus, .community-follow button:focus, .article-subscribe button:focus, .section-subscribe button:focus, .split-button button:focus, .button.button-primary, .button-primary.pagination-next-link, .button-primary.pagination-prev-link, .button-primary.pagination-first-link, .button-primary.pagination-last-link, .subscriptions-subscribe button.button-primary, .subscriptions-subscribe button[data-selected=true], .requests-table-toolbar .organization-subscribe button.button-primary, .requests-table-toolbar .organization-subscribe button[data-selected=true], .community-follow button.button-primary, .article-subscribe button.button-primary, .article-subscribe button[data-selected=true], .section-subscribe button.button-primary, .section-subscribe button[data-selected=true], .split-button button.button-primary {
+.button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover, .subscriptions-subscribe button:hover, .requests-table-toolbar .organization-subscribe button:hover, .community-follow button:hover, .article-subscribe button:hover, .split-button button:hover, .button:active, .pagination-next-link:active, .pagination-prev-link:active, .pagination-first-link:active, .pagination-last-link:active, .subscriptions-subscribe button:active, .requests-table-toolbar .organization-subscribe button:active, .community-follow button:active, .article-subscribe button:active, .split-button button:active, .button:focus, .pagination-next-link:focus, .pagination-prev-link:focus, .pagination-first-link:focus, .pagination-last-link:focus, .subscriptions-subscribe button:focus, .requests-table-toolbar .organization-subscribe button:focus, .community-follow button:focus, .article-subscribe button:focus, .split-button button:focus, .button.button-primary, .button-primary.pagination-next-link, .button-primary.pagination-prev-link, .button-primary.pagination-first-link, .button-primary.pagination-last-link, .subscriptions-subscribe button.button-primary, .subscriptions-subscribe button[data-selected=true], .requests-table-toolbar .organization-subscribe button.button-primary, .requests-table-toolbar .organization-subscribe button[data-selected=true], .community-follow button.button-primary, .article-subscribe button.button-primary, .article-subscribe button[data-selected=true], .section-subscribe button.button[data-selected=true], .section-subscribe button[data-selected=true].pagination-next-link, .section-subscribe button[data-selected=true].pagination-prev-link, .section-subscribe button[data-selected=true].pagination-first-link, .section-subscribe button[data-selected=true].pagination-last-link, .section-subscribe .community-follow button[data-selected=true], .community-follow .section-subscribe button[data-selected=true], .split-button button.button-primary, .split-button .section-subscribe button[data-selected=true], .section-subscribe .split-button button[data-selected=true] {
   background-color: $brand_color;
   color: $brand_text_color;
   text-decoration: none;
 }
-.button.button-primary:hover, .button-primary.pagination-next-link:hover, .button-primary.pagination-prev-link:hover, .button-primary.pagination-first-link:hover, .button-primary.pagination-last-link:hover, .subscriptions-subscribe button.button-primary:hover, .subscriptions-subscribe button[data-selected=true]:hover, .requests-table-toolbar .organization-subscribe button.button-primary:hover, .requests-table-toolbar .organization-subscribe button[data-selected=true]:hover, .community-follow button.button-primary:hover, .article-subscribe button.button-primary:hover, .article-subscribe button[data-selected=true]:hover, .section-subscribe button.button-primary:hover, .section-subscribe button[data-selected=true]:hover, .split-button button:hover, .button.button-primary:focus, .button-primary.pagination-next-link:focus, .button-primary.pagination-prev-link:focus, .button-primary.pagination-first-link:focus, .button-primary.pagination-last-link:focus, .subscriptions-subscribe button.button-primary:focus, .subscriptions-subscribe button[data-selected=true]:focus, .requests-table-toolbar .organization-subscribe button.button-primary:focus, .requests-table-toolbar .organization-subscribe button[data-selected=true]:focus, .community-follow button.button-primary:focus, .article-subscribe button.button-primary:focus, .article-subscribe button[data-selected=true]:focus, .section-subscribe button.button-primary:focus, .section-subscribe button[data-selected=true]:focus, .split-button button.button-primary:focus, .button.button-primary:active, .button-primary.pagination-next-link:active, .button-primary.pagination-prev-link:active, .button-primary.pagination-first-link:active, .button-primary.pagination-last-link:active, .subscriptions-subscribe button.button-primary:active, .subscriptions-subscribe button[data-selected=true]:active, .requests-table-toolbar .organization-subscribe button.button-primary:active, .requests-table-toolbar .organization-subscribe button[data-selected=true]:active, .community-follow button.button-primary:active, .article-subscribe button.button-primary:active, .article-subscribe button[data-selected=true]:active, .section-subscribe button.button-primary:active, .section-subscribe button[data-selected=true]:active, .split-button button.button-primary:active {
+.button.button-primary:hover, .button-primary.pagination-next-link:hover, .button-primary.pagination-prev-link:hover, .button-primary.pagination-first-link:hover, .button-primary.pagination-last-link:hover, .subscriptions-subscribe button.button-primary:hover, .subscriptions-subscribe button[data-selected=true]:hover, .requests-table-toolbar .organization-subscribe button.button-primary:hover, .requests-table-toolbar .organization-subscribe button[data-selected=true]:hover, .community-follow button.button-primary:hover, .article-subscribe button.button-primary:hover, .article-subscribe button[data-selected=true]:hover, .section-subscribe button.button[data-selected=true]:hover, .section-subscribe button[data-selected=true].pagination-next-link:hover, .section-subscribe button[data-selected=true].pagination-prev-link:hover, .section-subscribe button[data-selected=true].pagination-first-link:hover, .section-subscribe button[data-selected=true].pagination-last-link:hover, .section-subscribe .community-follow button[data-selected=true]:hover, .community-follow .section-subscribe button[data-selected=true]:hover, .split-button button:hover, .button.button-primary:focus, .button-primary.pagination-next-link:focus, .button-primary.pagination-prev-link:focus, .button-primary.pagination-first-link:focus, .button-primary.pagination-last-link:focus, .subscriptions-subscribe button.button-primary:focus, .subscriptions-subscribe button[data-selected=true]:focus, .requests-table-toolbar .organization-subscribe button.button-primary:focus, .requests-table-toolbar .organization-subscribe button[data-selected=true]:focus, .community-follow button.button-primary:focus, .article-subscribe button.button-primary:focus, .article-subscribe button[data-selected=true]:focus, .section-subscribe button.button[data-selected=true]:focus, .section-subscribe button[data-selected=true].pagination-next-link:focus, .section-subscribe button[data-selected=true].pagination-prev-link:focus, .section-subscribe button[data-selected=true].pagination-first-link:focus, .section-subscribe button[data-selected=true].pagination-last-link:focus, .section-subscribe .community-follow button[data-selected=true]:focus, .community-follow .section-subscribe button[data-selected=true]:focus, .split-button button.button-primary:focus, .split-button .section-subscribe button[data-selected=true]:focus, .section-subscribe .split-button button[data-selected=true]:focus, .button.button-primary:active, .button-primary.pagination-next-link:active, .button-primary.pagination-prev-link:active, .button-primary.pagination-first-link:active, .button-primary.pagination-last-link:active, .subscriptions-subscribe button.button-primary:active, .subscriptions-subscribe button[data-selected=true]:active, .requests-table-toolbar .organization-subscribe button.button-primary:active, .requests-table-toolbar .organization-subscribe button[data-selected=true]:active, .community-follow button.button-primary:active, .article-subscribe button.button-primary:active, .article-subscribe button[data-selected=true]:active, .section-subscribe button.button[data-selected=true]:active, .section-subscribe button[data-selected=true].pagination-next-link:active, .section-subscribe button[data-selected=true].pagination-prev-link:active, .section-subscribe button[data-selected=true].pagination-first-link:active, .section-subscribe button[data-selected=true].pagination-last-link:active, .section-subscribe .community-follow button[data-selected=true]:active, .community-follow .section-subscribe button[data-selected=true]:active, .split-button button.button-primary:active, .split-button .section-subscribe button[data-selected=true]:active, .section-subscribe .split-button button[data-selected=true]:active {
   background-color: darken($brand_color, 20%);
   border-color: darken($brand_color, 20%);
 }
-.button[data-disabled], [data-disabled].pagination-next-link, [data-disabled].pagination-prev-link, [data-disabled].pagination-first-link, [data-disabled].pagination-last-link, .subscriptions-subscribe button[data-disabled], .requests-table-toolbar .organization-subscribe button[data-disabled], .community-follow button[data-disabled], .article-subscribe button[data-disabled], .section-subscribe button[data-disabled], .split-button button[data-disabled] {
+.button[data-disabled], [data-disabled].pagination-next-link, [data-disabled].pagination-prev-link, [data-disabled].pagination-first-link, [data-disabled].pagination-last-link, .subscriptions-subscribe button[data-disabled], .requests-table-toolbar .organization-subscribe button[data-disabled], .community-follow button[data-disabled], .article-subscribe button[data-disabled], .split-button button[data-disabled] {
   cursor: default;
 }
 
@@ -1243,9 +1243,6 @@ footer #legal .ml:before {
   content: ">";
   margin: 0 4px;
 }
-.breadcrumbs li a:visited {
-  color: $link_color;
-}
 
 /***** Search field *****/
 .search-container {
@@ -1374,8 +1371,8 @@ footer #legal .ml:before {
   padding: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
   min-height: 180px;
 }
 .hero:not(:has(.hero-outer)) .hero-inner {
@@ -1385,6 +1382,18 @@ footer #legal .ml:before {
   display: flex;
   margin: 0 auto;
   width: 100%;
+}
+.hero-image {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image svg {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  margin: -17px;
 }
 
 .hero-inner .search-bar-container {
@@ -1398,7 +1407,7 @@ footer #legal .ml:before {
     flex-direction: column;
   }
 }
-.hero-inner .search-bar-container .button, .hero-inner .search-bar-container .pagination-next-link, .hero-inner .search-bar-container .pagination-prev-link, .hero-inner .search-bar-container .pagination-first-link, .hero-inner .search-bar-container .pagination-last-link, .hero-inner .search-bar-container .subscriptions-subscribe button, .subscriptions-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .community-follow button, .community-follow .hero-inner .search-bar-container button, .hero-inner .search-bar-container .article-subscribe button, .article-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .section-subscribe button, .section-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .split-button button, .split-button .hero-inner .search-bar-container button {
+.hero-inner .search-bar-container .button, .hero-inner .search-bar-container .pagination-next-link, .hero-inner .search-bar-container .pagination-prev-link, .hero-inner .search-bar-container .pagination-first-link, .hero-inner .search-bar-container .pagination-last-link, .hero-inner .search-bar-container .subscriptions-subscribe button, .subscriptions-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .community-follow button, .community-follow .hero-inner .search-bar-container button, .hero-inner .search-bar-container .article-subscribe button, .article-subscribe .hero-inner .search-bar-container button, .hero-inner .search-bar-container .split-button button, .split-button .hero-inner .search-bar-container button {
   width: 162px;
 }
 
@@ -1539,13 +1548,13 @@ footer #legal .ml:before {
     max-width: 600px;
   }
 }
-.sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .section-subscribe button, .section-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
+.sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
   width: auto;
   height: auto;
   padding: 0 16px;
 }
 @media (max-width: 768px) {
-  .sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .section-subscribe button, .section-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
+  .sub-nav .button, .sub-nav .pagination-next-link, .sub-nav .pagination-prev-link, .sub-nav .pagination-first-link, .sub-nav .pagination-last-link, .sub-nav .subscriptions-subscribe button, .subscriptions-subscribe .sub-nav button, .sub-nav .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .sub-nav button, .sub-nav .community-follow button, .community-follow .sub-nav button, .sub-nav .article-subscribe button, .article-subscribe .sub-nav button, .sub-nav .split-button button, .split-button .sub-nav button {
     width: 100%;
   }
 }
@@ -1600,7 +1609,7 @@ footer #legal .ml:before {
   margin-bottom: 32px;
 }
 .blocks-list {
-  justify-content: center;
+  justify-content: start;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 320px));
   grid-auto-rows: minmax(104px, 190px);
@@ -1613,6 +1622,7 @@ footer #legal .ml:before {
 @media (max-width: 768px) {
   .blocks-list {
     align-items: center;
+    justify-content: center;
   }
 }
 .blocks-item {
@@ -1627,11 +1637,6 @@ footer #legal .ml:before {
   height: 100%;
   text-align: center;
   box-shadow: 5px 0 7px rgba(0, 0, 0, 0.08), 9px 0 13px rgba(0, 0, 0, 0.04), 0 5px 7px rgba(0, 0, 0, 0.22), 0 9px 13px rgba(0, 0, 0, 0.1);
-}
-@media (min-width: 768px) {
-  .blocks-item {
-    margin: 0 15px 30px;
-  }
 }
 .blocks-item:hover, .blocks-item:focus, .blocks-item:active {
   background-color: $brand_text_color;
@@ -1682,6 +1687,12 @@ footer #legal .ml:before {
 }
 .blocks-item-description {
   margin: 0;
+  max-height: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
 }
 .blocks-item-description:not(:empty) {
   margin-top: 10px;
@@ -1900,16 +1911,10 @@ footer #legal .ml:before {
 /***** Category pages *****/
 .category-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .category-content {
-  flex: 1;
-  max-width: 100%;
-}
-@media (min-width: 1024px) {
-  .category-content {
-    flex: 0 0 80%;
-  }
+  width: 100%;
 }
 
 .section-tree {
@@ -1968,7 +1973,7 @@ footer #legal .ml:before {
 /***** Section pages *****/
 .section-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 .section-content {
   flex: 1;
@@ -1978,6 +1983,21 @@ footer #legal .ml:before {
   .section-content {
     flex: 0 0 80%;
   }
+}
+.section-subscribe button {
+  font-size: 18px;
+  padding: 5px 16px;
+  background-color: transparent;
+  border: 2px solid rgb(216, 220, 222);
+  color: #87929D !important;
+  border-radius: 30px;
+  text-decoration: none;
+}
+.section-subscribe button:hover {
+  background-color: white !important;
+  border: 2px solid #87929D;
+  color: $text_color !important;
+  cursor: pointer;
 }
 .section-list {
   margin: 40px 0;
@@ -2782,7 +2802,7 @@ footer #legal .ml:before {
   font-size: 16px;
   margin-bottom: 20px;
 }
-.community-footer .button, .community-footer .pagination-next-link, .community-footer .pagination-prev-link, .community-footer .pagination-first-link, .community-footer .pagination-last-link, .community-footer .subscriptions-subscribe button, .subscriptions-subscribe .community-footer button, .community-footer .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .community-footer button, .community-footer .community-follow button, .community-follow .community-footer button, .community-footer .split-button button, .split-button .community-footer button, .community-footer .section-subscribe button, .section-subscribe .community-footer button, .community-footer .article-subscribe button, .article-subscribe .community-footer button {
+.community-footer .button, .community-footer .pagination-next-link, .community-footer .pagination-prev-link, .community-footer .pagination-first-link, .community-footer .pagination-last-link, .community-footer .subscriptions-subscribe button, .subscriptions-subscribe .community-footer button, .community-footer .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .community-footer button, .community-footer .community-follow button, .community-follow .community-footer button, .community-footer .split-button button, .split-button .community-footer button, .community-footer .article-subscribe button, .article-subscribe .community-footer button {
   font-size: 16px;
   padding: 0 16px;
   background-color: transparent;
@@ -2790,7 +2810,7 @@ footer #legal .ml:before {
   color: #87929D !important;
   margin-bottom: 32px;
 }
-.community-footer .button:hover, .community-footer .pagination-next-link:hover, .community-footer .pagination-prev-link:hover, .community-footer .pagination-first-link:hover, .community-footer .pagination-last-link:hover, .community-footer .subscriptions-subscribe button:hover, .subscriptions-subscribe .community-footer button:hover, .community-footer .requests-table-toolbar .organization-subscribe button:hover, .requests-table-toolbar .organization-subscribe .community-footer button:hover, .community-footer .community-follow button:hover, .community-follow .community-footer button:hover, .community-footer .split-button button:hover, .split-button .community-footer button:hover, .community-footer .section-subscribe button:hover, .section-subscribe .community-footer button:hover, .community-footer .article-subscribe button:hover, .article-subscribe .community-footer button:hover {
+.community-footer .button:hover, .community-footer .pagination-next-link:hover, .community-footer .pagination-prev-link:hover, .community-footer .pagination-first-link:hover, .community-footer .pagination-last-link:hover, .community-footer .subscriptions-subscribe button:hover, .subscriptions-subscribe .community-footer button:hover, .community-footer .requests-table-toolbar .organization-subscribe button:hover, .requests-table-toolbar .organization-subscribe .community-footer button:hover, .community-footer .community-follow button:hover, .community-follow .community-footer button:hover, .community-footer .split-button button:hover, .split-button .community-footer button:hover, .community-footer .article-subscribe button:hover, .article-subscribe .community-footer button:hover {
   background-color: white !important;
   border: 2px solid #87929D;
   color: $text_color !important;
@@ -2807,7 +2827,7 @@ footer #legal .ml:before {
     margin: 0;
   }
 }
-.post-to-community .button, .post-to-community .pagination-next-link, .post-to-community .pagination-prev-link, .post-to-community .pagination-first-link, .post-to-community .pagination-last-link, .post-to-community .subscriptions-subscribe button, .subscriptions-subscribe .post-to-community button, .post-to-community .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .post-to-community button, .post-to-community .community-follow button, .community-follow .post-to-community button, .post-to-community .split-button button, .split-button .post-to-community button, .post-to-community .section-subscribe button, .section-subscribe .post-to-community button, .post-to-community .article-subscribe button, .article-subscribe .post-to-community button {
+.post-to-community .button, .post-to-community .pagination-next-link, .post-to-community .pagination-prev-link, .post-to-community .pagination-first-link, .post-to-community .pagination-last-link, .post-to-community .subscriptions-subscribe button, .subscriptions-subscribe .post-to-community button, .post-to-community .requests-table-toolbar .organization-subscribe button, .requests-table-toolbar .organization-subscribe .post-to-community button, .post-to-community .community-follow button, .community-follow .post-to-community button, .post-to-community .split-button button, .split-button .post-to-community button, .post-to-community .article-subscribe button, .article-subscribe .post-to-community button {
   padding: 0 16px;
 }
 
@@ -5344,7 +5364,7 @@ a.blocks-item-link:hover > span {
   cursor: pointer;
 }
 
-.button-large, .button, .split-button button, .section-subscribe button, .article-subscribe button, .community-follow button, .requests-table-toolbar .organization-subscribe button, .subscriptions-subscribe button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link {
+.button-large, .button, .split-button button, .article-subscribe button, .community-follow button, .requests-table-toolbar .organization-subscribe button, .subscriptions-subscribe button, .pagination-next-link, .pagination-prev-link, .pagination-first-link, .pagination-last-link {
   border-radius: 30px;
   padding: 6px 28px;
   text-decoration: none;
@@ -5355,7 +5375,7 @@ a.blocks-item-link:hover > span {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover, .split-button button:hover, .section-subscribe button:hover, .article-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover {
+.button:hover, .split-button button:hover, .article-subscribe button:hover, .community-follow button:hover, .requests-table-toolbar .organization-subscribe button:hover, .subscriptions-subscribe button:hover, .pagination-next-link:hover, .pagination-prev-link:hover, .pagination-first-link:hover, .pagination-last-link:hover {
   background-color: rgb(167, 65, 39);
   color: white;
 }
