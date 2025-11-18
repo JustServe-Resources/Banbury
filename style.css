@@ -1375,6 +1375,9 @@ footer #legal .ml:before {
   flex-direction: row;
   min-height: 386px;
 }
+.hero:not(:has(.hero-outer)) {
+  min-height: 200px;
+}
 .hero:not(:has(.hero-outer)) .hero-inner {
   max-width: 718px;
 }
@@ -1392,8 +1395,9 @@ footer #legal .ml:before {
 }
 @media (max-width: 768px) {
   .hero-image {
-    position: absolute;
-    right: 0;
+    position: relative;
+    right: 50%;
+    margin: -10%;
   }
 }
 .hero-image svg {
@@ -1407,7 +1411,7 @@ footer #legal .ml:before {
   .hero-image svg {
     margin: 0px;
     position: absolute;
-    top: -200px;
+    top: -270px;
   }
 }
 
@@ -1438,13 +1442,12 @@ footer #legal .ml:before {
   margin-bottom: 8px;
 }
 .hero-outer .search-title h1 {
-  font-size: 5vw;
+  font-size: clamp(30px, 5vw, 72px);
   min-width: max-content;
 }
 @media (max-width: 768px) {
   .hero-outer .search-title h1 {
-    font-size: 6vw;
-    max-width: fit-content;
+    font-size: clamp(28px, 7vw, 40px);
   }
 }
 
@@ -1556,7 +1559,7 @@ footer #legal .ml:before {
   justify-content: center;
   width: 100%;
   padding-bottom: 52px;
-  margin: 0 36px 0 16px;
+  margin: 0 36px 15px 16px;
 }
 @media (min-width: 1024px) {
   .sub-nav .search-container {
@@ -1614,7 +1617,7 @@ footer #legal .ml:before {
   box-sizing: border-box;
 }
 .sub-nav .sub-nav-right-container .search-wrapper {
-  margin-top: 32px;
+  margin-top: 49px;
   position: relative;
   display: inline-block;
   width: 100%;
