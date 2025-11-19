@@ -1657,7 +1657,7 @@ footer #legal .ml:before {
   }
 }
 .blocks-item {
-  background-color: rgb(220, 235, 243);
+  background-color: rgb(229, 227, 227);
   border-radius: 8px;
   box-sizing: border-box;
   color: $text_color;
@@ -1727,6 +1727,9 @@ footer #legal .ml:before {
 }
 .blocks-item-description:not(:empty) {
   margin-top: 10px;
+}
+.blocks .meta-group {
+  display: none;
 }
 
 /***** Homepage *****/
@@ -1992,12 +1995,24 @@ footer #legal .ml:before {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.article-list-item:has(.icon-star) .icon-file {
+  display: none;
+}
 .article-list-item a {
   color: $text_color;
 }
+.article-list-item a:hover .icon-folder, .article-list-item a:hover .icon-file {
+  color: $brand_text_color;
+}
+.article-list-item a:hover .icon-star {
+  color: #E1BC21;
+}
+.article-list-item a .icon-folder, .article-list-item a .icon-file {
+  color: #989B9F;
+}
 
 .icon-star {
-  color: $brand_color;
+  color: $brand_text_color;
   font-size: 18px;
 }
 

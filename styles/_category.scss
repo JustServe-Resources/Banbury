@@ -64,13 +64,43 @@
     text-overflow: ellipsis;
     overflow: hidden;
 
-    a { color: $text_color; }
+    &:has(.icon-star)
+    {
+      .icon-file
+      {
+        display: none;
+      }
+    }
+
+    a 
+    {
+      color: $text_color; 
+      &:hover 
+      {
+        .icon-folder, .icon-file
+        {
+          color: $brand_text_color;
+        }
+        .icon-star
+        {
+          color: #E1BC21;
+        }
+      }
+
+      .icon-folder , .icon-file
+      {
+        color: #989B9F;
+      }
+      
+    }
   }
 }
 
 .icon-star {
-  color: $brand_color;
+  color: $brand_text_color;
   font-size: 18px;
 }
+
+
 
 

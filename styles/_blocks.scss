@@ -33,7 +33,7 @@
 
 
     // border: 1px solid $brand_color;
-    background-color: rgb(220, 235, 243);
+    background-color: rgb(229, 227, 227);
     border-radius: 8px;
     box-sizing: border-box;
     color: $text_color;
@@ -124,4 +124,15 @@
   &-item-description:not(:empty) {
     margin-top: 10px;
   }
+
+  .meta-group
+  {
+    display: none;
+  }
 }
+
+// .blocks-item:has(.meta-group)
+//     .blocks-item-description:not(:empty)
+//     {
+//       -webkit-line-clamp: 2;
+//     }
