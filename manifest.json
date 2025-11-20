@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "api_version": 4,
   "default_locale": "en-us",
-  "repository": "git@github.com:JustServe-Resources/Banbury.git"
+  "repository": "git@github.com:JustServe-Resources/Banbury.git",
   "settings": [
     {
       "label": "colors_group_label",
