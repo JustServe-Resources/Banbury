@@ -1388,32 +1388,29 @@ footer #legal .ml:before {
   max-width: 846px;
 }
 .hero-image {
-  height: 100%;
-  width: 25%;
-  max-width: 336px;
+  height: 275px;
+  width: 400px;
   align-items: center;
+  display: flex;
 }
 @media (max-width: 768px) {
   .hero-image {
-    position: relative;
-    right: 50%;
-    margin: -10%;
+    position: absolute;
+    left: auto;
   }
 }
-.hero-image svg {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: -webkit-fill-available;
-  height: -moz-available;
-  margin-right: -7rem;
-  margin-top: -2rem;
-  margin-bottom: -2rem;
+@media (min-width: 768px) {
+  .hero-image {
+    margin: -4%;
+  }
 }
 @media (max-width: 768px) {
   .hero-image svg {
     margin: 0px;
     position: absolute;
-    top: -270px;
+    top: -190px;
+    width: 130px;
+    left: 32%;
   }
 }
 

@@ -47,29 +47,29 @@
     @include mobile 
     {
       // display: none;
-      position: relative;
-      right: 50%;
-      margin: -10%;
+      position: absolute;
+      left: auto;
     }
-    height: 100%;
-    width: 25%;
-    max-width: 336px;
+
+    @include tablet
+    {
+      margin: -4%;
+    }
+
+    height: 275px;
+    width: 400px;
     align-items: center;
+    display: flex;
     svg 
     {
       @include mobile 
       {
-        margin:0px;
+        margin: 0px;
         position: absolute;
-        top: -270px;
+        top: -190px;
+        width: 130px;
+        left: 32%;
       }
-      width: -webkit-fill-available;
-      width: -moz-available;
-      height: -webkit-fill-available;
-      height: -moz-available;
-      margin-right: -7rem;
-      margin-top: -2rem;
-      margin-bottom: -2rem;
     }
   }
 }
