@@ -475,8 +475,11 @@
       input.addEventListener("keyup", toggleClearSearchButtonAvailability);
     });
     // update placeholder text
+    const container = document.querySelector('.search-bar-container');
+    const placeholder = container?.dataset.searchPlaceholder;
+    console.log(placeholder);
     const input = document.querySelector('.search input[type="search"]');
-    if (input) input.placeholder = 'Find answers and resources';
+    if (input && placeholder) input.placeholder = placeholder;
   });
 
   const key = "returnFocusTo";
