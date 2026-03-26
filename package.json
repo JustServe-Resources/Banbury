@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently -k -r 'rollup -c -w' 'wait-on script.js style.css && zcli themes:preview'",
     "build": "rollup -c --environment NODE_ENV:production",
-    "prebuild": "pwsh -NoProfile -Command \"Remove-Item -Force assets/*-bundle.js -ErrorAction SilentlyContinue\"",
+    "prebuild": "pwsh -NoProfile -Command \"Remove-Item -Force assets/*-bundle*.js -ErrorAction SilentlyContinue\"",
     "eslint": "eslint src",
     "prepare": "husky install",
     "download-locales": "node ./bin/update-translations",
