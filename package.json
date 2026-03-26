@@ -1,11 +1,11 @@
 {
-  "name": "copenhagen_theme",
+  "name": "banbury",
   "version": "1.0.0",
-  "repository": "git@github.com:zendesk/copenhagen_theme.git",
+  "repository": "git@github.com:JustServe/banbury.git",
   "scripts": {
     "start": "concurrently -k -r 'rollup -c -w' 'wait-on script.js style.css && zcli themes:preview'",
-    "build": "NODE_ENV=production rollup -c",
-    "prebuild": "rm -f assets/*-bundle.js",
+    "build": "rollup -c --environment NODE_ENV:production",
+    "prebuild": "pwsh -NoProfile -Command \"Remove-Item -Force assets/*-bundle.js -ErrorAction SilentlyContinue\"",
     "eslint": "eslint src",
     "prepare": "husky install",
     "download-locales": "node ./bin/update-translations",
@@ -77,6 +77,7 @@
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "@zendesk/zcli": "1.0.0-beta.52",
+    "baseline-browser-mapping": "^2.10.11",
     "concurrently": "8.0.1",
     "dotenv": "16.0.3",
     "eslint": "8.35.0",
