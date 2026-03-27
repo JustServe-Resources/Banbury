@@ -32,7 +32,6 @@ function parseNetscapeCookies(filePath: string) {
   }
 }
 
-const testHost = process.env.ZENDESK_TEST_HOST || '';
 const storageState = parseNetscapeCookies(path.join(__dirname, 'cookies-zendesk-com.txt'));
 
 /**

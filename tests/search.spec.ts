@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+function escapeForRegex(s: string): string {
+  return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
 
 const searchMethods = ['SubmitButton', 'EnterKey', 'AutocompleteClick'] as const;
 
@@ -35,7 +38,7 @@ for (const method of searchMethods) {
     }
 
     await expect(page).not.toHaveURL(startUrl, { timeout: 15000 });
-    const domainRegex = new RegExp(`.*${testHost.replace(/\./g, '\\.')}.*`);
+    const domainRegex = new RegExp(`.*${escapeForRegex(testHost ?? '')}.*`);
     await expect(page).toHaveURL(domainRegex, { timeout: 15000 });
   });
 }
