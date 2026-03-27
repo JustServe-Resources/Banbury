@@ -11,3 +11,6 @@ playwright/.auth
 test-results/
 playwright-report/
 blob-report/
+
+# Yarn Optimization Cache
+.yarn/install-state.gz
