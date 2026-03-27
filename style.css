@@ -2941,14 +2941,6 @@ footer #legal .ml:before {
 .community-follow button:hover {
   background-color: $brand_color;
 }
-.community-follow button[data-selected=true] {
-  background-color: $brand_color;
-  color: $brand_text_color;
-}
-.community-follow button[data-selected=true]::after {
-  border-left: 1px solid $brand_text_color;
-  color: $brand_text_color;
-}
 .community-follow button[data-selected=true]:hover {
   background-color: darken($brand_color, 20%);
   border-color: darken($brand_color, 20%);
@@ -3057,6 +3049,7 @@ footer #legal .ml:before {
   font-size: 12px;
   font-weight: 600;
   margin-right: 2px;
+  margin-left: 16px;
   padding: 3px 10px;
   vertical-align: middle;
   white-space: nowrap;

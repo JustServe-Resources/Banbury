@@ -14,7 +14,7 @@ import { defineConfig } from "rollup";
 const fileNames = "[name]-bundle.js";
 const isProduction = process.env.NODE_ENV === "production";
 const TRANSLATION_FILE_REGEX =
-  /src\/modules\/(.+?)\/translations\/locales\/.+?\.json$/;
+  /src[\\/]modules[\\/](.+?)[\\/]translations[\\/]locales[\\/].+?\.json$/;
 
 export default defineConfig([
   // Configuration for bundling the script.js file
@@ -42,23 +42,24 @@ export default defineConfig([
       dir: "assets",
       format: "es",
       manualChunks: (id) => {
+        const normalizedId = id.replace(/\\/g, '/');
         if (
-          id.includes("node_modules/@zendesk/help-center-wysiwyg") ||
-          id.includes("node_modules/@ckeditor5")
+          normalizedId.includes("node_modules/@zendesk/help-center-wysiwyg") ||
+          normalizedId.includes("node_modules/@ckeditor5")
         ) {
           return "wysiwyg";
         }
 
-        if (id.includes("node_modules") || id.includes("src/modules/shared")) {
+        if (normalizedId.includes("node_modules") || normalizedId.includes("src/modules/shared")) {
           return "shared";
         }
 
-        if (id.includes("src/modules/ticket-fields")) {
+        if (normalizedId.includes("src/modules/ticket-fields")) {
           return "ticket-fields";
         }
 
         // Bundle all files from `src/modules/MODULE_NAME/translations/locales/*.json to `${MODULE_NAME}-translations.js`
-        const translationFileMatch = id.match(TRANSLATION_FILE_REGEX);
+        const translationFileMatch = normalizedId.match(TRANSLATION_FILE_REGEX);
         if (translationFileMatch) {
           return `${translationFileMatch[1]}-translations`;
         }
