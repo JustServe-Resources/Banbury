@@ -1,6 +1,16 @@
 .sass-cache/
 style.css.map
 node_modules/
+.env
 .a11yrc.json
 *.DS_Store
 coverage/
+
+# Playwright
+playwright/.auth
+test-results/
+playwright-report/
+blob-report/
+
+# Yarn Optimization Cache
+.yarn/install-state.gz

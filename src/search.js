@@ -98,4 +98,15 @@ window.addEventListener("DOMContentLoaded", () => {
   const placeholder = container?.dataset.searchPlaceholder;
   const input = document.querySelector('.search input[type="search"]');
   if (input && placeholder) input.placeholder = placeholder;
+
+  // Bind custom search submit buttons to the native Zendesk search form
+  const searchSubmitBtns = document.querySelectorAll("#searchSubmitBtn");
+  searchSubmitBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Look for the form immediately next to the button, or fallback to the first generic search form on the page
+      const form = btn.parentElement.querySelector("form[role='search']") || document.querySelector("form[role='search']");
+      if (form) form.submit();
+    });
+  });
 });
