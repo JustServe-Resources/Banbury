@@ -62,12 +62,15 @@ __DO NOT RUN TESTS AGAINST PRODUCTION__ (`justserve.zendesk.com`). Tests are to 
 
 ### Playwright Tests
 
-We use Playwright for automated UI tests. You must manually set your active browser cookies to bypass Zendesk and Cloudflare bot protection. We use the firefox extension [Export Cookies] to get these. 
+> [!CAUTION]
+> This authentication process will soon change to something more reliable
+
+We use Playwright for automated UI tests. You must manually set your active browser cookies to allow playwright to work with Zendesk, albeit for only half a dozen tests or so.
 
 1. Copy `.env.example` to `.env` and configure `ZENDESK_TEST_HOST` with your assigned Sandbox domain.
 2. Open Firefox, log into the JustServe Zendesk Sandbox securely, and pass any captchas.
 3. Click the Export Cookies extension and select "Export as cookies.txt".
-4. Copy or save the downloaded file into the root folder of this repository, ensuring it is named exactly `cookies-zendesk-com.txt`.
+4. Copy or save the downloaded file into the root folder of this repository, ensuring it is named exactly `cookies-zendesk-com.txt`. DO NOT COMMIT THIS FILE
 5. Run the test suite:
    ```bash
    yarn test:e2e
