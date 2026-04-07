@@ -88,13 +88,9 @@
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">
         {{#if signed_in}}
-          <li class="user-avatar-item item">
+          <li class="item">
             {{#my_profile role="menuitem" class="my-profile"}}
-              {{user_avatar class="menu-profile-avatar"}}
-              <div class="menu-profile-name">
-                <div>{{user_name}}</div>
-                <div class="my-profile-tooltip">{{t 'profile'}}</div>
-              </div>
+              {{user_name}}
             {{/my_profile}}
           </li>
           <li class="item">{{link "requests" role="menuitem"}}</li>
