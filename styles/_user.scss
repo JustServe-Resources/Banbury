@@ -49,8 +49,14 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  display: none; // formerly inline-block [DevSciCloan]
+  // display: none; // formerly inline-block [DevSciCloan]
+  display: inline-block;
   vertical-align: middle;
+}
+
+// Hide the avatar specifically on the mobile toggle button if desired
+.menu-button-mobile .user-avatar {
+  display: none;
 }
 
 .avatar {
