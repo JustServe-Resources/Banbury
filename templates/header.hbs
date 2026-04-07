@@ -88,13 +88,9 @@
     <nav class="menu-list-mobile" id="user-nav-mobile" aria-expanded="false">
       <ul class="menu-list-mobile-items">
         {{#if signed_in}}
-          <li class="user-avatar-item item">
+          <li class="item">
             {{#my_profile role="menuitem" class="my-profile"}}
-              {{user_avatar class="menu-profile-avatar"}}
-              <div class="menu-profile-name">
-                <div>{{user_name}}</div>
-                <div class="my-profile-tooltip">{{t 'profile'}}</div>
-              </div>
+              {{user_name}}
             {{/my_profile}}
           </li>
           <li class="item">{{link "requests" role="menuitem"}}</li>
@@ -115,6 +111,26 @@
         <li class="item ham-link_request">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
         <li class="item ham-link_services">{{link 'service_catalog' role="menuitem"}}</li>
         <li class="nav-divider"></li>
+        {{#if alternative_locales}}
+          <li class="nav-divider"></li>
+          <li class="item">
+            <div class="dropdown language-selector">
+              <button class="dropdown-toggle" aria-haspopup="true">
+                {{current_locale.name}}
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/>
+                </svg>
+              </button>
+              <span class="dropdown-menu" role="menu">
+                {{#each alternative_locales}}
+                  <a href="{{url}}" dir="{{direction}}" rel="nofollow" role="menuitem">
+                    {{name}}
+                  </a>
+                {{/each}}
+              </span>
+            </div>
+          </li>
+        {{/if}}
         {{#if signed_in}}
           <li class="item">
             {{link "sign_out" role="menuitem"}}

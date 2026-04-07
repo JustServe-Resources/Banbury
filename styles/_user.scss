@@ -49,8 +49,14 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  display: none; // formerly inline-block [DevSciCloan]
+  // display: none; // formerly inline-block [DevSciCloan]
+  display: inline-block;
   vertical-align: middle;
+}
+
+// Hide the avatar specifically on the mobile toggle button if desired
+.menu-button-mobile .user-avatar {
+  display: none;
 }
 
 .avatar {
@@ -66,8 +72,8 @@
     color: $brand_color;
     border: 2px solid #fff;
     border-radius: 50%;
+    background-color: transparent; /* Removed teal background per user request */
     bottom: -4px;
-    background-color: $brand_text_color;
     font-size: 17px;
     height: 17px;
     line-height: 17px;
