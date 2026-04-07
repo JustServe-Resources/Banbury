@@ -100,7 +100,6 @@
     }
     
     &:focus {
-      @include focus-ring;
       text-decoration: none;
     }
   }
