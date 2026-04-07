@@ -1951,41 +1951,48 @@ footer #legal .ml:before {
 }
 
 .section-tree {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 @media (min-width: 768px) {
   .section-tree {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-tree {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .section-tree .section {
-  flex: initial;
+  background-color: white;
+  border: 1px solid rgb(216, 220, 222);
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   max-width: 100%;
 }
 @media (min-width: 768px) {
   .section-tree .section {
-    flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */
-  }
-  .section-tree .section:first-child {
-    border-right: 1px solid rgb(216, 220, 222);
-    padding-right: 2vw;
+    padding: 24px;
   }
 }
 .section-tree-title {
-  margin-bottom: 0;
+  margin-bottom: 16px;
   font-size: 18px;
   font-weight: 600;
-  /* a { color: $text_color; } */
 }
 .section-tree-title a {
   color: $brand_text_color;
 }
 .section-tree .see-all-articles {
   display: block;
-  padding: 15px 0;
+  padding: 15px 0 0 0;
+  margin-top: 15px;
+  border-top: 1px solid rgb(216, 220, 222);
 }
 
 .article-list-item {

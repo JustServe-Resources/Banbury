@@ -16,46 +16,51 @@
 }
 
 .section-tree {
-  @include tablet 
-  {
-    flex-direction: row; 
-    
-  }
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  // Mobile (default)
+  display: grid;
+  grid-template-columns: 1fr; // 1 column on mobile
+  gap: 24px; // Tighter gap for smaller screens
 
+  // Tablet
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr); // 2 columns
+    gap: 32px;
+  }
+
+  // Desktop
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr); // 3 columns on large screens
+  }
 
   .section {
-    @include tablet 
-    { 
-      flex: 0 0 45%; /* Two columns for tablet and desktop. Leaving 5% separation between columns */ 
-      &:first-child
-      { 
-        border-right: 1px solid $low-contrast-border-color;
-        padding-right: 2vw;
-      }
-    }
-    
-    flex: initial;
+    background-color: white;
+    border: 1px solid $low-contrast-border-color;
+    border-radius: 8px;
+    padding: 16px; // Tighter padding on mobile
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     max-width: 100%;
+
+    @include tablet {
+      padding: 24px; // More breathing room for larger screens
+    }
   }
 
   &-title {
-    margin-bottom: 0;
+    margin-bottom: 16px;
     font-size: 18px;
     font-weight: $font-weight-semibold;
-
-    /* a { color: $text_color; } */
     a { color: $brand-text-color; }
   }
 
   .see-all-articles {
     display: block;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
+    margin-top: 15px;
+    border-top: 1px solid $low-contrast-border-color;
   }
 }
+
 
 .article-list {
   &-item {
