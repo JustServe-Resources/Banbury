@@ -1709,8 +1709,6 @@ footer #legal .ml:before {
   text-decoration: none;
 }
 .blocks-item-link:focus {
-  outline: 0;
-  box-shadow: 0 0 0 3px $brand_color;
   text-decoration: none;
 }
 .blocks-item-title {
