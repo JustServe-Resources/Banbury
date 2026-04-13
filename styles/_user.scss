@@ -72,7 +72,7 @@
     color: $brand_color;
     border: 2px solid #fff;
     border-radius: 50%;
-    background-color: transparent; /* Removed teal background per user request */
+    background-color: $background_color; /* Removed teal background per user request */
     bottom: -4px;
     font-size: 17px;
     height: 17px;
