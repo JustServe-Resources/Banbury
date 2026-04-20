@@ -674,4 +674,123 @@
     }
   });
 
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ensure we are on a community topic page
+    const postListings = document.querySelectorAll('.posts-list li');
+    if (postListings.length === 0) return;
+
+    // 1. Gather all unique tags from the currently loaded posts
+    const uniqueTags = new Set();
+    postListings.forEach(post => {
+      const tags = post.querySelectorAll('.content-tag'); 
+      tags.forEach(tag => {
+        uniqueTags.add(tag.getAttribute('data-tag') || tag.textContent.trim());
+      });
+    });
+
+    if (uniqueTags.size === 0) return; // Exit if no tags exist on the page
+
+    // 2. Create the custom dropdown menu following Zendesk's native style
+    const filterContainer = document.createElement('span');
+    filterContainer.className = 'dropdown post-tag-filter';
+
+    const button = document.createElement('button');
+    button.className = 'dropdown-toggle';
+    button.setAttribute('aria-haspopup', 'true');
+    button.innerHTML = `Filter by Tag (All) <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+
+    const dropdownMenu = document.createElement('span');
+    dropdownMenu.className = 'dropdown-menu';
+    dropdownMenu.setAttribute('role', 'menu');
+
+    // Add the default 'All' option
+    const defaultOption = document.createElement('a');
+    defaultOption.href = '#';
+    defaultOption.setAttribute('role', 'menuitemradio');
+    defaultOption.setAttribute('aria-checked', 'true');
+    defaultOption.textContent = 'All Tags';
+    defaultOption.setAttribute('data-value', 'all');
+    dropdownMenu.appendChild(defaultOption);
+
+    // Add the unique tags to the dropdown
+    uniqueTags.forEach(tag => {
+      const option = document.createElement('a');
+      option.href = '#';
+      option.setAttribute('role', 'menuitemradio');
+      option.setAttribute('aria-checked', 'false');
+      option.textContent = tag;
+      option.setAttribute('data-value', tag.toLowerCase());
+      dropdownMenu.appendChild(option);
+    });
+
+    filterContainer.appendChild(button);
+    filterContainer.appendChild(dropdownMenu);
+
+    // 3. Inject the dropdown next to the existing sorting options
+    const filterBar = document.querySelector('.topic-filters');
+    if (filterBar) {
+      filterBar.appendChild(filterContainer);
+    }
+
+    // Handle dropdown toggle visibility (basic Zendesk theme style)
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      
+      // close other native dropdowns
+      document.querySelectorAll('.topic-filters .dropdown-toggle').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      
+      button.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    document.addEventListener('click', function() {
+      button.setAttribute('aria-expanded', 'false');
+    });
+
+    // 4. Handle the filtering logic when a selection changes
+    const options = dropdownMenu.querySelectorAll('a');
+    options.forEach(opt => {
+      opt.addEventListener('click', function(e) {
+        e.preventDefault();
+        const selectedTagValue = this.getAttribute('data-value');
+        
+        // Update checkmarks
+        options.forEach(o => o.setAttribute('aria-checked', 'false'));
+        this.setAttribute('aria-checked', 'true');
+        
+        // Update button text
+        const rawText = this.textContent.trim();
+        const textToDisplay = selectedTagValue === 'all' ? 'Filter by Tag (All)' : rawText;
+        button.innerHTML = `${textToDisplay} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+
+        // Apply filtering to posts
+        postListings.forEach(post => {
+          if (selectedTagValue === "all") {
+            post.style.display = ""; // Show all
+            return;
+          }
+
+          // Check if this specific post has the selected tag
+          const tags = post.querySelectorAll('.content-tag');
+          let hasTag = false;
+          tags.forEach(tag => {
+            const tagValue = (tag.getAttribute('data-tag') || tag.textContent.trim()).toLowerCase();
+            if (tagValue === selectedTagValue) {
+              hasTag = true;
+            }
+          });
+
+          // Toggle visibility based on presence of the tag
+          if (hasTag) {
+            post.style.display = "";
+          } else {
+            post.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+
 })();
