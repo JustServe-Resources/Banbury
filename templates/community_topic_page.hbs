@@ -18,27 +18,29 @@
   {{breadcrumbs}}
   
   <header class="page-header">
-    <h1>
-      {{topic.name}}
-      {{#if topic.internal}}
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
-          <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-          <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-        </svg>
+    <div class="page-header-title-container">
+      <h1>
+        {{topic.name}}
+        {{#if topic.internal}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+            <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+            <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+          </svg>
+        {{/if}}
+      </h1>
+      <p class="page-header-description">{{topic.description}}</p>
+    </div>
+    <div class="header-actions">
+      {{#if settings.show_follow_topic}}
+        <div class="community-follow">
+          {{subscribe}}
+        </div>
       {{/if}}
-    </h1>
-    <span class="post-to-community">
-      {{link 'new_post' topic_id=topic.id class='button button-large'}}
-    </span>
+      <span class="post-to-community">
+        {{link 'new_post' topic_id=topic.id class='button button-large'}}
+      </span>
+    </div>
   </header>
-  <div class="community-header">
-    <p class="page-header-description">{{topic.description}}</p>
-    {{#if settings.show_follow_topic}}
-      <div class="community-follow">
-        {{subscribe}}
-      </div>
-    {{/if}}
-  </div>
 
   <div class="topic-header">
     <span class="topic-filters">

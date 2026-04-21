@@ -2927,17 +2927,38 @@ footer #legal .ml:before {
   margin-bottom: 20px;
 }
 
-/* Topic, post and user follow button */
-.community-follow {
-  margin-bottom: 10px;
+/* Header Actions Container */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   width: 100%;
+  margin-top: 15px;
 }
 @media (min-width: 768px) {
-  .community-follow {
-    margin-bottom: 0;
+  .header-actions {
+    flex-direction: row;
     width: auto;
   }
 }
+@media (min-width: 1024px) {
+  .header-actions {
+    margin-top: 0;
+  }
+}
+.header-actions .community-follow,
+.header-actions .post-to-community {
+  margin: 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header-actions .community-follow,
+  .header-actions .post-to-community {
+    width: auto;
+  }
+}
+
+/* Topic, post and user follow button */
 .community-follow button {
   line-height: 30px;
   padding: 0 10px 0 15px;
@@ -2957,10 +2978,10 @@ footer #legal .ml:before {
   border-color: darken($brand_color, 20%);
 }
 .community-follow button::after {
+  display: none;
   border-left: 1px solid white;
   content: attr(data-follower-count);
   color: white;
-  display: inline-block;
   font-family: $heading_font;
   margin-left: 15px;
   padding-left: 10px;
@@ -2970,6 +2991,7 @@ footer #legal .ml:before {
 @media (min-width: 768px) {
   .community-follow button::after {
     position: static;
+    display: inline-block;
   }
 }
 [dir=rtl] .community-follow button::after {
