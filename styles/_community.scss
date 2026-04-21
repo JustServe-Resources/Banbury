@@ -94,6 +94,12 @@
     border-top: 1px solid $low-contrast-border-color;
     padding: 10px 0;
   }
+
+  .topic-filters {
+    .dropdown-toggle {
+      color: #87929d;
+    }
+  }
 }
 
 .no-posts-with-filter {

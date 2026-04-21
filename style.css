@@ -2918,6 +2918,9 @@ footer #legal .ml:before {
     padding: 0;
   }
 }
+.topic-header .topic-filters .dropdown-toggle {
+  color: #87929d;
+}
 
 .no-posts-with-filter {
   margin-top: 20px;
@@ -2985,7 +2988,7 @@ footer #legal .ml:before {
   align-items: flex-start;
   border-bottom: 1px solid rgb(216, 220, 222);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-end;
   padding: 20px 0;
 }
@@ -2995,24 +2998,86 @@ footer #legal .ml:before {
     flex-direction: row;
   }
 }
+.striped-list .post-status-icon {
+  flex-shrink: 0;
+}
+.striped-list .post-status-icon svg {
+  display: block;
+}
+.striped-list .post-status-icon.status-none {
+  color: #c72a1c;
+}
+.striped-list .post-status-icon.status-new {
+  color: #ffb648;
+}
+.striped-list .post-status-icon.status-planned {
+  color: #1f73b7;
+}
+.striped-list .post-status-icon.status-not_planned {
+  color: lighten($text_color, 20%);
+}
+.striped-list .post-status-icon.status-answered, .striped-list .post-status-icon.status-completed {
+  color: #8250df;
+}
 .striped-list-info {
   flex: 2;
+  display: flex;
+  flex-direction: column;
 }
 .striped-list-title {
-  color: $link_color;
-  margin-bottom: 10px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
   margin-right: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 .striped-list-title:hover, .striped-list-title:focus, .striped-list-title:active {
   text-decoration: underline;
 }
 .striped-list-title:visited {
-  color: $visited_link_color;
+  color: #000;
 }
 .striped-list .meta-group {
-  margin: 5px 0;
+  margin: 0;
+  margin-left: 26px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #87929d;
+  font-size: 13px;
+}
+.striped-list .meta-group .meta-data {
+  color: inherit;
+}
+.striped-list .meta-group .tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.striped-list .meta-group .tags-list .content-tag {
+  background-color: transparent;
+  border: 1px solid #d8dcde;
+  border-radius: 2em;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 18px;
+  color: lighten($text_color, 20%);
+}
+.striped-list .meta-group .tags-list .content-tag .tags-list-item {
+  color: inherit;
 }
 .striped-list-count {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
   color: lighten($text_color, 20%);
   font-size: 13px;
   justify-content: flex-start;
@@ -3023,7 +3088,13 @@ footer #legal .ml:before {
     display: flex;
     flex: 1;
     justify-content: space-around;
+    margin-top: 0;
+    flex-direction: row;
   }
+}
+.striped-list-count-item {
+  display: flex;
+  align-items: center;
 }
 .striped-list-count-item::after {
   content: "·";

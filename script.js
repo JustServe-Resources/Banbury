@@ -769,31 +769,46 @@
       postsListUl.parentNode.insertBefore(filterContainer, postsListUl);
     }
 
-    // Handle dropdown toggle visibility explicitly
+    let isDropdownOpen = false;
+
+    // Handle dropdown toggle visibility explicitly and locally
     button.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      e.preventDefault();
+      e.stopImmediatePropagation(); // Kills any Zendesk native listeners that might interfere
       
-      // close other native dropdowns via Zendesk's global listener by simulating a body click
-      // but we need to stopPropagation right after so we don't close ourselves!
-      // Actually, just explicitly close them:
+      isDropdownOpen = !isDropdownOpen;
+      
+      // close other native dropdowns SAFELY (remove inline styles instead of forcing none)
       document.querySelectorAll('.topic-filters .dropdown-toggle').forEach(btn => {
         if (btn !== button) {
           btn.setAttribute('aria-expanded', 'false');
           const nextMenu = btn.nextElementSibling;
           if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
-            nextMenu.style.display = 'none';
+            nextMenu.style.display = ''; // Clear inline style so CSS can take over again!
           }
         }
       });
       
-      button.setAttribute('aria-expanded', !isExpanded);
-      dropdownMenu.style.display = isExpanded ? 'none' : 'block';
+      button.setAttribute('aria-expanded', isDropdownOpen ? 'true' : 'false');
+      dropdownMenu.style.display = isDropdownOpen ? 'block' : 'none'; // Explicit override
     });
 
-    document.addEventListener('click', function() {
-      button.setAttribute('aria-expanded', 'false');
-      dropdownMenu.style.display = 'none';
+    function closeTagFilter() {
+      if (isDropdownOpen) {
+        isDropdownOpen = false;
+        button.setAttribute('aria-expanded', 'false');
+        dropdownMenu.style.display = 'none';
+      }
+    }
+
+    // Close when clicking outside
+    document.addEventListener('click', closeTagFilter);
+
+    // Close when clicking other native Zendesk dropdown toggles
+    document.querySelectorAll('.topic-filters .dropdown-toggle').forEach(btn => {
+      if (btn !== button) {
+        btn.addEventListener('click', closeTagFilter);
+      }
     });
 
     // 4. Handle the filtering logic when a selection changes
@@ -812,6 +827,7 @@
       button.innerHTML = `${textToDisplay} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
 
       // Explicitly close the dropdown menu
+      isDropdownOpen = false;
       button.setAttribute('aria-expanded', 'false');
       dropdownMenu.style.display = 'none';
 
