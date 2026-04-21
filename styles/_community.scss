@@ -1,9 +1,9 @@
 /***** Community *****/
 .community {
-//   &-hero {
-//     background-image: url($community_background_image);
-//     margin-bottom: 10px;
-//   }
+  //   &-hero {
+  //     background-image: url($community_background_image);
+  //     margin-bottom: 10px;
+  //   }
 
   &-footer {
     padding-top: 50px;
@@ -14,33 +14,33 @@
       margin-bottom: 20px;
     }
 
-    .button 
-    {
+    .button {
       font-size: 16px;
       padding: 0 16px;
       background-color: transparent;
       border: 2px solid $low-contrast-border-color;
       color: $high-contrast-border-color !important;
-      &:hover 
-      {
+
+      &:hover {
         background-color: white !important;
         border: 2px solid $high-contrast-border-color;
         color: $text_color !important;
       }
+
       margin-bottom: 32px;
     }
   }
 
-//   &-featured-posts .title {
-//     font-size: 18px;
-//     font-weight: 600;
-//   }
+  //   &-featured-posts .title {
+  //     font-size: 18px;
+  //     font-weight: 600;
+  //   }
 
-//   &-featured-posts,
-//   &-activity {
-//     padding-top: 40px;
-//     width: 100%;
-//   }
+  //   &-featured-posts,
+  //   &-activity {
+  //     padding-top: 40px;
+  //     width: 100%;
+  //   }
 
   &-header {
     margin-bottom: 30px;
@@ -53,10 +53,13 @@
 }
 
 .post-to-community {
-  @include tablet { margin: 0; }
+  @include tablet {
+    margin: 0;
+  }
+
   margin-top: 10px;
-  .button 
-  {
+
+  .button {
     padding: 0 16px;
   }
 }
@@ -78,7 +81,10 @@
 /* Community topic page */
 
 .topic-header {
-  @include tablet { padding-bottom: 10px; }
+  @include tablet {
+    padding-bottom: 10px;
+  }
+
   border-bottom: 1px solid $low-contrast-border-color;
   font-size: $font-size-small;
 
@@ -94,6 +100,12 @@
     border-top: 1px solid $low-contrast-border-color;
     padding: 10px 0;
   }
+
+  .topic-filters {
+    .dropdown-toggle {
+      color: $high-contrast-border-color;
+    }
+  }
 }
 
 .no-posts-with-filter {
@@ -101,34 +113,53 @@
   margin-bottom: 20px;
 }
 
-/* Topic, post and user follow button */
-.community-follow {
+/* Header Actions Container */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  margin-top: 15px;
+
   @include tablet {
-    margin-bottom: 0;
+    flex-direction: row;
     width: auto;
   }
 
-  margin-bottom: 10px;
-  width: 100%;
+  @include desktop {
+    margin-top: 0;
+  }
 
+  .community-follow,
+  .post-to-community {
+    margin: 0; // Strip old margins so flex gap can handle spacing cleanly
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}
+
+/* Topic, post and user follow button */
+.community-follow {
   button {
     @extend .button;
-    @include tablet { width: auto;}
+
+    @include tablet {
+      width: auto;
+    }
 
     line-height: 30px;
     padding: 0 10px 0 15px;
     position: relative;
     width: 100%;
 
-    &:hover { background-color: $brand_color; }
-
-    // &:hover::after, &:focus::after {
-    //   border-color: $brand_text_color;
-    //   color: $brand_text_color;
-    // }
+    &:hover {
+      background-color: $brand_color;
+    }
 
     &[data-selected="true"] {
-
       &:hover {
         background-color: $hover-button-color;
         border-color: $hover-button-color;
@@ -138,12 +169,13 @@
     &::after {
       @include tablet {
         position: static;
+        display: inline-block;
       }
 
+      display: none; // Omit follower count on mobile
       border-left: 1px solid white;
       content: attr(data-follower-count);
       color: white;
-      display: inline-block;
       font-family: $heading_font;
       margin-left: 15px;
       padding-left: 10px;
@@ -159,5 +191,3 @@
     }
   }
 }
-
-

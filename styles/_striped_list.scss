@@ -12,19 +12,40 @@
     align-items: flex-start;
     border-bottom: 1px solid $low-contrast-border-color;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
     padding: 20px 0;
   }
 
+  .post-status-icon {
+    flex-shrink: 0;
+    
+    svg {
+      display: block;
+    }
+
+    &.status-none { color: $palette-green; }                          // open — active/live
+    &.status-new { color: $palette-gold; }                            // new — attention/featured
+    &.status-planned { color: $palette-teal; }                        // planned — in motion
+    &.status-not_planned { color: $palette-grey-mid; }                // not planned — de-emphasized
+    &.status-answered, &.status-completed { color: $palette-green; }  // resolved — success
+  }
+
   &-info {
     flex: 2;
+    display: flex;
+    flex-direction: column;
   }
 
   &-title {
-    color: $link_color;
-    margin-bottom: 10px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
     margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
     &:hover,
     &:focus,
@@ -32,11 +53,46 @@
       text-decoration: underline;
     }
 
-    &:visited { color: $visited_link_color; }
+    &:visited { color: #000; }
   }
 
   .meta-group {
-    margin: 5px 0;
+    margin: 0;
+    margin-left: 26px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #87929d;
+    font-size: 13px;
+    
+    .meta-data {
+      color: inherit;
+    }
+
+    .tags-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .content-tag {
+        background-color: transparent;
+        border: 1px solid $menu-border-color;
+        border-radius: 2em;
+        padding: 0 8px;
+        font-size: 12px;
+        line-height: 18px;
+        color: $secondary-text-color;
+        
+        .tags-list-item {
+          color: inherit;
+        }
+      }
+    }
   }
 
   &-count {
@@ -44,14 +100,23 @@
       display: flex;
       flex: 1;
       justify-content: space-around;
+      margin-top: 0;
+      flex-direction: row;
     }
 
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
     color: $secondary-text-color;
     font-size: $font-size-small;
     justify-content: flex-start;
     text-transform: capitalize;
   }
+  
   &-count-item {
+    display: flex;
+    align-items: center;
+    
     &::after {
       @include tablet { display: none; }
 
@@ -61,6 +126,15 @@
     }
 
     &:last-child::after { display: none; }
+
+    &.is-empty {
+      visibility: hidden;
+      pointer-events: none;
+
+      .striped-list-number {
+        display: none;
+      }
+    }
   }
 
   &-number {

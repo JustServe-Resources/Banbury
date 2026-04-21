@@ -4,6 +4,16 @@
 $hover-button-color: zass-darken($brand_color, 20%);
 $secondary-text-color: zass-lighten($text_color, 20%);
 
+// Brand palette
+$palette-green:       #71AA32; // PMS 368 C — active, success, open
+$palette-teal:        #009EB9; // PMS 7703 C — in-progress, links
+$palette-orange:      #EF5E39; // PMS 151 C — brand primary accent
+$palette-gold:        #E1BC21; // PMS 116 C — new, attention
+$palette-brown:       #674B3E; // PMS 7603 — closed, inactive
+$palette-grey-mid:    #989B9F; // mid grey — muted/secondary
+$palette-grey-light:  #BBBDC0; // light grey — borders, subtle
+$palette-grey-subtle: #E5E3E3; // very light grey — backgrounds
+
 $primary-shade: zass-darken($background_color, 3%); //#f8f8f8 for the default background_color
 $secondary-shade: zass-darken($background_color, 5%); //#f2f2f2 for the default background_color
 

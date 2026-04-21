@@ -18,27 +18,29 @@
   {{breadcrumbs}}
   
   <header class="page-header">
-    <h1>
-      {{topic.name}}
-      {{#if topic.internal}}
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
-          <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-          <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-        </svg>
+    <div class="page-header-title-container">
+      <h1>
+        {{topic.name}}
+        {{#if topic.internal}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
+            <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
+            <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
+          </svg>
+        {{/if}}
+      </h1>
+      <p class="page-header-description">{{topic.description}}</p>
+    </div>
+    <div class="header-actions">
+      {{#if settings.show_follow_topic}}
+        <div class="community-follow">
+          {{subscribe}}
+        </div>
       {{/if}}
-    </h1>
-    <span class="post-to-community">
-      {{link 'new_post' topic_id=topic.id class='button button-large'}}
-    </span>
+      <span class="post-to-community">
+        {{link 'new_post' topic_id=topic.id class='button button-large'}}
+      </span>
+    </div>
   </header>
-  <div class="community-header">
-    <p class="page-header-description">{{topic.description}}</p>
-    {{#if settings.show_follow_topic}}
-      <div class="community-follow">
-        {{subscribe}}
-      </div>
-    {{/if}}
-  </div>
 
   <div class="topic-header">
     <span class="topic-filters">
@@ -82,41 +84,68 @@
           <li>
             <section role="region" aria-labelledby="title-{{id}}" class="striped-list-item {{#if featured}}post-featured{{/if}}">
               <span class="striped-list-info">
-                <a href="{{url}}" id="title-{{id}}" class="striped-list-title">{{title}}</a>
-                <span class="post-overview-item">
-                  {{#if pinned}}
-                    <span class="status-label status-label-pinned">{{t 'pinned'}}</span>
-                  {{/if}}
-
-                  {{#if featured}}
-                    <span class="status-label status-label-featured">{{t 'featured'}}</span>
-                  {{/if}}
-
-                  {{#is status 'none'}}
-                  {{else}}
-                    <span class="status-label-{{status_dasherized}} status-label striped-list-status">{{status_name}}</span>
-                  {{/is}}
-                </span>
+                <a href="{{url}}" id="title-{{id}}" class="striped-list-title">
+                  <span class="post-status-icon status-{{status_dasherized}}" title="{{#is status 'none'}}Open{{else}}{{status_name}}{{/is}}">
+                    {{#is status 'none'}}
+                      <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path></svg>
+                    {{else}}
+                      {{#is status 'planned'}}
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028 1.122a.75.75 0 0 1-.724 1.308l-2.433-1.346A.75.75 0 0 1 7 8.16V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
+                      {{/is}}
+                      {{#is status 'not_planned'}}
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm0 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"></path></svg>
+                      {{/is}}
+                      {{#is status 'answered'}}
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>
+                      {{/is}}
+                      {{#is status 'completed'}}
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l3.5-3.5Z"></path><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"></path></svg>
+                      {{/is}}
+                      {{#is status 'new'}}
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>
+                      {{/is}}
+                    {{/is}}
+                  </span>
+                  <span>{{title}}</span>
+                </a>
+                {{#if pinned}}
+                  <span class="status-label status-label-pinned">{{t 'pinned'}}</span>
+                {{/if}}
+                {{#if featured}}
+                  <span class="status-label status-label-featured">{{t 'featured'}}</span>
+                {{/if}}
 
                 <div class="meta-group">
-                  <span class="meta-data">{{author.name}}</span>
-                  {{#if editor}}
-                    <span class="meta-data">{{date edited_at timeago=true}}</span>
-                    <span class="meta-data">{{t 'edited'}}</span>
-                  {{else}}
-                    <span class="meta-data">{{date created_at timeago=true}}</span>
+                  {{#if content_tags}}
+                    <ul class="tags-list">
+                      {{#each content_tags}}
+                        <li class="content-tag" data-tag="{{name}}">
+                          <span class="tags-list-item">{{name}}</span>
+                        </li>
+                      {{/each}}
+                    </ul>
                   {{/if}}
+
+                  <span class="meta-data">{{author.name}}</span>
+                  <span class="meta-data">opened this {{date created_at timeago=true}}</span>
                 </div>
               </span>
 
               <div class="post-overview-count striped-list-count">
-                <span class="striped-list-count-item">
+                <span class="striped-list-count-item {{#unless vote_sum}}is-empty{{/unless}}" title="{{vote_sum}} {{t 'vote' count=vote_sum}}">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" focusable="false" style="margin-right: 4px; flex-shrink: 0;">
+                    <g fill="none" stroke="currentColor">
+                      <path stroke-linejoin="round" d="M14.5 6.5a1 1 0 011 1c-.1 2.4-.4 8-2 8H5a.47.47 0 01-.5-.5V6.9a.55.55 0 01.3-.5c.6-.2 1.7-1 1.7-4.4a1.5 1.5 0 013 0v4.5z"/>
+                      <rect width="2" height="9" x=".5" y="6.5" rx=".5" ry=".5"/>
+                    </g>
+                  </svg>
                   <span class="striped-list-number">{{vote_sum}}</span>
-                  {{t 'vote' count=vote_sum}}
                 </span>
-                <span class="striped-list-count-item">
+                <span class="striped-list-count-item {{#unless comment_count}}is-empty{{/unless}}" title="{{comment_count}} {{t 'comment' count=comment_count}}">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" focusable="false" style="margin-right: 4px; flex-shrink: 0;">
+                    <path fill="none" stroke="currentColor" d="M1 .5h14c.3 0 .5.2.5.5v10c0 .3-.2.5-.5.5H8l-3.6 3.6c-.3.3-.9.1-.9-.4v-3.3H1c-.3 0-.5-.2-.5-.5V1C.5.7.7.5 1 .5z"/>
+                  </svg>
                   <span class="striped-list-number">{{comment_count}}</span>
-                  {{t 'comment' count=comment_count}}
                 </span>
               </div>
             </section>
