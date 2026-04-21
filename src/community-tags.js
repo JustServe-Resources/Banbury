@@ -40,10 +40,34 @@ document.addEventListener("DOMContentLoaded", async function () {
   const filterContainer = document.createElement('span');
   filterContainer.className = 'dropdown post-tag-filter';
 
+  // Creates a new chevron SVG element (static, no user content)
+  function createChevronSvg() {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '12');
+    svg.setAttribute('height', '12');
+    svg.setAttribute('focusable', 'false');
+    svg.setAttribute('viewBox', '0 0 12 12');
+    svg.classList.add('dropdown-chevron-icon');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('d', 'M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  // Safely sets the button label using textContent to avoid XSS,
+  // then appends the static chevron SVG as a DOM node.
+  function setButtonLabel(text) {
+    button.textContent = text + ' ';
+    button.appendChild(createChevronSvg());
+  }
+
   const button = document.createElement('button');
   button.className = 'dropdown-toggle';
   button.setAttribute('aria-haspopup', 'true');
-  button.innerHTML = `Filter by Tag (All) <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+  setButtonLabel('Filter by Tag (All)');
 
   const dropdownMenu = document.createElement('span');
   dropdownMenu.className = 'dropdown-menu';
@@ -145,10 +169,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     options.forEach(o => o.setAttribute('aria-checked', 'false'));
     this.setAttribute('aria-checked', 'true');
     
-    // Update button text
+    // Update button text safely (textContent prevents HTML injection)
     const rawText = this.textContent.trim();
     const textToDisplay = selectedTagValue === 'all' ? 'Filter by Tag (All)' : rawText;
-    button.innerHTML = `${textToDisplay} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+    setButtonLabel(textToDisplay);
 
     // Explicitly close the dropdown menu
     isDropdownOpen = false;
@@ -177,7 +201,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   if (totalPages > 1) {
     button.disabled = true;
     button.style.opacity = '0.7';
-    button.innerHTML = `Loading all posts... <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+    setButtonLabel('Loading all posts...');
 
     try {
       const baseUrl = new URL(window.location.href);
@@ -212,7 +236,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       
       button.disabled = false;
       button.style.opacity = '1';
-      button.innerHTML = `Filter by Tag (All) <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+      setButtonLabel('Filter by Tag (All)');
       
       // Hide the native pagination since we loaded everything
       if (pagination) pagination.style.display = 'none';
