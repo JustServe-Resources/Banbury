@@ -93,21 +93,31 @@ document.addEventListener("DOMContentLoaded", async function () {
     postsListUl.parentNode.insertBefore(filterContainer, postsListUl);
   }
 
-  // Handle dropdown toggle visibility (basic Zendesk theme style)
+  // Handle dropdown toggle visibility explicitly
   button.addEventListener('click', function(e) {
     e.stopPropagation();
     const isExpanded = button.getAttribute('aria-expanded') === 'true';
     
-    // close other native dropdowns
+    // close other native dropdowns via Zendesk's global listener by simulating a body click
+    // but we need to stopPropagation right after so we don't close ourselves!
+    // Actually, just explicitly close them:
     document.querySelectorAll('.topic-filters .dropdown-toggle').forEach(btn => {
-      btn.setAttribute('aria-expanded', 'false');
+      if (btn !== button) {
+        btn.setAttribute('aria-expanded', 'false');
+        const nextMenu = btn.nextElementSibling;
+        if (nextMenu && nextMenu.classList.contains('dropdown-menu')) {
+          nextMenu.style.display = 'none';
+        }
+      }
     });
     
     button.setAttribute('aria-expanded', !isExpanded);
+    dropdownMenu.style.display = isExpanded ? 'none' : 'block';
   });
 
   document.addEventListener('click', function() {
     button.setAttribute('aria-expanded', 'false');
+    dropdownMenu.style.display = 'none';
   });
 
   // 4. Handle the filtering logic when a selection changes
@@ -124,6 +134,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     const rawText = this.textContent.trim();
     const textToDisplay = selectedTagValue === 'all' ? 'Filter by Tag (All)' : rawText;
     button.innerHTML = `${textToDisplay} <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="dropdown-chevron-icon"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5"/></svg>`;
+
+    // Explicitly close the dropdown menu
+    button.setAttribute('aria-expanded', 'false');
+    dropdownMenu.style.display = 'none';
 
     // Apply filtering to all dynamically loaded posts
     allPosts.forEach(post => {
