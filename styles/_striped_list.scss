@@ -126,6 +126,15 @@
     }
 
     &:last-child::after { display: none; }
+
+    &.is-empty {
+      visibility: hidden;
+      pointer-events: none;
+
+      .striped-list-number {
+        display: none;
+      }
+    }
   }
 
   &-number {

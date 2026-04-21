@@ -1238,11 +1238,14 @@ footer #legal .ml:before {
   }
 }
 .breadcrumbs li {
-  color: lighten($text_color, 20%);
+  color: #87929D;
   font-size: 13px;
   max-width: 450px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.breadcrumbs li a {
+  color: #87929D;
 }
 .breadcrumbs li + li::before {
   content: ">";
@@ -2919,7 +2922,7 @@ footer #legal .ml:before {
   }
 }
 .topic-header .topic-filters .dropdown-toggle {
-  color: #87929d;
+  color: #87929D;
 }
 
 .no-posts-with-filter {
@@ -3129,6 +3132,13 @@ footer #legal .ml:before {
   }
 }
 .striped-list-count-item:last-child::after {
+  display: none;
+}
+.striped-list-count-item.is-empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+.striped-list-count-item.is-empty .striped-list-number {
   display: none;
 }
 .striped-list-number {
