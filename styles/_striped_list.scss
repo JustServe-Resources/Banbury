@@ -24,11 +24,11 @@
       display: block;
     }
 
-    &.status-none { color: #c72a1c; }
-    &.status-new { color: #ffb648; }
-    &.status-planned { color: #1f73b7; }
-    &.status-not_planned { color: $secondary-text-color; }
-    &.status-answered, &.status-completed { color: #8250df; }
+    &.status-none { color: $palette-green; }                          // open — active/live
+    &.status-new { color: $palette-gold; }                            // new — attention/featured
+    &.status-planned { color: $palette-teal; }                        // planned — in motion
+    &.status-not_planned { color: $palette-grey-mid; }                // not planned — de-emphasized
+    &.status-answered, &.status-completed { color: $palette-green; }  // resolved — success
   }
 
   &-info {

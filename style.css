@@ -3030,19 +3030,19 @@ footer #legal .ml:before {
   display: block;
 }
 .striped-list .post-status-icon.status-none {
-  color: #c72a1c;
+  color: #71AA32;
 }
 .striped-list .post-status-icon.status-new {
-  color: #ffb648;
+  color: #E1BC21;
 }
 .striped-list .post-status-icon.status-planned {
-  color: #1f73b7;
+  color: #009EB9;
 }
 .striped-list .post-status-icon.status-not_planned {
-  color: lighten($text_color, 20%);
+  color: #989B9F;
 }
 .striped-list .post-status-icon.status-answered, .striped-list .post-status-icon.status-completed {
-  color: #8250df;
+  color: #71AA32;
 }
 .striped-list-info {
   flex: 2;
